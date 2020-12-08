@@ -1,0 +1,1551 @@
+Delivered-To: ihadtopee@gmail.com
+Received: by 2002:a9d:20e2:0:0:0:0:0 with SMTP id x89-v6csp1152618ota;
+        Fri, 17 Aug 2018 14:02:28 -0700 (PDT)
+X-Google-Smtp-Source: AA+uWPz+rJOoJgumjFBuUSyi+fJh8WbhK+CO2YK1IT3JcImqfM42i6uzc6Pb4zm5vuvAHyI3eG/S
+X-Received: by 2002:ac8:530d:: with SMTP id t13-v6mr34210491qtn.396.1534539747828;
+        Fri, 17 Aug 2018 14:02:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1534539747; cv=none;
+        d=google.com; s=arc-20160816;
+        b=OBNqs9mApYNVaUUz9OSGlG2W+aT9TqjgKW8L/LWs5pS3zVeyi7rOfAQA8CQZZP+MtM
+         Q3d5TBC3qJgVrtrV7/cFsK8wBCQjbiQTIjoXGyViQgLcv1uuk63OS8rLfePZlWSY0hB8
+         yGHcKT4bTcsQ8B+lu+CDw2Y9zvNGBxy/H+IKBeBnnbiephGgC8EE7jdrhi5NDMuq6sW+
+         smcS6JQgOCQ9wSS2B13ndLoDbRrzf4NJhEfrshszIdar0sAfsQb6TOZN0gPxR9YwwS7i
+         rqYIwios6Wdnn+0VZR6BqgJfb/C52tQLMqLSIM1DFPGdfJXcdpGpQ6LB9QMRoLG5gQP0
+         B6Hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to
+         :reply-to:from:date:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=YmE1a5hloSV16aNSwegpxua+mMmoZwipEoM5o7Gkb4w=;
+        b=eURFtB7AttRAcwDTL9kowxq/Avzb7MiDo5kfTn6gQ/6gEsbRfBb+U+3E3NlM57T1sb
+         9mV70FQkRYjRb0yQZbIByN9Fqtm+sE/nehsYKBs/eCrE/t8gVnScAXY8TA4sFhWFzJFf
+         +TaSNbhKySVH3I0lFWr4ZNroBd/30fW9WdJZPJIedoloBlps2AY4Igwyq2ory40NY5VZ
+         eXUowpuaP+YLGdleiaNOLBZUwiPl+71ydLf+LGxucS5DUdNcf363HnYK++hefZLtPm7Z
+         2O/fJMMJpFxjGtk095X3oh8ymBcgSJvMe/mj4BWkTfXDy/tpL8ZQFlZ/cNdRdRgJnUh2
+         M52Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@getrevue.co header.s=smtpapi header.b=SOBc6+fr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=pstf93WM;
+       spf=pass (google.com: domain of bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co designates 168.245.28.69 as permitted sender) smtp.mailfrom="bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co"
+Return-Path: <bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co>
+Received: from o2.em.getrevue.co (o2.em.getrevue.co. [168.245.28.69])
+        by mx.google.com with ESMTPS id r3-v6si2875963qkb.7.2018.08.17.14.02.27
+        for <ihadtopee@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Fri, 17 Aug 2018 14:02:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co designates 168.245.28.69 as permitted sender) client-ip=168.245.28.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@getrevue.co header.s=smtpapi header.b=SOBc6+fr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=pstf93WM;
+       spf=pass (google.com: domain of bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co designates 168.245.28.69 as permitted sender) smtp.mailfrom="bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co"
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=getrevue.co; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding; 
+	s=smtpapi; bh=PLDsq6tNtivJdrXFI/h9xd1H7m4=; b=SOBc6+frdKal0s18lH
+	AzU7GTRgmBdDgF9cIbnvhXy8h5PvM5eN0yckjtTXLBifil9G6gwuVQQVBSVT2aej
+	YcS2rbd6pWnoL7DsBUOUQpGJRbyQ8Qt4z6xQxWJvwxzTuD3NQIz2lSKXpQv5xRjE
+	FEDifFV7/gXiG2V/txZ5XqOVw=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=sendgrid.info; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding:x-feedback-id; 
+	s=smtpapi; bh=PLDsq6tNtivJdrXFI/h9xd1H7m4=; b=pstf93WMKfQEacWgL+
+	izsJnNl4To6CR0vzpO8JVr7+XmJy/tepyi7wfWFh0XOMH+edwgyiciIcfl7sQFuw
+	07GPcVmnPZR3DSwmUl606ZYMwF0sqbuS+RM29aACTn8tR3TKg7nB1dPY5ESC3xOi
+	tcr4lRj5Vta7/bVjd+nvP8wfQ=
+Received: by filter0057p3las1.sendgrid.net with SMTP id filter0057p3las1-8080-5B773756-28
+        2018-08-17 21:00:06.840032685 +0000 UTC m=+258081.791363978
+Received: from heroku.com (ec2-54-157-199-55.compute-1.amazonaws.com [54.157.199.55])
+	by ismtpd0025p1mdw1.sendgrid.net (SG) with ESMTP id NemFzxStSKGDQ9wU61I8Iw
+	for <caseynewton@getrevue.co>; Fri, 17 Aug 2018 21:00:05.862 +0000 (UTC)
+Date: Fri, 17 Aug 2018 21:02:26 +0000 (UTC)
+From: Casey Newton <caseynewton@getrevue.co>
+Reply-to: casey@theverge.com
+To: ihadtopee@gmail.com
+Message-ID: <5b7737557724d_42b11acf6733427151b@5bc1f95d-bfd4-43e5-8b78-9daf0705f103.mail>
+Subject: The tweets that stopped Google in its tracks
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5b7737556f8a3_42b11acf67334271460";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-SG-EID: Z0Ma3PVa3KP08UxHA6Ac+gcl0ut3Lr3kpJXNwGOW47uca5eTR9dl7vk3Bo39YMxRWXFIdREz382g2N
+ YHA1iUsr2MSteY6edCWKCJuJTFUqkyKgpHmhVW7snrqQJkDHzeBelLidBWv5jaxd9foQN/ZtcMO9Cp
+ aceDClLjPrVTRygGbwYaYesXLBIoLPZ4m0X+su/F/9uhoX4rfISvAgjCWj72BAyf5hL0bf1GkTir43
+ M=
+X-SG-ID: nWpgdNLu1RlknLCU5weRnLogee/fKPP20BTvw4zSyQ5wNMnFUOZADt66CT8h8ygHvZnKsXVR8urPF6
+ zbz96W6nkIfmieowfIsGbY4Fje+48=
+X-Feedback-ID: 1592020:nHrAh69pm2wNFIxuq0A9hzf56Oo2XS9xi3FR9a7toBU=:nHrAh69pm2wNFIxuq0A9hzf56Oo2XS9xi3FR9a7toBU=:SG
+
+----==_mimepart_5b7737556f8a3_42b11acf67334271460
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+The Interface
+August 17 - Issue #189
+
+
+On Thursday afternoon, a critical meeting at Google was derailed by a handf=
+ul of tweets (https://twitter.com/kateconger/status/1030244626911911937&quo=
+t; target=3D&quot;_blank). Employees who had been pressing top executives f=
+or answers about the company's plans to build a censored search engine and =
+news app for the Chinese market appeared to have finally gotten their wish.=
+ Google cofounder Sergey Brin and CEO Sundar Pichai had taken the stage to =
+address employees' concerns. &quot;We=E2=80=99ll=C2=A0definitely be transpa=
+rent as we get closer to actually having a plan of record,=E2=80=9D Pichai =
+said, according to a report from The Intercept's Ryan Gallagher (https://th=
+eintercept.com/2018/08/17/internal-meeting-reveals-how-google-bosses-misled=
+-staff-on-their-china-censorship-plan-here-are-the-questions-they-must-answ=
+er/&quot; target=3D&quot;_blank).
+
+Then employees noticed that executives' words were being transcribed in rea=
+l time by the New York Times' Kate Conger, who had a source inside. Upon wh=
+ich an unidentified employee at the meeting went up to a microphone and did=
+ this, according to Business Insider's Greg Sandoval (https://www.businessi=
+nsider.com/google-insiders-press-leaks-at-meeting-backfired-gave-sergey-bri=
+n-moral-high-ground-china-2018-8&quot; target=3D&quot;_blank):
+
+&quot;Fuck you,&quot; said the male Google employee standing at the microph=
+one during a pivotal moment at the company=C2=A0all-hands meeting (https://=
+www.businessinsider.com/google-ceo-sundar-pichai-on-censored-search-in-chin=
+a-2018-8&quot; target=3D&quot;_blank)=C2=A0on Thursday night.According to t=
+hree sources in attendance who spoke with Business Insider, the man was add=
+ressing whoever within Google was relaying what was said at the gathering i=
+n real time to a New York Times reporter. The reporter had posted statement=
+s to Twitter that had been made just minutes before by Google's cofounder S=
+ergey Brin and CEO, Sundar Pichai, and her tweets were displayed on a large=
+ screen before the gathering.It was a dramatic turn of events, and it stopp=
+ed the meeting in its tracks. Few details about the Chinese project were sh=
+ared, and as Sandoval notes, it gave Brin and Pichai a good excuse to conti=
+nue working on the Chinese project in secrecy.
+
+But what the executives did say has raised some uncomfortable questions. (G=
+allagher has 13 of them for Google (https://theintercept.com/2018/08/17/int=
+ernal-meeting-reveals-how-google-bosses-misled-staff-on-their-china-censors=
+hip-plan-here-are-the-questions-they-must-answer/&quot; target=3D&quot;_bla=
+nk), all worth reading; we'll limit ourselves to just a few.)
+
+One, Pichai apparently characterized the nature of Google's work in China a=
+s exploratory. Gallagher has previously reported that Google had plans to g=
+et the censored search engine =E2=80=94 codenamed Dragonfly =E2=80=94=C2=A0=
+into a &quot;launch-ready state.&quot; Maybe those things aren't at odds =
+=E2=80=94 maybe something can be both launch-ready and exploratory =E2=80=
+=94 but Google appears to be much further down the road to relaunch in Chin=
+a than anyone acknowledged on Thursday.
+
+Two, Brin said he had only recently become aware of Dragonfly. On one level=
+, this would seem to strain credulity: Brin's upbringing in the Soviet Unio=
+n shaped his views on censorship (https://www.telegraph.co.uk/technology/go=
+ogle/7503641/Sergey-Brin-My-upbringing-in-USSR-helped-shape-Googles-views-o=
+n-China.html&quot; target=3D&quot;_blank) and informed the company's decisi=
+on to exit the Chinese market in 2010. Launching an initiative to re-enter =
+China without Brin's express approval would seem to be a firing offense, ev=
+en if Google is now a subsidiary of Alphabet and operating with less direct=
+ oversight. (Counterpoint: this is Sergey Brin we're talking about! One of =
+the world's most eccentric billionaires. Yesterday he described Dragonfly a=
+s a &quot;kerfuffle.&quot; If you told me Brin had recently delegated all o=
+f his decision-making authority to a stack of pancakes, I would believe it.)
+
+But while Google may have dodged a bullet on Thursday, I'm less certain tha=
+n ever that the company can avoid a crisis without abandoning the project. =
+China considers censorship a state secret, vastly restricting what Google c=
+an tell even its own employees about what its plans are. Meanwhile, a group=
+ of at least 1,400 employees (https://www.nytimes.com/2018/08/16/technology=
+/google-employees-protest-search-censored-china.html&quot; target=3D&quot;_=
+blank) is leading a charge to stop Dragonfly in its tracks.=20
+
+Employees succeeded earlier this year in getting Google to stop working on =
+a controversial project for the Pentagon (https://www.nytimes.com/2018/06/0=
+1/technology/google-pentagon-project-maven.html&quot; target=3D&quot;_blank=
+). It's hard to imagine employees successfully derailing a project to aid t=
+he American military and then failing to derail a project to aid the Chines=
+e military. (The data generated by any Google service not being of at least=
+ some use to intelligence agencies.)
+
+The thing I find myself wondering about the most here is what Sundar Pichai=
+ is thinking. Of the big tech-company CEOs, he is easily the kindest and mo=
+st approachable. Taking Google to China =E2=80=94 a China that is vastly mo=
+re authoritarian than it was even when Google abandoned it the first time a=
+round =E2=80=94=C2=A0would require him to make compromises that will define=
+ his legacy.=20
+
+The stock price would surely surge, but at the likely expense of any moral =
+capital he hoped to spend for the rest of his career. It could also come at=
+ the expense of at least 1,400 employees, working on projects across the co=
+mpany.
+
+On one hand, look at how naive we are =E2=80=94 acting all surprised when w=
+e find out a giant corporation is in it for the money. But what happens whe=
+n this new brute-capitalist version of Google finds out it's not the compan=
+y some of its most talented people signed up to work for?
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+** DEMOCRACY
+--------------------------------------
+
+* U.S. GOVERNMENT SEEKS FACEBOOK HELP TO WIRETAP MESSENGER: SOURCES
+The U.S. government wants to force Facebook to break the encryption in Mess=
+enger authorities can listen to a suspect's voice conversations in a crimin=
+al probe, report Dan Levine and Joseph Menn:
+
+The potential impact of the judge=E2=80=99s coming ruling is unclear. If th=
+e government prevails in the Facebook Messenger case, it could make similar=
+ arguments to force companies to rewrite other popular encrypted services s=
+uch as Signal and Facebook=E2=80=99s billion-user WhatsApp, which include b=
+oth voice and text functions, some legal experts said.Law enforcement agenc=
+ies forcing technology providers to rewrite software to capture and hand ov=
+er data that is no longer encrypted would have major implications for the c=
+ompanies which see themselves as defenders=C2=A0of individual privacy while=
+ under pressure from police and lawmakers.=20
+https://www.reuters.com/article/us-facebook-encryption-exclusive/u-s-govern=
+ment-seeks-facebook-help-to-wiretap-messenger-sources-idUSKBN1L226D
+
+* FACEBOOK COULD BE RESPONSIBLE FOR HOW ADVERTISERS USE ITS PLATFORM, JUSTI=
+CE DEPARTMENT SAYS
+Fair housing groups have sued Facebook, saying its ad tools let landlords d=
+iscriminate against women with children and other protected categories of p=
+eople. Facebook sought to have the suit dismissed, saying that under Sectio=
+n 230 of the Communications Decency Act it could not be held liable for lan=
+dlords' ads. But in a surprise move, the Justice Department argued that it =
+potentially could be. The argument is essentially that its ad-targeting too=
+ls are so good they explicitly enable this kind of behavior:
+
+Geoffrey S. Berman, the U.S. attorney for the Southern District of New York=
+, sided with the plaintiffs, noting Facebook =E2=80=9Ccreates and harvests =
+user data to develop profiles for each user, categorizing them into groups =
+based on demographics, interests, behaviors and other criteria.=E2=80=9DBer=
+man wrote, =E2=80=9CThe Complaint sufficiently alleges that, for purposes o=
+f housing advertisements, the categorizing of Facebook users based on prote=
+cted characteristics, and the mechanism that Facebook offers advertisers to=
+ target those segments of the potential audience, violated the FHA.&quot;
+https://www.washingtonpost.com/technology/2018/08/17/facebook-could-be-resp=
+onsible-how-advertisers-use-its-platform-justice-department-says/?utm_term=
+=3D.de1677677ea1
+
+* =E2=80=98WEAPONIZED AD TECHNOLOGY=E2=80=99: FACEBOOK=E2=80=99S MONEYMAKER=
+ GETS A CRITICAL EYE
+And speaking of microtargeting, Natasha Singer reports on regulators' mount=
+ing concerns over Facebook's impressive advertising tools:
+
+Facebook is just one player among tech giants like Google and Twitter that =
+also offer data-mining services to try to influence consumer and voter beha=
+vior. But Facebook=E2=80=99s gargantuan reach, vast holdings of user data a=
+nd easy-to-use self-service advertising system have made it a lightning rod=
+ for political microtargeting.Much of the new attention being paid to micro=
+targeted advertising has emerged from investigations into how Russian group=
+s interfered in elections and how the voter-profiling company Cambridge Ana=
+lytica harvested the data of millions of Facebook users. Microtargeting, th=
+ey have found, was a central tool for foreign groups trying to interfere in=
+ elections.
+https://www.nytimes.com/2018/08/16/technology/facebook-microtargeting-adver=
+tising.html
+
+* FACEBOOK HAS A PLAN TO PROTECT THE US MIDTERM ELECTIONS. IS IT ENOUGH?
+Kurt Wagner examines Facebook's battle readiness heading into the midterms.=
+ Here's what Samidh Chakrabarti, product manager for all of Facebook=E2=80=
+=99s election-related efforts, had to say:
+
+=E2=80=9CI feel like we have a good handle and a good plan for many of the =
+problem types that we=E2=80=99re seeing. But whether we will get far enough=
+, fast enough, is really the question,=E2=80=9D he added. =E2=80=9CIt=E2=80=
+=99s just a question of time. I would love if the U.S. midterms were in 201=
+9.=E2=80=9D
+https://www.recode.net/2018/8/17/17686252/facebook-2018-midterm-election-pl=
+an-russia?utm_campaign=3Drecode.net&amp;utm_content=3Dchorus&amp;utm_medium=
+=3Dsocial&amp;utm_source=3Dtwitter
+
+
+** ELSEWHERE
+--------------------------------------
+
+* ALEX JONES OF INFOWARS DESTROYED EVIDENCE RELATED TO SANDY HOOK SUITS, MO=
+TION SAYS
+Alex Jones you absolute rascal! Elizabeth Williamson reports that the tweet=
+s Jones deleted to keep his Twitter account alive were part of the public r=
+ecord and not supposed to be tampered with. A real rock-and-a-hard-place si=
+tuation for Jones:
+
+At least some of the deleted content was considered evidence in the Sandy H=
+ook cases, and Mr. Jones had been informed in writing in April that he was =
+obligated by law to preserve all relevant material, according to the court =
+filing in District Court in Travis County in Austin.=E2=80=9CAs pressure mo=
+unted from pending defamation lawsuits and growing public indignation, Mr. =
+Jones chose to destroy evidence of his actual malice and defamatory conduct=
+,=E2=80=9D the motion filed on Friday said. =E2=80=9CInfowars deleted criti=
+cal evidence at the precise moment plaintiff and his experts were attemptin=
+g to marshal that evidence.=E2=80=9D
+https://www.nytimes.com/2018/08/17/us/politics/alex-jones-evidence-infowars=
+.html?action=3Dclick&amp;contentCollection=3Dundefined&amp;contentPlacement=
+=3D1&amp;module=3Dstream_unit&amp;pgtype=3Dcollection&amp;region=3Dstream&a=
+mp;rref=3Dcollection/byline/elizabeth-williamson&amp;version=3Dlatest
+
+* ELON MUSK CONFRONTS A FATEFUL TWEET AND AN =E2=80=98EXCRUCIATING=E2=80=99=
+ YEAR
+I've mostly avoided sharing news about Elon Musk in this space, but as a ca=
+se study in Never Tweet, the Tesla CEO has rapidly cleared a space for him =
+in the Hall of Fame. I don't want to make too much light of this =E2=80=94 =
+Musk appears to be struggling with serious health issues here =E2=80=94=C2=
+=A0and yet it's worth pointing out in column about social media just how mu=
+ch trouble his Twitter account is causing him. From the story by David Gell=
+es, James B. Stewart, Jessica Silver-Greenberg, and Kate Kell:
+
+In the interview, Mr. Musk added that he did not regret his Twitter post =
+=E2=80=94 =E2=80=9CWhy would I?=E2=80=9D =E2=80=94 and said he had no plans=
+ to stop using the social media platform. Some board members, however, have=
+ recently told Mr. Musk that he should lay off Twitter and focus on making =
+cars and launching rockets, according to people familiar with the matter.
+https://www.nytimes.com/2018/08/16/business/elon-musk-interview-tesla.html
+
+* FACEBOOK'S INCONSISTENT AD POLICY HURTS BRA AND UNDERWEAR SELLERS
+Smaller bra and underwear companies say Facebook unfairly bans their ads, s=
+aying they don't comply with policies about &quot;nudity and sexualization.=
+&quot; (Personally I have always found that bras help prevent nudity.)
+
+Jeff White, co-founder and owner of Andrew Christian, a company that market=
+s underwear to LGBTQ+ men, said via email that he sees the same inconsisten=
+cies in the ads his company submits to Facebook and Instagram. =E2=80=9CEve=
+n using very specific targeting and very conservative images and language w=
+e probably only get 50% of our ads approved,=E2=80=9D he says. Of those app=
+roved, around half are discontinued in the middle of the ad campaign, added=
+ White. The company has also had one of their ad accounts terminated entire=
+ly.
+http://fortune.com/2018/08/17/facebook-inconsistent-ad-policy-targets-small=
+-bra-and-underwear-retailers/
+
+* FAKE NUMBERS? FACEBOOK MISLED ADVERTISERS WITH INFLATED =E2=80=98POTENTIA=
+L REACH,=E2=80=99 LAWSUIT SAYS
+A group of advertisers are suing Facebook for misleading them about an ad's=
+ &quot;potential reach.&quot; I am not a lawyer but I expect they will have=
+ a hard time that their ads could not &quot;potentially&quot; reach however=
+ many people Facebook said they could. It's an ad! On the internet! Anyone =
+could see it. Potentially.
+
+
+https://www.eastbaytimes.com/2018/08/16/fake-numbers-facebook-misled-advert=
+isers-with-inflated-potential-reach-lawsuit-says/
+
+
+** TAKES
+--------------------------------------
+
+* GOOGLE COMPLICITY IN CHINESE CENSORSHIP COULD ENDANGER PRESS FREEDOM ELSE=
+WHERE
+The Committee to Protect Journalists asks Google not to pursue Dragonfly:
+
+Still, by integrating its services with the Chinese model, Google risks ena=
+bling serious violations beyond censorship. According to Bloomberg, Google =
+is also working to launch cloud services in China, including products like =
+Google Drive and Google Docs. Cynthia Wong, a senior researcher on the inte=
+rnet and human rights at Human Rights Watch, said she is concerned the gove=
+rnment could employ such products, which are commonly used by journalists, =
+as a &quot;honey pot&quot; to surveil and even jail reporters and their sou=
+rces. The state already combs through digital records to find citizens who =
+challenge it: a 2017 investigation by=C2=A0The Wall Street Journal=C2=A0fou=
+nd Chinese authorities routinely use posts from the social media platform W=
+eChat as=C2=A0evidence (https://www.wsj.com/articles/jailed-for-a-text-chin=
+as-censors-are-spying-on-mobile-chat-groups-1512665007#_=3D_&quot; target=
+=3D&quot;_blank)=C2=A0to prosecute dissent.
+https://cpj.org/blog/2018/08/google-complicity-in-chinese-censorship-could-=
+enda.php
+
+
+** AND FINALLY ...
+--------------------------------------
+
+* ELON MUSK IS WORKING TOO HARD
+Just how bad can a single tweet be? Matt Levine, in a string of commentarie=
+s about Elon Musk that ought to win him a Pulitzer next year, has my new fa=
+vorite answer to this question:
+
+Last week Musk=C2=A0infamously tweeted (https://twitter.com/elonmusk/status=
+/1026872652290379776&quot; target=3D&quot;_blank)=C2=A0that he had =E2=80=
+=9Cfunding secured=E2=80=9D for a buyout of Tesla at $420 per share; it has=
+=C2=A0since come out (https://www.bloomberg.com/view/articles/2018-08-13/fu=
+nding-for-elon-musk-s-tesla-buyout-wasn-t-so-secure&quot; target=3D&quot;_b=
+lank)=C2=A0that that was not, in the ordinary usage of those words, true. =
+=E2=80=9CIn the interview, Mr. Musk added that he did not regret his Twitte=
+r post =E2=80=94 =E2=80=98Why would I?=E2=80=99 =E2=80=94 and said he had n=
+o plans to stop using the social media platform.=E2=80=9D Why would he regr=
+et the tweet about going private? Because he is=C2=A0being investigated (ht=
+tps://www.wsj.com/articles/sec-sends-subpoena-to-tesla-in-probe-over-musk-t=
+weets-1534366752&quot; target=3D&quot;_blank)=C2=A0by the Securities and Ex=
+change Commission, is being=C2=A0sued by investors (https://www.bloomberg.c=
+om/news/articles/2018-08-10/musk-tweet-draws-tesla-investor-lawsuit-over-sh=
+are-price-swings&quot; target=3D&quot;_blank), and may well end up costing =
+the company (or himself) hundreds of millions of dollars in damages?=C2=A0T=
+esla made about $588 million last quarter from selling cars; my rough estim=
+ate of the damages caused by Musk=E2=80=99s going-private tweet is at least=
+ $606 million.=C2=A0If the shareholder lawsuits settle for anything like th=
+at amount, then Musk=E2=80=99s tweet was as bad as shutting down the assemb=
+ly line for three months. Sabotage!There are bad tweets, there are worse tw=
+eets, and then there are tweets that cost your company $606 million. Person=
+ally I'm feeling much better about my own tweets lately!
+
+Have a nice weekend.
+
+
+https://www.bloomberg.com/view/articles/2018-08-17/elon-musk-is-working-too=
+-hard
+
+
+** TALK TO ME
+--------------------------------------
+
+Send me tips, comments, questions, weekend plans: casey@theverge.com.
+
+
+
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Do you enjoy receiving this? Please share it:
+
+Twitter: https://www.twitter.com/share?url=3Dhttp://www.getrevue.co/profile=
+/caseynewton/archive/130217&amp;via=3Drevue&amp;text=3DThe%20tweets%20that%=
+20stopped%20Google%20in%20its%20tracks%20%20by%20%40CaseyNewton&amp;related=
+=3Drevue
+
+Facebook: http://www.facebook.com/sharer/sharer.php?u=3Dhttp://www.getrevue=
+.co/profile/caseynewton/archive/130217
+--------------------------------------
+
+Carefully curated by The Interface with Revue (https://www.getrevue.co)
+
+If you don't want these updates anymore, please unsubscribe
+http://www.getrevue.co/profile/caseynewton/unsubscribe/uUMzqfcaakaGqp8ZJ73R=
+FA
+
+----==_mimepart_5b7737556f8a3_42b11acf67334271460
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">=20
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+  <title>Revue</title>
+  <style type=3D"text/css">
+    #outlook a {padding:0;}
+    body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%; margin:0; padding:0;-webkit-font-smoothing: antialiased;-moz=
+-osx-font-smoothing: grayscale;}=20
+    .ExternalClass {width:100%;}
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass f=
+ont, .ExternalClass td, .ExternalClass div, .ExternalClass blockquote {line=
+-height: 100%;}
+    .ExternalClass p, .ExternalClass blockquote {margin-bottom: 0; margin: =
+0;}
+    #backgroundTable {margin:0; padding:0; width:100% !important; line-heig=
+ht: 100% !important;}
+=20=20=20=20
+    img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubi=
+c;}=20
+    a img {border:none;}=20
+    .image_fix {display:block;}
+
+    p {margin: 1em 0;}
+    .revue-p + .revue-p, .revue-p + .revue-blockquote {margin-top: 14px !im=
+portant;}
+=20=20=20=20
+
+    h1, h2, h3, h4, h5, h6 {color: black !important;}
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: black;}
+    h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:=
+active {color: black;}
+    h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, =
+h6 a:visited {color: black;}
+
+    table td {border-collapse: collapse;}
+    table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt; }
+
+    a {color: #3498db;}
+    p.domain a{color: black;}
+
+    hr {border: 0; background-color: #d8d8d8; margin: 0; margin-bottom: 0; =
+height: 1px;}
+
+    @media screen and (max-width:600px) {
+      a[href^=3D"tel"], a[href^=3D"sms"] {
+        text-decoration: none;
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+
+      td[class=3D"description-before"] {
+        padding-bottom: 28px !important;
+      }
+      td[class=3D"description"] {
+        padding-bottom: 14px !important;
+      }
+      td[class=3D"description"] span, [class=3D"item-text"], [class=3D"item=
+-text"] span {
+        font-size: 16px !important;
+        line-height: 24px !important;
+      }
+
+      span[class=3D"item-link-title"] {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+
+      [class=3D"item-header"] {
+        font-size: 22px !important;
+      }
+
+      [class=3D"item-link-description"], [class=3D"item-link-description"] =
+span {
+        font-size: 14px !important;
+        line-height: 22px !important;
+      }
+
+      img.item-image-large {
+        margin-bottom: 14px !important;
+      }
+
+      .link-image {
+        width: 84px !important;
+        height: 84px !important;
+      }
+
+      .link-image img {
+        max-width: 100% !important;
+        max-height: 100% !important;
+      }
+
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width:=
+ 1024px) {
+      a[href^=3D"tel"], a[href^=3D"sms"] {
+        text-decoration: none;
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+  </style>
+  <!--[if gte mso 9]>
+    <style type=3D"text/css">
+      #contentTable {
+        width: 600px;
+      }
+    </style>
+  <![endif]-->
+</head>
+<body style=3D"width:100% !important;-webkit-text-size-adjust:100%;-ms-text=
+-size-adjust:100%;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" id=3D"backgroundTab=
+le" style=3D"margin:0; padding:0; width:100% !important; line-height: 100% =
+!important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt;" width=3D"100%">
+  <tr>
+    <td width=3D"10" valign=3D"top">&nbsp;</td>
+    <td valign=3D"top" align=3D"center">
+      <!--[if (gte mso 9)|(IE)]>
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color: #FFF; border-collapse:collap=
+se;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+        <tr>
+          <td>
+      <![endif]-->
+      <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"cent=
+er" style=3D"width: 100%; max-width: 600px; background-color: #FFF; border-=
+collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" id=3D"content=
+Table">
+        <tr>
+          <td width=3D"600" valign=3D"top" align=3D"center" style=3D"border=
+-collapse:collapse;">
+            <div style=3D'display:none;font-size:1px;color:#FFF;line-height=
+:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;'>On Thursday a=
+fternoon, a critical meeting at Google was derailed by a handful of tweets.=
+ Employees wh</div>
+<table align=3D'center' border=3D'0' cellpadding=3D'0' cellspacing=3D'0'>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 28px; padding-top: 28px;' val=
+ign=3D'top'>&nbsp;</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'font-family: "lato", "Helvetica Neue", Helvet=
+ica, Arial, sans-serif; font-size: 16px; line-height: 20px; color: #A7ADB5;=
+ text-decoration: none; padding-bottom: 8px;'>August 17 &middot; Issue #189=
+ &middot; <a target=3D"_blank" style=3D"color: #8b9dc3" href=3D"http://em.g=
+etrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h0/YIsQhoYrwDrJ5o=
+beHyaQS7CpgVdBW1OY1yN3j2G6h1etPi-2BwHCyLfRq3y0Si0h7fNMm-2Fh454xX6SMQZHL09BZ=
+xXlZKkmI5ERRx-2BMtsFGYG-2FWN9d8rmCgi-2BW8z-2FwYvCeSsyJxq-2FIUoeG0t28H7TXO0V=
+GzrI7GEuxUwwzuM-2FLzg4cV0EcYgRvPjgFp42oIM-2FT-2FpEKuBFs-2FvRLdoaFL84pNpD1p-=
+2BCbifnXz3dQ3adnjpmxNzglTh7bfduPf-2F2cWR62w">View online</a></td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 56px;' valign=3D'top'>
+<a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipb=
+nIOA/h1/MKbwDG86HDZFRxFonRveoCwlQEZuUpaPdac3tOCAOF30DEroXrBQHprPN9yYxAYbjIe=
+JlEq3hF65yOV7qsbvxS62Skj2FxgDAmfL1nS1wPq3t2EVf0sQD5jfgNkw2Hxr-2BiDSSCPli1DI=
+jLXXKOemk8ZGN4tHfLxic4j4VIX6IWbbN51o-2FuxF2w7w6uTYgH6U"><img alt=3D"The Int=
+erface" style=3D"display: block; width: 100%; border: 0; outline: none;" sr=
+c=3D"https://s3.amazonaws.com/revue/profile_covers/images/000/001/549/cover=
+/VRG_DSN_2420_Interface_Newsletter_v03.jpg?1522118552" />
+</a></td>
+</tr>
+<tr>
+<td align=3D'left' class=3D'description' style=3D'padding-bottom: 28px;' va=
+lign=3D'top'>
+<span style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, san=
+s-serif; font-size: 18px; line-height: 28px;display: block; margin: 0; marg=
+in-bottom: 0;'><div style=3D"margin: 0;" class=3D"revue-p">On Thursday afte=
+rnoon, a critical meeting at Google was derailed by a <a href=3D"http://em.=
+getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h2/VE2atosPJwyp5=
+yA4oN-2FSajcBE-2FTJ4eRDTA1OHnPflgDlG7xZH-2F60Q5nxtSy4Lxwwht5OmewsiIFT-2FnKI=
+ndT8Sg-3D-3D" target=3D"_blank" style=3D"color: #8b9dc3">handful of tweets<=
+/a>. Employees who had been pressing top executives for answers about the c=
+ompany=E2=80=99s plans to build a censored search engine and news app for t=
+he Chinese market appeared to have finally gotten their wish. Google cofoun=
+der Sergey Brin and CEO Sundar Pichai had taken the stage to address employ=
+ees=E2=80=99 concerns. =E2=80=9CWe=E2=80=99ll=C2=A0definitely be transparen=
+t as we get closer to actually having a plan of record,=E2=80=9D Pichai sai=
+d, <a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bd=
+ipbnIOA/h3/3iaThca61p2tcSwqPS1jRqR1JEK9FsvikNsCwVrBF-2Bv8Fo7KnJMKhbIqyitFLM=
+og3QAfRwI7hRYiXaQQLfAKjvsHse0Rv2IcEnQlU2EW-2Fm89XBy9IgLo7Pqu3FelQs-2Bj8y631=
+v0K-2BDmsN5-2F0P4wrUn0UCN-2BaZzn3fCwNrSvdgtiJ5UjPeFQLAwSZLHSbEn4EkRpav6GdaN=
+fp5hTuOscxKCGNec-2F46844zqxGCdKKQ1o-3D" target=3D"_blank" style=3D"color: #=
+8b9dc3">according to a report from <em>The Intercept</em>=E2=80=99s Ryan Ga=
+llagher</a>.</div><div style=3D"margin: 0;" class=3D"revue-p">Then employee=
+s noticed that executives=E2=80=99 words were being transcribed in real tim=
+e by the <em>New York Times</em>=E2=80=99 Kate Conger, who had a source ins=
+ide. Upon which an unidentified employee at the meeting went up to a microp=
+hone and did this, <a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3=
+/G8qxgi-3SW-L-bdipbnIOA/h4/B-2BkaOajjYskp6-2BP4tN3nReQca6yDftx6iT05kLqdYfqP=
+t0GK3kTFtq8-2BNSsplmIwfeMELRcd13JZ2OPAQptxbfEKLwoNjzgHNVE4WU83p1sxAWXuHyxej=
+HcNfMAegaf0Z7M-2B3seneJRmTxNnJc8CnQblxSUyZv0WPVcDpueFJvQ-3D" target=3D"_bla=
+nk" style=3D"color: #8b9dc3">according to <em>Business Insider</em>=E2=80=
+=99s Greg Sandoval</a>:</div><div style=3D"margin: 0; display: block; Margi=
+n: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-l=
+eft: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"rev=
+ue-blockquote">"Fuck you,=E2=80=9D said the male Google employee standing a=
+t the microphone during a pivotal moment at the company=C2=A0<a href=3D"htt=
+p://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h5/B-2Bka=
+OajjYskp6-2BP4tN3nReQca6yDftx6iT05kLqdYfqhKml3NJd1GtoCOxg-2FCpf-2FvwC48Dw6W=
+yuHtqbaWsczs-2Bxgh-2BuwqdT1wl2ceYIEpSTaJR0e1kexAvEQ8b7FuLx2" target=3D"_bla=
+nk" style=3D"color: #8b9dc3">all-hands meeting</a>=C2=A0on Thursday night.<=
+/div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14p=
+x; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; =
+color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">According=
+ to three sources in attendance who spoke with Business Insider, the man wa=
+s addressing whoever within Google was relaying what was said at the gather=
+ing in real time to a New York Times reporter. The reporter had posted stat=
+ements to Twitter that had been made just minutes before by Google=E2=80=99=
+s cofounder Sergey Brin and CEO, Sundar Pichai, and her tweets were display=
+ed on a large screen before the gathering.</div><div style=3D"margin: 0;" c=
+lass=3D"revue-p">It was a dramatic turn of events, and it stopped the meeti=
+ng in its tracks. Few details about the Chinese project were shared, and as=
+ Sandoval notes, it gave Brin and Pichai a good excuse to continue working =
+on the Chinese project in secrecy.</div><div style=3D"margin: 0;" class=3D"=
+revue-p">But what the executives did say has raised some uncomfortable ques=
+tions. (Gallagher has <a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.=
+2k3/G8qxgi-3SW-L-bdipbnIOA/h6/3iaThca61p2tcSwqPS1jRqR1JEK9FsvikNsCwVrBF-2Bv=
+8Fo7KnJMKhbIqyitFLMog3QAfRwI7hRYiXaQQLfAKjvsHse0Rv2IcEnQlU2EW-2Fm89XBy9IgLo=
+7Pqu3FelQs-2Bj8y631v0K-2BDmsN5-2F0P4wrUn0UCN-2BaZzn3fCwNrSvdgtiJ5UjPeFQLAwS=
+ZLHSbEn4EkRpav6GdaNfp5hTuOscxKCGNec-2F46844zqxGCdKKQ1o-3D" target=3D"_blank=
+" style=3D"color: #8b9dc3">13 of them for Google</a>, all worth reading; we=
+=E2=80=99ll limit ourselves to just a few.)</div><div style=3D"margin: 0;" =
+class=3D"revue-p">One, Pichai apparently characterized the nature of Google=
+=E2=80=99s work in China as exploratory. Gallagher has previously reported =
+that Google had plans to get the censored search engine =E2=80=94 codenamed=
+ Dragonfly =E2=80=94=C2=A0into a =E2=80=9Claunch-ready state.=E2=80=9D Mayb=
+e those things aren=E2=80=99t at odds =E2=80=94 maybe something can be both=
+ launch-ready and exploratory =E2=80=94 but Google appears to be much furth=
+er down the road to relaunch in China than anyone acknowledged on Thursday.=
+</div><div style=3D"margin: 0;" class=3D"revue-p">Two, Brin said he had onl=
+y recently become aware of Dragonfly. On one level, this would seem to stra=
+in credulity: Brin=E2=80=99s upbringing in the Soviet Union <a href=3D"http=
+://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h7/dEslMnY=
+f3v7wCj03xY86Cj5yJpGvX4Mi0OXqVaWXoHUDftQ27lvXheOauK8bl0-2BHtS-2Bjpwhrmd4pmq=
+CB19HAvPcjBE-2Bq0LkNrwrlBh81riUVwWK9-2BZGHEkYtItYoJU1Z7U1AW5ucUB917mIRr2kdl=
+N-2FWygkRVQFtaz35-2F8tUaAs-3D" target=3D"_blank" style=3D"color: #8b9dc3">s=
+haped his views on censorship</a> and informed the company=E2=80=99s decisi=
+on to exit the Chinese market in 2010. Launching an initiative to re-enter =
+China without Brin=E2=80=99s express approval would seem to be a firing off=
+ense, even if Google is now a subsidiary of Alphabet and operating with les=
+s direct oversight. (Counterpoint: this is Sergey Brin we=E2=80=99re talkin=
+g about! One of the world=E2=80=99s most eccentric billionaires. Yesterday =
+he described Dragonfly as a =E2=80=9Ckerfuffle.=E2=80=9D If you told me Bri=
+n had recently delegated all of his decision-making authority to a stack of=
+ pancakes, I would believe it.)</div><div style=3D"margin: 0;" class=3D"rev=
+ue-p">But while Google may have dodged a bullet on Thursday, I=E2=80=99m le=
+ss certain than ever that the company can avoid a crisis without abandoning=
+ the project. China considers censorship a state secret, vastly restricting=
+ what Google can tell even its own employees about what its plans are. Mean=
+while, <a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-=
+L-bdipbnIOA/h8/wspANFbyofaCTRUcC3Fm54FsRM9l-2BqF2ksKywG-2Ff9DuZMAfKn0FaMRpA=
+HxLhOVrHxHeUzzusjdCPSxDfRQR3ygbaxq-2B1j59wl0GgBD4EwYGBsyHl1f9DT2ium8d9-2BiN=
+KdwTbeeetE2gK6rm7InXy7A-3D-3D" target=3D"_blank" style=3D"color: #8b9dc3">a=
+ group of at least 1,400 employees</a> is leading a charge to stop Dragonfl=
+y in its tracks. </div><div style=3D"margin: 0;" class=3D"revue-p">Employee=
+s succeeded earlier this year in getting Google to <a href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h9/wspANFbyofaCTRUc=
+C3Fm5yAyyS4Nvmg3PKMN5ESV7olvn8JqfKlrssNj3nvXffEA4LC8lbzgrIstkI7ln-2FGtjBYpa=
+aCWIZclLo-2Fd40aNQcc-3D" target=3D"_blank" style=3D"color: #8b9dc3">stop wo=
+rking on a controversial project for the Pentagon</a>. It=E2=80=99s hard to=
+ imagine employees successfully derailing a project to aid the American mil=
+itary and then failing to derail a project to aid the <em>Chinese</em> mili=
+tary. (The data generated by any Google service not being of at least some =
+use to intelligence agencies.)</div><div style=3D"margin: 0;" class=3D"revu=
+e-p">The thing I find myself wondering about the most here is what Sundar P=
+ichai is thinking. Of the big tech-company CEOs, he is easily the kindest a=
+nd most approachable. Taking Google to China =E2=80=94 a China that is vast=
+ly more authoritarian than it was even when Google abandoned it the first t=
+ime around =E2=80=94=C2=A0would require him to make compromises that will d=
+efine his legacy. </div><div style=3D"margin: 0;" class=3D"revue-p">The sto=
+ck price would surely surge, but at the likely expense of any moral capital=
+ he hoped to spend for the rest of his career. It could also come at the ex=
+pense of at least 1,400 employees, working on projects across the company.<=
+/div><div style=3D"margin: 0;" class=3D"revue-p">On one hand, look at how n=
+aive we are =E2=80=94 acting all surprised when we find out a giant corpora=
+tion is in it for the money. But what happens when this new brute-capitalis=
+t version of Google finds out it=E2=80=99s not the company some of its most=
+ talented people signed up to work for?</div>
+</span>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 56px;' valign=3D'top'>
+<hr style=3D'border: 0; background-color: #d8d8d8; margin: 0; margin-bottom=
+: 0; height: 1px;'>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Demo=
+cracy</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h10/noS-2FEEDsSw87N=
+iJpqQvVOGE4mv0fb9p5dfB6CXS5mc5xOLnAxfSIcleAsPERbIyUfwZO36PZy05EMWdN8y4takYE=
+mis6SK0nKD8gExGgpcwuriAzBYV8fSbqTCaiuXGY5aoUBBD8ChFfR6ngNs63sx0I4SgGly027tM=
+1xv285PNqm9A5eLuGAiCxF6vOvpTvjnLrEIgbgWq7LOAWgISBQMA4xO-2F9XLEx8bZ-2Frep8dj=
+cg0S8p5TpOtGVl-2F1uhsMVWts-2FEj8q1AZBvgits63V6CzFClFFbywTkQ366ubvfCNY-3D"><=
+img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-left=
+: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/ite=
+ms/images/003/359/911/thumb/r?1534538607" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h11/noS-2FEE=
+DsSw87NiJpqQvVOGE4mv0fb9p5dfB6CXS5mc5xOLnAxfSIcleAsPERbIyUfwZO36PZy05EMWdN8=
+y4takYEmis6SK0nKD8gExGgpcwuriAzBYV8fSbqTCaiuXGY5aoUBBD8ChFfR6ngNs63sx0I4SgG=
+ly027tM1xv285PNqm9A5eLuGAiCxF6vOvpTvjnLrEIgbgWq7LOAWgISBQMA4xO-2F9XLEx8bZ-2=
+Frep8djcg0S8p5TpOtGVl-2F1uhsMVWts-2FEj8q1AZBvgits63V6CzFClFFbywTkQ366ubvfCN=
+Y-3D">U.S. government seeks Facebook help to wiretap Messenger: sources</a>=
+</span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h12/Xf0Eksq5rWx-2BLA1cMtCck4r3IKKw=
+yYT2Whe60dZNFjC3nSanl4q-2F-2FRyAnUNnfiT-2BzrrfAs2Y9jNeaQbF4wIqnQmOcOGD0TVbu=
+yUwSJe-2F6nkMAg2fI2PuBoThv732I3Ol3P3M9uXK1H2L3DGtLATj1A-3D-3D">www.reuters.=
+com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h13/Xf0Eksq5rWx-2BLA1cMtCck4r3IKKwyYT2Whe60dZNFjC3nSanl4q-2F-=
+2FRyAnUNnfiT-2BchgRXiFby6LTTMRsqNb8TLK8aScwUsxI4MmEUMnmN9l3JadeYixxTTi1sOQT=
+pDj-2BpeZTvDTldJ5WVmqvLJLDHg-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">The U.S. government wants to force Facebook to break the encryptio=
+n in Messenger authorities can listen to a suspect=E2=80=99s voice conversa=
+tions in a criminal probe, report Dan Levine and Joseph Menn:</div><div sty=
+le=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0=
+ 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889=
+A; line-height: inherit;" class=3D"revue-blockquote">The potential impact o=
+f the judge=E2=80=99s coming ruling is unclear. If the government prevails =
+in the Facebook Messenger case, it could make similar arguments to force co=
+mpanies to rewrite other popular encrypted services such as Signal and Face=
+book=E2=80=99s billion-user WhatsApp, which include both voice and text fun=
+ctions, some legal experts said.</div><div style=3D"margin: 0; display: blo=
+ck; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8;=
+ border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" cla=
+ss=3D"revue-blockquote">Law enforcement agencies forcing technology provide=
+rs to rewrite software to capture and hand over data that is no longer encr=
+ypted would have major implications for the companies which see themselves =
+as defenders=C2=A0of individual privacy while under pressure from police an=
+d lawmakers. </div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h14/mb-2FqhNwiPwHg2=
+6xxrzU0i-2Bn9A759hzsF7bFCDS2ohCpk3TfOioDC8b2KpseZU1R2kWOENYvY6IAk0MNlerUsdX=
+36-2BENyYYadhSUwAHXxqg7oi8J7gywBxhPHxGGdnapd8k7X-2Fj4KRBXB61Pe5OQPCkJYKfXXR=
+5wzVWUmJqOyI3VzRdDHJEW-2F3RiMtWN20XIfuR1cidIAfVv3mqqbZ3PjswYyMy2VwIpPQQD-2F=
+jiO3VNm1K3yhruJVJDhaXS-2Fy3VQgcamd5PKk-2BrFzlAbnGT1nyIZ2HurS-2FWyVVSSRPlEZZ=
+B7SFYcwW4szuT6TpT-2FESB7zXQbTBnzmdQN74yfKpAIa9A-3D-3D"><img width=3D"112" h=
+eight=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" a=
+lign=3D"right" src=3D"https://s3.amazonaws.com/revue/items/images/003/359/6=
+46/thumb/7GTMZEFA7YI6RI65FIMZD4DV2U.jpg?1534529365" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h15/mb-2FqhN=
+wiPwHg26xxrzU0i-2Bn9A759hzsF7bFCDS2ohCpk3TfOioDC8b2KpseZU1R2kWOENYvY6IAk0MN=
+lerUsdX36-2BENyYYadhSUwAHXxqg7oi8J7gywBxhPHxGGdnapd8k7X-2Fj4KRBXB61Pe5OQPCk=
+JYKfXXR5wzVWUmJqOyI3VzRdDHJEW-2F3RiMtWN20XIfuR1cidIAfVv3mqqbZ3PjswYyMy2VwIp=
+PQQD-2FjiO3VNm1K3yhruJVJDhaXS-2Fy3VQgcamd5PKk-2BrFzlAbnGT1nyIZ2HurS-2FWyVVS=
+SRPlEZZB7SFYcwW4szuT6TpT-2FESB7zXQbTBnzmdQN74yfKpAIa9A-3D-3D">Facebook coul=
+d be responsible for how advertisers use its platform, Justice Department s=
+ays</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h16/PCnRxUnD2QZYRroeLmkIBuLHRdNl-2=
+FzNhCU-2F7V9vJ-2F5gYUEfm8VCWz3YP5PtjcGVRA1SMofsSdpuAFtMNvIn08Ql-2FYdIuZR3f7=
+c9br240-2FnB73w0MxG0SBo1q3x3Oij8Pngd624jJ6ifafDng7Xg36A-3D-3D">www.washingt=
+onpost.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h17/PCnRxUnD2QZYRroeLmkIBuLHRdNl-2FzNhCU-2F7V9vJ-2F5gYUEfm8VC=
+Wz3YP5PtjcGVRcDHYKyAtVV7i2k4hT03K-2F6Ffw0VLRq9RIEc6z6j4dkJAHvp-2BVCxw2M3b4l=
+1ffm-2Fw0r8qy1OssLC5yjrJvHtotw-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Fair housing groups have sued Facebook, saying its ad tools let la=
+ndlords discriminate against women with children and other protected catego=
+ries of people. Facebook sought to have the suit dismissed, saying that und=
+er Section 230 of the Communications Decency Act it could not be held liabl=
+e for landlords=E2=80=99 ads. But in a surprise move, the Justice Departmen=
+t argued that it potentially could be. The argument is essentially that its=
+ ad-targeting tools are so good they explicitly enable this kind of behavio=
+r:</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: =
+14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E=
+8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Geoffr=
+ey S. Berman, the U.S. attorney for the Southern District of New York, side=
+d with the plaintiffs, noting Facebook =E2=80=9Ccreates and harvests user d=
+ata to develop profiles for each user, categorizing them into groups based =
+on demographics, interests, behaviors and other criteria.=E2=80=9D</div><di=
+v style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; paddi=
+ng: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #=
+7A889A; line-height: inherit;" class=3D"revue-blockquote">Berman wrote, =E2=
+=80=9CThe Complaint sufficiently alleges that, for purposes of housing adve=
+rtisements, the categorizing of Facebook users based on protected character=
+istics, and the mechanism that Facebook offers advertisers to target those =
+segments of the potential audience, violated the FHA.=E2=80=9C</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h18/wspANFbyofaCTRU=
+cC3Fm54FsRM9l-2BqF2ksKywG-2Ff9DucKYunb2kIwP6nbwtEI97edrOXe7XCDx4-2BmQ7G6igo=
+KBUSJF4PURkdgAScc1-2F796SuSMFT6Xr65OXX-2FERwtR6rmLZ8HZ4cUEFM-2B46LfmLeZiqTo=
+mcV6XC4BS3uG3-2BWBO1UruUT5bT-2FbbuHjZ-2F6ckw53TLwiBO3u4BzsD0H2DjsF-2BuUeiR9=
+DKz4iU07-2BxUD8m4-3D"><img width=3D"112" height=3D"112" style=3D"padding-bo=
+ttom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.=
+amazonaws.com/revue/items/images/003/358/518/thumb/01dc-trolls-facebookJumb=
+o.jpg?1534514453" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h19/wspANFby=
+ofaCTRUcC3Fm54FsRM9l-2BqF2ksKywG-2Ff9DucKYunb2kIwP6nbwtEI97edrOXe7XCDx4-2Bm=
+Q7G6igoKBUSJF4PURkdgAScc1-2F796SuSMFT6Xr65OXX-2FERwtR6rmLZ8HZ4cUEFM-2B46Lfm=
+LeZiqTomcV6XC4BS3uG3-2BWBO1UruUT5bT-2FbbuHjZ-2F6ckw53TLwiBO3u4BzsD0H2DjsF-2=
+BuUeiR9DKz4iU07-2BxUD8m4-3D">=E2=80=98Weaponized Ad Technology=E2=80=99: Fa=
+cebook=E2=80=99s Moneymaker Gets a Critical Eye</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h20/1zoiZGFGEilBfkECrP-2FKwBrW8FrF=
+b5sJuXxI-2Fr-2FdYuAMNKQBlkBUdREEPv-2BXeG9VUEh61dyutvudFWu5hoS8knbwL2rREuEgB=
+kWAFS5xD4NQeh6x3BoHYwT5MEcpKKwB8xIm0CECJNOcwEtX4fsvXA-3D-3D">www.nytimes.co=
+m</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h21/1zoiZGFGEilBfkECrP-2FKwBrW8FrFb5sJuXxI-2Fr-2FdYuAMNKQBlkB=
+UdREEPv-2BXeG9VGYZ31cz7r6PF3v4VmT2flA-2FLI1pnjXNklSnMVaTPG-2F0-2Bf0QHEHo8uE=
+6bdm49B89FkQFL-2Ba-2B6g-2BFVV4tBWKtJIA-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">And <em>speaking</em> of microtargeting, Natasha Singer reports on=
+ regulators=E2=80=99 mounting concerns over Facebook=E2=80=99s impressive a=
+dvertising tools:</div><div style=3D"margin: 0; display: block; Margin: 0; =
+Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2=
+px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blo=
+ckquote">Facebook is just one player among tech giants like Google and Twit=
+ter that also offer data-mining services to try to influence consumer and v=
+oter behavior. But Facebook=E2=80=99s gargantuan reach, vast holdings of us=
+er data and easy-to-use self-service advertising system have made it a ligh=
+tning rod for political microtargeting.</div><div style=3D"margin: 0; displ=
+ay: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #=
+E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inheri=
+t;" class=3D"revue-blockquote">Much of the new attention being paid to micr=
+otargeted advertising has emerged from investigations into how Russian grou=
+ps interfered in elections and how the voter-profiling company Cambridge An=
+alytica harvested the data of millions of Facebook users. Microtargeting, t=
+hey have found, was a central tool for foreign groups trying to interfere i=
+n elections.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h22/3PddIM770X7yCq-=
+2Br3p8Ogg9l3lsQlneLUOamJainODZcFd-2BAzV4m0WT6omKa2lsKPoZM7WPT75V4m5S4Et52-2=
+FZOTojLuYhi79zHNjpOkQmFxsQ-2FE9hdbNGiU4IpZwhNjuoEjsIG4Fx8UJdAYATAAUISN7EIGF=
+AbeP6HGpx2xMDEnDgpvCDCTGBx2IuMoBICZ7tURHYr8TIYB11f67rzFmFkhxFEd-2Fm8pVtWIdg=
+gg4D0-3D"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;p=
+adding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.co=
+m/revue/items/images/003/358/523/thumb/944224586.jpg.jpg?1534514478" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h23/3PddIM77=
+0X7yCq-2Br3p8Ogg9l3lsQlneLUOamJainODZcFd-2BAzV4m0WT6omKa2lsKPoZM7WPT75V4m5S=
+4Et52-2FZOTojLuYhi79zHNjpOkQmFxsQ-2FE9hdbNGiU4IpZwhNjuoEjsIG4Fx8UJdAYATAAUI=
+SN7EIGFAbeP6HGpx2xMDEnDgpvCDCTGBx2IuMoBICZ7tURHYr8TIYB11f67rzFmFkhxFEd-2Fm8=
+pVtWIdggg4D0-3D">Facebook has a plan to protect the US midterm elections. I=
+s it enough?</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h24/D65fu-2FtcnDAGePuzMdAE2DkdeFg-=
+2F7XgnXUmyLNaR2c3STShXYZdY2jBO9Voe-2BzpUWQYd5onS044OH7dtYqtCFSvZK4W8WDrdRaK=
+71LA78kTaTlBSwN84DNZC7kh3RGAWJNWDF-2Fg-2BmWAk9uNFYeR5rg-3D-3D">www.recode.n=
+et</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h25/D65fu-2FtcnDAGePuzMdAE2DkdeFg-2F7XgnXUmyLNaR2c3STShXYZdY2=
+jBO9Voe-2BzpUVidTVCVjP8eZNJImD8FBlUtMDwM0dhqylX8U0Zo1U-2FWRDFIHjoyyg4T2Wxtq=
+0KpcE5H6h4aGBbWGf5uwsICG7g-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Kurt Wagner examines Facebook=E2=80=99s battle readiness heading i=
+nto the midterms. Here=E2=80=99s what Samidh Chakrabarti, product manager f=
+or all of Facebook=E2=80=99s election-related efforts, had to say:</div><di=
+v style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; paddi=
+ng: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #=
+7A889A; line-height: inherit;" class=3D"revue-blockquote">=E2=80=9CI feel l=
+ike we have a good handle and a good plan for many of the problem types tha=
+t we=E2=80=99re seeing. But whether we will get far enough, fast enough, is=
+ really the question,=E2=80=9D he added. =E2=80=9CIt=E2=80=99s just a quest=
+ion of time. I would love if the U.S. midterms were in 2019.=E2=80=9D</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Else=
+where</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h26/wspANFbyofaCTRU=
+cC3Fm54FsRM9l-2BqF2ksKywG-2Ff9DtsjhUyvdEZIDqG3qYcrsFWO8vVa4ulcgQHuw9az8f0Ja=
+YnTCUPuEMdg6iXdWBN6OjGfCmmyK1MCSDh8lhXO13251UarpntNTcudNxVOqm0hJVfNTC5ojJK9=
+tV7yOsSo20Q1a3QbeIxWzZNrJOtbjsGtKCNg4mBHd-2Bpfz5Rr-2FEjYWzPj08k54dEDCstPhcT=
+g6A3DvmPzebbBG1ZMPTwDDffkeqxF26DALw-2FDwcgVU9FGcQqeJ8-2FLlPyk52CMppgHKAcgRo=
+9qw-2Bw-2Fv9eR-2FOgems1geoz1G6xTdOIigkCdePB-2BUZFY8bneS9rUWU2hSvCQi4rNUPeDO=
+nPZ5B9Gf-2B3yYroHNzpuTCMq-2BHJP3KIlUeCg8vj8QWIvUnCU4qV224tV0VSRL-2FudS9aAU0=
+0ylaPlass"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;=
+padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.c=
+om/revue/items/images/003/359/889/thumb/18dc-alexjones-facebookJumbo.jpg?15=
+34537918" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h27/wspANFby=
+ofaCTRUcC3Fm54FsRM9l-2BqF2ksKywG-2Ff9DtsjhUyvdEZIDqG3qYcrsFWO8vVa4ulcgQHuw9=
+az8f0JaYnTCUPuEMdg6iXdWBN6OjGfCmmyK1MCSDh8lhXO13251UarpntNTcudNxVOqm0hJVfNT=
+C5ojJK9tV7yOsSo20Q1a3QbeIxWzZNrJOtbjsGtKCNg4mBHd-2Bpfz5Rr-2FEjYWzPj08k54dED=
+CstPhcTg6A3DvmPzebbBG1ZMPTwDDffkeqxF26DALw-2FDwcgVU9FGcQqeJ8-2FLlPyk52CMppg=
+HKAcgRo9qw-2Bw-2Fv9eR-2FOgems1geoz1G6xTdOIigkCdePB-2BUZFY8bneS9rUWU2hSvCQi4=
+rNUPeDOnPZ5B9Gf-2B3yYroHNzpuTCMq-2BHJP3KIlUeCg8vj8QWIvUnCU4qV224tV0VSRL-2Fu=
+dS9aAU00ylaPlass">Alex Jones of Infowars Destroyed Evidence Related to Sand=
+y Hook Suits, Motion Says</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h28/bgFJBXEp2-2FR1RpI-2FpxFhmKga48=
+jKXallijxgkqgQII2NTYwOXxwld79rOzG4W-2BZBg4D32mGoCAkLkjw8lSO4k3U-2F0ov3C9QmI=
+JNAhdqZG-2BPcxBoGbwTVlD598r5k2QJCUp4Ezfil-2BVedLwN-2FM79u-2FA-3D-3D">www.ny=
+times.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h29/bgFJBXEp2-2FR1RpI-2FpxFhmKga48jKXallijxgkqgQII2NTYwOXxwld=
+79rOzG4W-2BZBHbB9x-2F6NEaq-2B82E-2BQ82fkePvm-2FeLmBmr6K9HJeIfWP1eRB5uWHP8Y9=
+bzLDgEeW8KUrTHaqGuHYQC5oPZg3wbUQ-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Alex Jones you absolute rascal! Elizabeth Williamson reports that =
+the tweets Jones deleted to keep his Twitter account alive were part of the=
+ public record and not supposed to be tampered with. A real rock-and-a-hard=
+-place situation for Jones:</div><div style=3D"margin: 0; display: block; M=
+argin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; bord=
+er-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D=
+"revue-blockquote">At least some of the deleted content was considered evid=
+ence in the Sandy Hook cases, and Mr. Jones had been informed in writing in=
+ April that he was obligated by law to preserve all relevant material, acco=
+rding to the court filing in District Court in Travis County in Austin.</di=
+v><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; =
+padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; col=
+or: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=E2=80=9CAs =
+pressure mounted from pending defamation lawsuits and growing public indign=
+ation, Mr. Jones chose to destroy evidence of his actual malice and defamat=
+ory conduct,=E2=80=9D the motion filed on Friday said. =E2=80=9CInfowars de=
+leted critical evidence at the precise moment plaintiff and his experts wer=
+e attempting to marshal that evidence.=E2=80=9D</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h30/wspANFbyofaCTRU=
+cC3Fm54FsRM9l-2BqF2ksKywG-2Ff9Du57N5V7u697VDwAK-2FKgFx521izP41lLC2GMkdmRRx1=
+-2B76NprR35qGo564yv-2F-2F40F9tuT8Cqa8tmoBYdJU9ASgzrPRf2QJD3Q3C4Ck3M43GynArB=
+gHbxYP20biXt51Oqt7HaXyOo3AtES66Pby7p7EQU9VCdhwK37FzQu-2B0UQYvVw-3D-3D"><img=
+ width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 2=
+8px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/=
+images/003/356/006/thumb/17MU-facebookJumbo.jpg?1534481047" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h31/wspANFby=
+ofaCTRUcC3Fm54FsRM9l-2BqF2ksKywG-2Ff9Du57N5V7u697VDwAK-2FKgFx521izP41lLC2GM=
+kdmRRx1-2B76NprR35qGo564yv-2F-2F40F9tuT8Cqa8tmoBYdJU9ASgzrPRf2QJD3Q3C4Ck3M4=
+3GynArBgHbxYP20biXt51Oqt7HaXyOo3AtES66Pby7p7EQU9VCdhwK37FzQu-2B0UQYvVw-3D-3=
+D">Elon Musk Confronts a Fateful Tweet and an =E2=80=98Excruciating=E2=80=
+=99 Year</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h32/1eNJ4iyJ-2BZvkSlcodf9UWlQq-2Bb=
+-2Bc-2BOWFkN34cdZgMX6AumIoSbOW3W1u8YJb3dzk3MgodKazzLw-2BFGuvWISg-2BUwnFTyel=
+GoqFrVswzOgUG-2FmnEZDTMj5OKCl2CfLpJJPCnWAyuMJqj3o0cwQ9Xqv3Q-3D-3D">www.nyti=
+mes.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h33/1eNJ4iyJ-2BZvkSlcodf9UWlQq-2Bb-2Bc-2BOWFkN34cdZgMX6AumIoS=
+bOW3W1u8YJb3dzklL8uSEkghiWJnCgo4RoeZeicNVYFdX09bwWYJqdq4Sig9sPv5L4Skut4MBzY=
+K5JMCSYZ2UD5ePSwI5-2FgxyS0zw-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">I=E2=80=99ve mostly avoided sharing news about Elon Musk in this s=
+pace, but as a case study in Never Tweet, the Tesla CEO has rapidly cleared=
+ a space for him in the Hall of Fame. I don=E2=80=99t want to make too much=
+ light of this =E2=80=94 Musk appears to be struggling with serious health =
+issues here =E2=80=94=C2=A0and yet it=E2=80=99s worth pointing out in colum=
+n about social media just how much trouble his Twitter account is causing h=
+im. From the story by David Gelles, James B. Stewart, Jessica Silver-Greenb=
+erg, and Kate Kell:</div><div style=3D"margin: 0; display: block; Margin: 0=
+; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left:=
+ 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-b=
+lockquote">In the interview, Mr. Musk added that he did not regret his Twit=
+ter post =E2=80=94 =E2=80=9CWhy would I?=E2=80=9D =E2=80=94 and said he had=
+ no plans to stop using the social media platform. Some board members, howe=
+ver, have recently told Mr. Musk that he should lay off Twitter and focus o=
+n making cars and launching rockets, according to people familiar with the =
+matter.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h34/Gwrym0CDth1XSy-=
+2Bc81Ch3i3WerD4fX1cMOe9t6slJIOKpxqMJQ3s5XIABFUmNHIscOOHH7bUWNVBtGX0qtk-2BLu=
+PPerx4e7KpI5Kl4UPJJN2CxToApk2NxfLLfODTRl19MdlK3tp780YTZIO1zZRpBMiPq2ZAgWmjM=
+jQBD13yUI3-2FX9LwTkwuhZMxEPcACOCgmt3m3nO6xoKLQp3yhL8-2FQoXfSiUdTqbXdJJaOKg0=
+DjEaiteyGO2GzoXa7mrGY9z5"><img width=3D"112" height=3D"112" style=3D"paddin=
+g-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https:/=
+/s3.amazonaws.com/revue/items/images/003/359/881/thumb/hw_1000x1164_s171197=
+9-1.jpg?1534537786" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h35/Gwrym0CD=
+th1XSy-2Bc81Ch3i3WerD4fX1cMOe9t6slJIOKpxqMJQ3s5XIABFUmNHIscOOHH7bUWNVBtGX0q=
+tk-2BLuPPerx4e7KpI5Kl4UPJJN2CxToApk2NxfLLfODTRl19MdlK3tp780YTZIO1zZRpBMiPq2=
+ZAgWmjMjQBD13yUI3-2FX9LwTkwuhZMxEPcACOCgmt3m3nO6xoKLQp3yhL8-2FQoXfSiUdTqbXd=
+JJaOKg0DjEaiteyGO2GzoXa7mrGY9z5">Facebook&#39;s Inconsistent Ad Policy Hurt=
+s Bra and Underwear Sellers</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h36/ANXcMLpnoje11qBAsr3dszSSSb3ike=
+xLE6KEQCtej5peV5CkOPmY8uBF8SZpDvEoIv2Xr0titbNRCQopJGPej3QNkd-2B-2FJIVaoDPiO=
+I-2BpQoxY9AZjx7UcCuAYKd-2FkHnCDkRZigjDq42Fcbwpw5Mzi4w-3D-3D">fortune.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h37/ANXcMLpnoje11qBAsr3dszSSSb3ikexLE6KEQCtej5peV5CkOPmY8uBF8=
+SZpDvEoPyxepvGB9wk4bYkYGbx0QUacOcgqXpHuixmbyAVlJt3m-2FScuAVVzUtYtQoGfH9nxn4=
+XwbVARm0okSGW4LrmGSQ-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Smaller bra and underwear companies say Facebook unfairly bans the=
+ir ads, saying they don=E2=80=99t comply with policies about =E2=80=9Cnudit=
+y and sexualization.=E2=80=9D (Personally I have always found that bras hel=
+p prevent nudity.)</div><div style=3D"margin: 0; display: block; Margin: 0;=
+ Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: =
+2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-bl=
+ockquote">Jeff White, co-founder and owner of Andrew Christian, a company t=
+hat markets underwear to LGBTQ+ men, said via email that he sees the same i=
+nconsistencies in the ads his company submits to Facebook and Instagram. =
+=E2=80=9CEven using very specific targeting and very conservative images an=
+d language we probably only get 50% of our ads approved,=E2=80=9D he says. =
+Of those approved, around half are discontinued in the middle of the ad cam=
+paign, added White. The company has also had one of their ad accounts termi=
+nated entirely.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h38/TMbAvIA4yopw8XP=
+tW5acvMBiWNmtQEnA8uV5kintZpi8XnsZAkZo-2BPLKRwpJi92iau0fOvntydyGzziXKO-2F7by=
+RS7nvUAI2y2GR4zcau2NN5w37Lgxm1VZvPEszVql2etVidYA5f9xyluDG5ynNwCBjozO5yrVJW0=
+NfBdb5mW-2Bqk4Q-2BlWN6FZI50h2kKUt3X6KTE687mm5kdUenlq3d4FvAPY-2FlbymKQ7h-2Fi=
+j7x-2B8VQ3ICA0dK5vfcjk1ZICV7PQwipIZDqIe-2BhsSLkKlxDzsw-3D-3D"><img width=3D=
+"112" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px;" alt=
+=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/images/00=
+3/358/768/thumb/fbprobe-1.jpg?1534516584" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h39/TMbAvIA4=
+yopw8XPtW5acvMBiWNmtQEnA8uV5kintZpi8XnsZAkZo-2BPLKRwpJi92iau0fOvntydyGzziXK=
+O-2F7byRS7nvUAI2y2GR4zcau2NN5w37Lgxm1VZvPEszVql2etVidYA5f9xyluDG5ynNwCBjozO=
+5yrVJW0NfBdb5mW-2Bqk4Q-2BlWN6FZI50h2kKUt3X6KTE687mm5kdUenlq3d4FvAPY-2FlbymK=
+Q7h-2Fij7x-2B8VQ3ICA0dK5vfcjk1ZICV7PQwipIZDqIe-2BhsSLkKlxDzsw-3D-3D">Fake n=
+umbers? Facebook misled advertisers with inflated =E2=80=98potential reach,=
+=E2=80=99 lawsuit says</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h40/Ww3LsF4WTQVMmnKihhVImkYEdsEnfA=
+z4vveC6z6cf1-2FctQGA0aTOmk4EWgLrBKXQI0aTtTaxG6Wjsvn02GoNO6TdQrEnsogdc9cOAQq=
+OLF5hhetU0nZ3qJ3H8-2ByQl5fz1dE4VSt7lxxf3emdO2Gncg-3D-3D">www.eastbaytimes.c=
+om</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h41/Ww3LsF4WTQVMmnKihhVImkYEdsEnfAz4vveC6z6cf1-2FctQGA0aTOmk4=
+EWgLrBKXQqZPuO36cTk85SYf0Vo4IgdPgFWjNM06JhZS7ZllNJsTfSbkPGNLmVV1XEBF2BcKl-2=
+F2BqHqSa-2BGaraLxt19Xf8w-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p">A group of advertisers are suing Facebook=
+ for misleading them about an ad=E2=80=99s =E2=80=9Cpotential reach.=E2=80=
+=9D I am not a lawyer but I expect they will have a hard time that their ad=
+s could not =E2=80=9Cpotentially=E2=80=9D reach however many people Faceboo=
+k said they could. It=E2=80=99s an ad! On the internet! Anyone could see it=
+. Potentially.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Take=
+s</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h42/iVAWGrJrPvv3rok=
+z7HFyc9TNcW0kPZ4h70Al2kKsPekDyK9jLpiKHIXYPmZejawexCvasMDITvAWsWP4VyX8MK1B2p=
+VMpuc0oTfZ-2F7BPnzzMfnLcnSepMWIEYsqfhGPZIhmmCyqCVgTC6s83AaNN73ULzvg-2BOLKBR=
+w14QsZnDvw5gGCNOqssZbWCOPqdBethYeilfRpYAwlfQ20Y0vYgto7X3XVb1MJbPPK7crXyzG4-=
+3D"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding=
+-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revu=
+e/items/images/003/359/903/thumb/Google_20China_20blog_208.17.jpg?153453844=
+4" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h43/iVAWGrJr=
+Pvv3rokz7HFyc9TNcW0kPZ4h70Al2kKsPekDyK9jLpiKHIXYPmZejawexCvasMDITvAWsWP4VyX=
+8MK1B2pVMpuc0oTfZ-2F7BPnzzMfnLcnSepMWIEYsqfhGPZIhmmCyqCVgTC6s83AaNN73ULzvg-=
+2BOLKBRw14QsZnDvw5gGCNOqssZbWCOPqdBethYeilfRpYAwlfQ20Y0vYgto7X3XVb1MJbPPK7c=
+rXyzG4-3D">Google complicity in Chinese censorship could endanger press fre=
+edom elsewhere</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h44/ewP8CL0teY61KRdWgVVNin2nX1Qw9w=
+-2BuVbyh5alxUQFsi9PPqj10osIchUp4VakghI7KeEZP0rJuf5eEf1R97-2FOZ6-2FJwPhq659u=
+K0wgFT6uCu4GRkDPyDF3mEEWMOwKGfs-2B1xab5EtvMO3GZEL-2F6xw-3D-3D">cpj.org</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h45/ewP8CL0teY61KRdWgVVNin2nX1Qw9w-2BuVbyh5alxUQFsi9PPqj10osI=
+chUp4VakgdfXK7-2FYF3GhJM4rrag6WpSi4DrCj4PWZa0H9ND16peNNf2r-2BKDOj-2F-2F6XlJ=
+V3uGp2h3dun9C9n0c-2Fomp4iD8t9w-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">The Committee to Protect Journalists asks Google not to pursue Dra=
+gonfly:</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bot=
+tom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #=
+E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">S=
+till, by integrating its services with the Chinese model, Google risks enab=
+ling serious violations beyond censorship. According to Bloomberg, Google i=
+s also working to launch cloud services in China, including products like G=
+oogle Drive and Google Docs. Cynthia Wong, a senior researcher on the inter=
+net and human rights at Human Rights Watch, said she is concerned the gover=
+nment could employ such products, which are commonly used by journalists, a=
+s a =E2=80=9Choney pot=E2=80=9D to surveil and even jail reporters and thei=
+r sources. The state already combs through digital records to find citizens=
+ who challenge it: a 2017 investigation by=C2=A0<em>The Wall Street Journal=
+</em>=C2=A0found Chinese authorities routinely use posts from the social me=
+dia platform WeChat as=C2=A0<a href=3D"http://em.getrevue.co/mpss/c/_wA/1Eo=
+YAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h46/WQfLT4lCURbmpRSkGVxcC-2F9MP1huiLazRuim=
+QRPPKAnFgmr1HTBzHYuxYQjXbP13O5YpytBswf4iQ3jKbaDD-2FjNaKopwG16vRRw-2BlJDhkZt=
+hd056B3JfUzlCTl7a6o-2BQsF6cqdWbWXxIU-2FrNerWq2g-3D-3D" target=3D"_blank" st=
+yle=3D"color: #8b9dc3">evidence</a>=C2=A0to prosecute dissent.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>And =
+finally ...</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetica Ne=
+ue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-s=
+ize: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=3D"_b=
+lank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http://em.ge=
+trevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h47/5AERylSNVCCwj1=
+pUwpeO2T-2B4RlN1npQ9UGFsqNWjN4VAq75LclSPzVg-2BH652QSx5TKyPaE2-2FT3e1WKXLfYH=
+-2FwWp25-2B6ylA6IyYEiBPe6QCphvjNd4zZGtEzt9tzWvl4xe5aZTN-2BnhCj7vlwVWs6FGgEo=
+nls9jDQKRLwbnzMa74llpWyEI7vrPDUP8nnSS4UGWc70CTi9oY9BhYMQyEUYjCngM6cERbrMhDG=
+Gus1NkSs-3D">Elon Musk Is Working Too Hard</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h48/niPNG6pX1nRlWs4tUiB5QH8xwfDziF=
+YCEjk0TnO1D631bid9a3lgrIkQGAK1vcPEPKQPyWXYJoU-2F2C21JWfUW18plHMJO4B9RpwAx4e=
+H0mytAiHXZPTl8RB9mu9AuAKY-2BLNiot8cEZEmuZU3RETA2w-3D-3D">www.bloomberg.com<=
+/a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3S=
+W-L-bdipbnIOA/h49/niPNG6pX1nRlWs4tUiB5QH8xwfDziFYCEjk0TnO1D631bid9a3lgrIkQG=
+AK1vcPEfVyI1qskRcJwnnqDSacLG4uXWlZTIG-2FWKvqXLKbdb1eClwVUCKUO3boA8QkSLJzTlQ=
+fxeiNs-2BMjNn0SEte3G4A-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p">Just how bad can a single tweet be? Matt =
+Levine, in a string of commentaries about Elon Musk that ought to win him a=
+ Pulitzer next year, has my new favorite answer to this question:</div><div=
+ style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; paddin=
+g: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7=
+A889A; line-height: inherit;" class=3D"revue-blockquote">Last week Musk=C2=
+=A0<a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bd=
+ipbnIOA/h50/VE2atosPJwyp5yA4oN-2FSaojzGLNC1HuoFD-2BqmnKEigEVvK-2FWG18hGGnke=
+Wq0g2WBgQC6v5vgLky7jDv-2BGbfjCA-3D-3D" target=3D"_blank" style=3D"color: #8=
+b9dc3">infamously tweeted</a>=C2=A0that he had =E2=80=9Cfunding secured=E2=
+=80=9D for a buyout of Tesla at $420 per share; it has=C2=A0<a href=3D"http=
+://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h51/5AERyl=
+SNVCCwj1pUwpeO2T-2B4RlN1npQ9UGFsqNWjN4VAq75LclSPzVg-2BH652QSx5wnkWI5t-2Fao-=
+2B7aHXw2cXVk0hknjp-2FK0zbeZgaDZdCutrMMylR-2BYQOm2QVyfFqJa0BevUHxBsTlMC0XGWt=
+YX4sqA-3D-3D" target=3D"_blank" style=3D"color: #8b9dc3">since come out</a>=
+=C2=A0that that was not, in the ordinary usage of those words, true. =E2=80=
+=9CIn the interview, Mr. Musk added that he did not regret his Twitter post=
+ =E2=80=94 =E2=80=98Why would I?=E2=80=99 =E2=80=94 and said he had no plan=
+s to stop using the social media platform.=E2=80=9D Why would he regret the=
+ tweet about going private? Because he is=C2=A0<a href=3D"http://em.getrevu=
+e.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h52/WQfLT4lCURbmpRSkGVx=
+cCysGMVNevSgLiVvxQFODOgyweBygXe1YDLsvRwgBvXz0d-2ByyzYmfFqdy4XbdgsRee5djHHST=
+LURc3MJkpeoVaUaqk5j6nF7LcJ1CEzm2OOXj" target=3D"_blank" style=3D"color: #8b=
+9dc3">being investigated</a>=C2=A0by the Securities and Exchange Commission=
+, is being=C2=A0<a href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8=
+qxgi-3SW-L-bdipbnIOA/h53/5AERylSNVCCwj1pUwpeO2QtNYDiK-2FZC7X9T0SXzgzbOsi5-2=
+BP64qHl1VTNSnLGOZ0sA8ilTtFnm4tHDwPMOLM994MLPutk7rfwXXDiCCCttaP-2FQtoUo0jaXu=
+sByHD9oXi2voguHvSZ3AlGICw2aXESy3GQQDdJRp4EuSfu0vB3PY-3D" target=3D"_blank" =
+style=3D"color: #8b9dc3">sued by investors</a>, and may well end up costing=
+ the company (or himself) hundreds of millions of dollars in damages?=C2=A0=
+Tesla made about $588 million last quarter from selling cars; my rough esti=
+mate of the damages caused by Musk=E2=80=99s going-private tweet is at leas=
+t $606 million.=C2=A0If the shareholder lawsuits settle for anything like t=
+hat amount, then Musk=E2=80=99s tweet was as bad as shutting down the assem=
+bly line for three months. Sabotage!</div><div style=3D"margin: 0;" class=
+=3D"revue-p">There are bad tweets, there are worse tweets, and then there a=
+re tweets that cost your company $606 million. Personally I=E2=80=99m feeli=
+ng much better about my own tweets lately!</div><div style=3D"margin: 0;" c=
+lass=3D"revue-p">Have a nice weekend.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Talk=
+ to me</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<div class=3D'item-text' style=3D'font-family: "lato", "Helvetica Neue", He=
+lvetica, Arial, sans-serif; font-size: 18px; line-height: 28px;display: blo=
+ck; margin: 0; margin-bottom: 0;'><div style=3D"margin: 0;" class=3D"revue-=
+p">Send me tips, comments, questions, weekend plans: casey@theverge.com.</d=
+iv>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding: 20px 0; background-color: #FAFAFB;' =
+valign=3D'top'>
+<table border=3D'0' cellpadding=3D'0' cellspacing=3D'0' style=3D'border-col=
+lapse: collapse;mso-table-lspace:0pt; mso-table-rspace:0pt;' width=3D'100%'>
+<tr>
+<td align=3D'right' valign=3D'top' width=3D'56%'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 36px; ma=
+rgin: 0; margin-bottom: 0; text-align: right;'>Did you enjoy this issue?</d=
+iv>
+</td>
+<td align=3D'left' style=3D'padding-left: 10px;' valign=3D'top' width=3D'44=
+%'>
+<table border=3D'0' cellpadding=3D'0' cellspacing=3D'0' style=3D'border-col=
+lapse: collapse;mso-table-lspace:0pt; mso-table-rspace:0pt;' width=3D'81'>
+<tr>
+<td align=3D'right' height=3D'36' valign=3D'top' width=3D'41'>
+<a style=3D"padding: 0; border:0; text-decoration: none;" href=3D"http://em=
+.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h54/YIsQhoYrwDr=
+J5obeHyaQS7CpgVdBW1OY1yN3j2G6h1etPi-2BwHCyLfRq3y0Si0h7fNMm-2Fh454xX6SMQZHL0=
+9BZxXlZKkmI5ERRx-2BMtsFGYG-2FWN9d8rmCgi-2BW8z-2FwYvCeSXGTawmj1dPJVxVFTYq4SG=
+jgICGYdXhVyq54Kj4bedc2JHmR9tJ-2Bk0bavXaflJ57T"><img style=3D"outline:none; =
+text-decoration:none; -ms-interpolation-mode: bicubic;border: 0;" width=3D"=
+41" height=3D"36" alt=3D"" src=3D"https://www.getrevue.co/assets/email/thum=
+bs_up-1ae5a7bdfcd3220e2b376aa0c1607bc5edaba758e5dd83b482d03965219a220b.png"=
+ />
+</a></td>
+<td align=3D'left' height=3D'36' valign=3D'top' width=3D'40'>
+<a style=3D"padding: 0; border:0; text-decoration: none;" href=3D"http://em=
+.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h55/YIsQhoYrwDr=
+J5obeHyaQS7CpgVdBW1OY1yN3j2G6h1etPi-2BwHCyLfRq3y0Si0h7fNMm-2Fh454xX6SMQZHL0=
+9BZxXlZKkmI5ERRx-2BMtsFGYG-2FWN9d8rmCgi-2BW8z-2FwYvCeSXGTawmj1dPJVxVFTYq4SG=
+jgICGYdXhVyq54Kj4bedc1L5m3vfw6EJs-2F7XQ9eYlAwoiDAZz0npTywstq3qgE0Hg-3D-3D">=
+<img style=3D"outline:none; text-decoration:none; -ms-interpolation-mode: b=
+icubic;border: 0;" width=3D"40" height=3D"36" alt=3D"" src=3D"https://www.g=
+etrevue.co/assets/email/thumbs_down-e13779fa29e2935b47488fb8f82977fedcf689a=
+0cc0cc3c19fa3c6bb14d1493b.png" />
+</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-top: 28px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"border: 0; outline: none; text-decoration: no=
+ne; -webkit-text-size-adjust:none;mso-hide:all;padding-right: 5px;" href=3D=
+"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h56/9=
+4d0KlU9iJ-2FHN3q9PYEl65-2BfBBvv8-2FwnOPhdJct0qnDt3hkG65X0sM98GzvAFV6IzXSeV0=
+6Vf-2BCZF6dv5rcTxGg3VjwNS8CzkhMnARSGM7xhGIJNkdLi-2FyKf5c0N1e-2BqzdPcQOdMKKP=
+QLcMNTiOL2IdXCAY-2Fj8Hu9xpSP-2BQpKxlaaOu7Yo1tgzQARxPKg2a0EETYyGnSDXk-2B8ORM=
+6DCXoKzO4Nt2rFB3cZAt6jisehDOxapKIU-2FkcLZl6dvQu9OwGBU7lCYXEJ2u-2FAKfTV2-2FD=
+103fAWHbkcomT40-2BX1yEW4ypceLotl05cTw8fQN6hHIgtvM14uBphDrGhETpL6tLg-3D-3D">=
+<img alt=3D"" width=3D"28" height=3D"28" src=3D"https://www.getrevue.co/ass=
+ets/email/share_twitter-1d50bcd74851bdf7f9c51e5942c9ca4bef741c6a69c9380e53e=
+a84ddf23936f6.png" />
+</a><a target=3D"_blank" style=3D"border: 0; outline: none; text-decoration=
+: none; -webkit-text-size-adjust:none; mso-hide:all;" href=3D"http://em.get=
+revue.co/mpss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h57/9ZtgBbtsz-2BGzB=
+X39C579VPKnH9tskLwOyTqqbK1ygPqs8217KqFAVvk8eu7ngPtHv-2BB8jKAlifF2SyHN0gH2YP=
+ov5wOMlrbkMPmLi26TNNs1IiTCl1WYOQ4Bq-2FNNXMVuMtlcc8zwS4whXj18Hi9WY5y3vZttAcR=
+GSAdAKs-2FAA2pwVO1ahWdxpaljSYticQP-2B325ZswNUR0ebUPAXTQO4nA-3D-3D"><img alt=
+=3D"" width=3D"28" height=3D"28" src=3D"https://www.getrevue.co/assets/emai=
+l/share_facebook-de794f7bb7cf43d1d511fb0ffa88ae43436a3f09811ee338a7fa38b413=
+fb659e.png" />
+</a></td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-top: 56px;' valign=3D'top'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 28px; co=
+lor: #999; margin: 0; margin-bottom: 0;'>
+If you don't want these updates anymore, please unsubscribe <a target=3D"_b=
+lank" style=3D"color: #8b9dc3" href=3D"http://em.getrevue.co/mpss/c/_wA/1Eo=
+YAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h58/YIsQhoYrwDrJ5obeHyaQS7CpgVdBW1OY1yN3j2=
+G6h1dCi2TqRCmZfVIjatzJ-2FkyhQUSoyUeUmTEDIPbQM4ROqmDY-2FZDw7xMbpS7wK8-2By9qB=
+SrhySasNGp4Fhd1P56anOwG1NYrEw3backDkxRCNhuDX1xw5IUQiJo-2BlamGtB8lDvRqjn87Qt=
+HTHOReKJpbuOGPhxM7hcAo-2Fxb1oHq6rnz1nyqVjTdmXILetw3GTLhL0-3D">here</a>
+</div>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 28px; co=
+lor: #999; margin: 0; margin-bottom: 0;'>
+If you were forwarded this newsletter and you like it, you can subscribe <a=
+ target=3D"_blank" style=3D"color: #8b9dc3" href=3D"http://em.getrevue.co/m=
+pss/c/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdipbnIOA/h59/MKbwDG86HDZFRxFonRveoCwlQ=
+EZuUpaPdac3tOCAOF30DEroXrBQHprPN9yYxAYbjIeJlEq3hF65yOV7qsbvxSBeCL8AZkf7E6w-=
+2FCCEb6TuX-2FO4cSD0U-2B6-2F-2BGb3aFXHWU1tNXApd35mwa8perVLD2Dj8hs5NX52N4Bici=
+AE6w9U-3D">here</a>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding: 8px 0 28px 0;' valign=3D'top'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 28px; co=
+lor: #999; margin: 0; margin-bottom: 0;'>Powered by <a target=3D"_parent" s=
+tyle=3D"color: #8b9dc3" href=3D"http://em.getrevue.co/mpss/c/_wA/1EoYAA/t.2=
+k3/G8qxgi-3SW-L-bdipbnIOA/h60/MKbwDG86HDZFRxFonRveoObD58FxZCDpwkLBQZJxemNYq=
+Jn0ywBomIXQRjAANUnesy50UnK-2FODFEopI9ejTAILH-2FSFiH4WEhfocp1FihxOAvQ5Js33yW=
+hNt4kvmMC3jKPCBCAK68JRl6JVxhZXUWDQ-3D-3D">Revue</a></div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' valign=3D'top'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; line-height: 28px; color: #fff; ma=
+rgin: 0; margin-bottom: 0;'>&nbsp;</div>
+</td>
+</tr>
+</table>
+
+          </td>
+        </tr>
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    </td>
+    <td width=3D"10" valign=3D"top">&nbsp;</td>
+  </tr>
+</table>=20
+
+<img src=3D"http://em.getrevue.co/mpss/o/_wA/1EoYAA/t.2k3/G8qxgi-3SW-L-bdip=
+bnIOA/o.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height=
+:1px !important;width:1px !important;border-width:0 !important;margin-top:0=
+ !important;margin-bottom:0 !important;margin-right:0 !important;margin-lef=
+t:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding=
+-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+----==_mimepart_5b7737556f8a3_42b11acf67334271460--

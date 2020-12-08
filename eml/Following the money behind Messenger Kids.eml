@@ -1,0 +1,1810 @@
+Delivered-To: ihadtopee@gmail.com
+Received: by 10.157.11.50 with SMTP id a47csp1534434ota;
+        Wed, 14 Feb 2018 17:01:59 -0800 (PST)
+X-Google-Smtp-Source: AH8x227bhF4Hh0eUMUsQCMIPjyNZVOWPo+s5fXA7qRXk/SwoWllZNnx37UpqEaypEzzC7LXGZpZL
+X-Received: by 10.233.239.129 with SMTP id d123mr1584986qkg.57.1518656519783;
+        Wed, 14 Feb 2018 17:01:59 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1518656519; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SFebKPqX0VAtTHDZIRBQlIXtv9eqwKYv7MetAjyOfHYyb77zcFYoVJ2TgkSA+2UC+Z
+         16TKN3HGyfXD8fEwC3XHM2N+nnAtZ9/vrFwCCZjfu51mEunVRSREOgn9oC8b14lUbwsx
+         zxzIj4duHFa13Zn7F9FqHC27HDg0VTnOEd20g3b2VpRbCQ2e8NJjK/fPJl3hkzYvIFkB
+         xXb3vgr3Yk+3orfadZ5QgsmopfIahJXbx5Nwh/jIkKgYRUUDyd9U7CF9dbvC0s2gm4Eq
+         0EnOaAhlAqgBW980heA/5yOH+jzfuXvDw+uz1yqSG+a5CJlyQaH5XtnUGZ0yL5Vv9mQS
+         PsmQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to
+         :reply-to:from:date:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=aZxLoOkXiUCfwgTHWAX+BijddcRx2pJcmidnmtdgo7A=;
+        b=lcvf2RHF7t+hjAzrH8JewhsZrxmleRWUhsQfL+cah6KI/Xk4FItbosTssaLqwgjJW1
+         GF0K/S8akABIPv+FfjovnqErX/rwVxd0VhDYghofwkoqRZgK8jVx2VGS9S08fkKxJb3k
+         9ZmMPdz//KCMOyM4iFbBQ8KTPgZKKgz6ywCGKsAQtpGtbQm5yfgzPW145PAzA965QaMu
+         pW7w/KhE+rhwR5SUGYk3SaamOs+AMYv/HXyAKqFGQmFr7uXMgZzoMCR1ACGBKh6rX+mX
+         UTAwC/vP5hh89qAcTsd26YYfmc59V6Zi9KI/qs9OkkNRwmkROsZwJKTP2j5G1cvKRel6
+         58dQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@getrevue.co header.s=smtpapi header.b=WMpXzmN0;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=SdS193eI;
+       spf=pass (google.com: domain of bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co designates 168.245.28.69 as permitted sender) smtp.mailfrom=bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co
+Return-Path: <bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co>
+Received: from o2.em.getrevue.co (o2.em.getrevue.co. [168.245.28.69])
+        by mx.google.com with ESMTPS id e64si408089qtb.13.2018.02.14.17.01.59
+        for <ihadtopee@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 14 Feb 2018 17:01:59 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co designates 168.245.28.69 as permitted sender) client-ip=168.245.28.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@getrevue.co header.s=smtpapi header.b=WMpXzmN0;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=SdS193eI;
+       spf=pass (google.com: domain of bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co designates 168.245.28.69 as permitted sender) smtp.mailfrom=bounces+1592020-e6be-ihadtopee=gmail.com@em.getrevue.co
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=getrevue.co; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding; 
+	s=smtpapi; bh=CCnQ3/z8Rs3dKNHUSt6NzVARYEg=; b=WMpXzmN0kw930UN64B
+	/hBxwt8LasyczhJGIYxMaQC686kbO9eiUIsCxxWvU4hxoUzEgjJHlFcpNERM9fAC
+	DTRIM8ZxyZobtcWT0txgDwL+HUpQAX0nLp2ORfmKGyDarayC3/JzNOg/OCY8b+vv
+	DZAPVNtt26U2WGCEs0mu01S3g=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=sendgrid.info; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding:x-feedback-id; 
+	s=smtpapi; bh=CCnQ3/z8Rs3dKNHUSt6NzVARYEg=; b=SdS193eIDos5RvrKt0
+	0eKKdPWjokJGX72ms8Di+RZWo5dFYmnlOio+oO8Xg2ZB1Ako/gjvO9ctvtlA+Yc6
+	bHJN9vrM0Kd65+yEQbTYhNG2YBKhqRcfl9s5mfinj7fCVFARKm5MWmmKTX9HEcWV
+	Xkug4CK1AilSO4LpnEZil2Esc=
+Received: by filter0097p1iad2.sendgrid.net with SMTP id filter0097p1iad2-16635-5A84DB95-2
+        2018-02-15 01:00:05.517317246 +0000 UTC
+Received: from heroku.com (ec2-54-211-221-164.compute-1.amazonaws.com [54.211.221.164])
+	by ismtpd0003p1iad1.sendgrid.net (SG) with ESMTP id suzcwaCvQ0mJFJ24mbpODw
+	for <caseynewton@getrevue.co>; Thu, 15 Feb 2018 01:00:05.178 +0000 (UTC)
+Date: Thu, 15 Feb 2018 01:01:59 +0000 (UTC)
+From: Casey Newton <caseynewton@getrevue.co>
+Reply-to: casey@theverge.com
+To: ihadtopee@gmail.com
+Message-ID: <5a84db951ae7f_42abcf5ab3e842943ec@e3f5ef7e-64db-431d-a138-2884f131fc23.mail>
+Subject: Following the money behind Messenger Kids
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a84db951a097_42abcf5ab3e842942a8";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-SG-EID: Z0Ma3PVa3KP08UxHA6Ac+gcl0ut3Lr3kpJXNwGOW47sldb0CFdLWiLBsRXeoWaMDeIyp/nAYPFixf0
+ yrdPPuthw2xhOf/QobqzTmrcQM3mkrRIqtPzijz3NkYKcOhCdZP1ganSToDp1jeXc39LPuHsCQaMxd
+ uoxNWfBCqW275GwXtkyUiXI3aaQCn7UqkZPLtYLi8hS1RGzTQHxiA2iW2jo1HTWNQoHrRCRvA5vNVf
+ Y=
+X-SG-ID: nWpgdNLu1RlknLCU5weRnDSrndHqN78VGzTCItVHTWeAJA8AOD/uzzRm59CZp79P+sutyLXABbdZLg
+ F8H7xZ5ZDBcAq8/GM76xTsEPPlgUw=
+X-Feedback-ID: 1592020:nHrAh69pm2wNFIxuq0A9hzf56Oo2XS9xi3FR9a7toBU=:nHrAh69pm2wNFIxuq0A9hzf56Oo2XS9xi3FR9a7toBU=:SG
+
+----==_mimepart_5a84db951a097_42abcf5ab3e842942a8
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+The Interface
+February 14 - Issue #83
+
+
+Facebook marked Valentine's Day by releasing Messenger for Kids (https://ww=
+w.theverge.com/2018/2/14/17012052/facebook-messenger-kids-android-app-now-a=
+vailable), its controversial app designed for children as young as 6, as an=
+ Android app. It was previously available only on iOS. &quot;The app across=
+ all platforms will have special new masks, stickers, and frames so kids ca=
+n send special V-day messages to their friends,&quot; a press release said =
+(https://www.theverge.com/2018/2/14/17012052/facebook-messenger-kids-androi=
+d-app-now-available). But the launch was overshadowed by news of a differen=
+t kind of frame job: the one Facebook did in the initial release of the app=
+, when the bulk of child development experts the company reported working w=
+ith turned out to have received undisclosed payments from the company.=C2=
+=A0
+
+Nitasha Tiku had the scoop in Wired (https://www.wired.com/story/facebook-f=
+unds-its-favorite-experts-but-skirts-tough-critics/?mbid=3Dsocial_twitter_o=
+nsiteshare):
+
+One Facebook post said the company had =E2=80=9Ccollaborated=E2=80=9D with =
+the National PTA, but it did not mention Facebook=E2=80=99s financial ties =
+to the group, or others among its advisers. The National PTA says Facebook =
+donated money for the first time in 2017, which the organization used to fu=
+nd a survey and roundtables. Facebook says it previously donated =E2=80=9Cs=
+mall amounts=E2=80=9D unrelated to the app to Blue Star Families, a nonprof=
+it for military families. Facebook funded the research at New Mexico State.=
+ At least seven members of Facebook 13-person advisory board have some kind=
+ of financial tie to the company. In 2017, Facebook donated money to Family=
+ Online Safety Institute, which has two representatives on the board, as we=
+ll as Connect Safely, the Yale Center for Emotional Intelligence, and Telef=
+ono Azzurro, which each have one representative on the board. In 2017, Face=
+book also donated at least $50,000 to MediaSmarts, which has two members on=
+ the board. One board member, former Sesame Workshop executive Lewis Bernst=
+ein, now works as a consultant advising Facebook on developing content for =
+teens, unrelated to Messenger Kids. Bernstein and other board members have =
+gone on to write op-eds in The Hill and the San Jose Mercury News supportin=
+g Facebook=E2=80=99s app.=C2=A0On one hand, the fact that Facebook made mod=
+est financial contributions to these organizations doesn't mean their contr=
+ibutions to the app were invalid. Arguably they deserved compensation for t=
+heir time! But it creates the perception of a conflict of interest among th=
+e groups upon whose credibility Facebook leaned heavily when it first relea=
+sed the app (https://newsroom.fb.com/news/2017/12/hard-questions-kids-onlin=
+e/). Here was Antigone Davis, Facebook's global head of safety, on Dec. 4:
+
+Over the last 18 months, we=E2=80=99ve worked closely with leading child de=
+velopment experts, educators and parents as we prepared to build our first =
+product for kids. We created an advisory board of experts. With them, we ar=
+e considering important questions like: Is there a =E2=80=9Cright age=E2=80=
+=9D to introduce kids to the digital world?=C2=A0Davis told Tiku the compan=
+y did not mean to hide the payments to its advisory board. &quot;There was =
+no attempt to not be upfront about it,=E2=80=9D she said. But nor was there=
+ an effort to be upfront. And the fact that Facebook was not initially fort=
+hcoming about financial relationships with its board of experts does not in=
+spire much confidence in its conclusions.=C2=A0
+
+Last month, I wrote here about how the strangest aspect of Messenger Kids w=
+as the timing of its launch (https://www.getrevue.co/profile/caseynewton/is=
+sues/the-backlash-against-messenger-kids-94495): at a time when trust in Am=
+erican's Facebook has possibly never been lower, the company asked its user=
+s to trust them with some of their most sensitive communications.
+
+The Campaign for a Commercial-Free Childhood has called for Facebook to wit=
+hdraw the app from app stores. In the meantime, though, consumers seem to s=
+hrugging over the whole thing. Messenger Kids made a brief appearance in th=
+e 1,000 most-downloaded iOS apps last month, according to App Annie, and tu=
+mbled off the list a few days later. I wonder whether Facebook will decide =
+the app, at least in this incarnation, is more trouble than it;s worth.=C2=
+=A0=C2=A0
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+** DEMOCRACY
+--------------------------------------
+
+* KELLI WARD TOUTS ENDORSEMENT FROM FAKE-NEWS SITE=20
+This story doesn't quite live up to its headline, but it's still amusing to=
+ see a political candidate touting an endorsement from a blog that seems to=
+ have been started for the express purpose of endorsing her:
+
+Despite its reputable sounding name, the Arizona Monitor is not a real news=
+ site. It is an anonymous, pro-Ward blog that has referred to her primary o=
+pponent Martha McSally as =E2=80=9CShifty McSally,=E2=80=9D frequently blas=
+ted Flake and, at the top of its home page, proclaims its mission as =E2=80=
+=9CStriking Fear into the Heart of the Establishment.=E2=80=9D The site lau=
+nched just a few weeks before publishing the endorsement, and its domain re=
+gistration is hidden, masking the identity of its owner. On its Facebook pa=
+ge, it is classified as a news site, but scant other information is offered.
+https://www.politico.com/story/2018/02/14/arizona-senate-kelli-ward-fake-ne=
+ws-407281
+
+* IN LEAKED CHATS, WIKILEAKS DISCUSSES PREFERENCE FOR GOP OVER CLINTON, RUS=
+SIA, TROLLING, AND FEMINISTS THEY DON=E2=80=99T LIKE
+The Intercept reads Wikileaks' DMs and they are exactly what you would expe=
+ct.=C2=A0
+
+
+https://theintercept.com/2018/02/14/julian-assange-wikileaks-election-clint=
+on-trump/
+
+* 2015 MIZZOU PROTESTS: RUSSIAN TWITTER TROLLS STOKED KKK FEARS
+The Kansas City Star has this intriguing story about how Russian trolls war=
+med up for the 2016 election by promoting a false story about cops marching=
+ with the KKK. This story gets extra points for using the amazing phrase &q=
+uot;masterminded a tweet&quot;:
+
+Russian Twitter trolls masterminded a tweet that fueled erroneous reports t=
+hat the Ku Klux Klan was patrolling Mizzou=E2=80=99s campus during the 2015=
+ student protests at the University of Missouri, a U.S. Air Force officer w=
+rote in an article on =E2=80=9Cinformation-age warfare=E2=80=9D published i=
+n Strategic Studies Quarterly late last year.The hoax was part of a calcula=
+ted and government-supported effort by Russia to disrupt democracies, and a=
+ warm-up to subsequent efforts to use social media to manipulate public opi=
+nion during the 2016 presidential election.
+http://www.kansascity.com/news/local/article200011139.html
+
+* TWITTER DELETED 200,000 RUSSIAN TROLL TWEETS. READ THEM HERE.
+Celebrate Valentine's Day by reading 200,000 deleted Russian troll tweets:
+
+These accounts, working in concert as part of large networks, pushed hundre=
+ds of thousands of inflammatory tweets, from fictitious tales of Democrats =
+practicing witchcraft to hardline posts from users masquerading as Black Li=
+ves Matter activists. Investigators have traced the accounts to a Kremlin-l=
+inked propaganda outfit founded in 2013 known as the Internet Research Asso=
+ciation (IRA). The organization has been assessed by the U.S. Intelligence =
+Community to be part of a Russian state-run effort to influence the outcome=
+ of the 2016 U.S. presidential race. And they're not done.
+https://www.nbcnews.com/tech/social-media/now-available-more-200-000-delete=
+d-russian-troll-tweets-n844731?cid=3Dsm_npd_nn_tw_ma
+
+
+** ELSEWHERE
+--------------------------------------
+
+* FACEBOOK=E2=80=99S TWO-FACTOR AUTHENTICATION SYSTEM AUTO-POSTS REPLIES ON=
+ YOUR PROFILE
+This feels like a bug, and it's a very strange one. Nick Statt:
+
+Facebook=E2=80=99s two-factor authentication (2FA) system has come under fi=
+re today for some bizarre design elements that seem to have gone largely un=
+noticed for quite some time. Bay Area software engineer Gabriel Lewis notic=
+ed earlier this week that Facebook was using the same phone number he used =
+for 2FA, which offers a more secure way to log into an online account by as=
+king for secondary confirmation of the user=E2=80=99s identity, to notify h=
+im about friends=E2=80=99 posts.Even worse, it seems that replying to this =
+message with any message, such as =E2=80=9CPlease stop,=E2=80=9D auto-posts=
+ that message to your Facebook profile. (It doesn=E2=80=99t cause the messa=
+ges to stop, either.) The Verge confirmed that this behavior occurs with an=
+y reply to a Facebook 2FA text message, and other users have popped up on T=
+witter to say both Facebook and Instagram have spammed them with notificati=
+ons to their 2FA phone number. In Lewis=E2=80=99 case, he says he never opt=
+ed in to notifications via text messaging in the first place.
+https://www.theverge.com/2018/2/14/17014116/facebook-2fa-two-factor-authent=
+ication-auto-post-replies-status-updates-bug
+
+* THE FACEBOOK HACKERS GAMING ITS VIDEO ALGORITHM
+Taylor Lorenz finds that rascally meme pages are gaming Facebook's video-th=
+irsty algorithm by turning static images into content that is just barely v=
+ideo:
+
+By doctoring videos to skirt Facebook=E2=80=99s sophisticated spam detectio=
+n software, some of the platform=E2=80=99s biggest meme pages have grown th=
+eir audience and generated millions of Facebook video views simply by explo=
+iting a video hack that you may have seen in action:Suspicious arrows or tr=
+iangles float almost transparently over static images of memes or funny twe=
+ets. The Facebook post plays as a video, but aside from the soft, almost im=
+perceptible arrows crawling around on top of the meme, to the casual viewer=
+ it looks just like an image post.Big time meme pages like Female Thoughts,=
+ Funny Texts, Bad Thoughts, Mean Girls, and Memes pump out these videos by =
+the hundreds. They spread like a web through Facebook, racking up millions =
+of views and collecting hundreds of thousands of comments and tags on the w=
+ay.
+https://www.thedailybeast.com/the-facebook-hackers-gaming-its-video-algorit=
+hm
+
+* MAGIC LEAP CEO THINKS VOLUMETRIC VIDEO WILL BE PART OF LIVE TV IN FIVE YE=
+ARS
+If there's one consistent thing about Magic Leap, it's that any promised le=
+ap takes plae years in the future:
+
+In an interview with The Verge, Abovitz said that within =E2=80=9Ctwo to fi=
+ve years,=E2=80=9D it will be technically possible for people wearing Magic=
+ Leap goggles to watch an NBA game (or other media) live, but in a holograp=
+hic, interactive form.=E2=80=9CYou can stream over the top and to the scree=
+ns, the virtual screens =E2=80=94 you can do that now,=E2=80=9D he said. =
+=E2=80=9CWe=E2=80=99re looking at, how do you derive the information to mov=
+e the volumetric stuff from that? And then, how do you do volumetric live-s=
+treaming as well ... if you time where processing power is going, particula=
+rly backends, you=E2=80=99re single-digit years away from that happening.=
+=E2=80=9D
+https://www.theverge.com/2018/2/14/17010546/magic-leap-ceo-rony-abovitz-liv=
+e-tv-volumetric-holographic-video-sports-news
+
+* WHAT REMAINS OF CHATROULETTE: IT=E2=80=99S GONE TO THE DO(N)GS
+My colleague Megan Farrokhmanesh checks in with Chatroulette after all thes=
+e years and finds that it is ... basically exactly the same:
+
+Browsing the site today, you=E2=80=99ll find an interface slightly more sle=
+ek than the original AIM-like screen. It=E2=80=99s been eight years since t=
+he site=E2=80=99s supposed death, but a small community persists. The men w=
+ho remain =E2=80=94 and make no mistake, they are overwhelmingly men =E2=80=
+=94 still consider it a place to waste a little time online. Between the oc=
+casional, curious user who is truly interested in just chatting, are the on=
+es everyone has come to expect: the on-cam men jerking off.
+https://www.theverge.com/2018/2/14/16381942/chatroulette-webcam-chat-male-c=
+ommunity
+
+* SNAP WILL USE DATA TO LURE DIGITAL STARS BACK FROM INSTAGRAM
+It's going to need more than these table-stakes analytics to lure those sta=
+rs back, but it's a start:
+
+Snap is going to give tens of thousands of digital content creators, known =
+as influencers, information about how often people view their Snapchat stor=
+ies, the time spent watching them and details about their audience, among o=
+ther data, the company said Wednesday.
+https://www.bloomberg.com/news/articles/2018-02-14/snap-will-use-data-to-lu=
+re-digital-stars-back-from-instagram
+
+
+** LAUNCHES
+--------------------------------------
+
+* GOOGLE=E2=80=99S TESTING AN ANDROID APP THAT ADDS SMART REPLY TO SLACK, F=
+ACEBOOK MESSENGER, AND MORE
+A consequence of Google's failure at social software is that it has to go p=
+lay in other people's apps:
+
+Google=E2=80=99s messaging app strategy is a huge mess, but one surprisingl=
+y useful feature that has extended from Inbox to Gmail to Allo and Android =
+Messages is Smart Reply, which offers three responses based on context for =
+you to quickly reply to your contacts. Google is now working to expand this=
+ beyond its own suite of products, and is opening up a limited test to Andr=
+oid users to add the feature to other chat apps, such as Slack and Skype.Ac=
+cording to a sign-up page for the app appropriately called Reply, Google is=
+ potentially interested in making the feature work on Facebook Messenger, W=
+hatsApp, Line, WeChat, and Twitter DMs. Smart Reply can already figure out =
+basic context to a conversation =E2=80=94 for example, if a person sends yo=
+u an email asking to meet, you=E2=80=99ll often get three suggestions that =
+basically amount to =E2=80=9CYes,=E2=80=9D =E2=80=9CNo,=E2=80=9D or =E2=80=
+=9CLet me get back to you.=E2=80=9D It=E2=80=99ll also take into account yo=
+ur calendar availability and current location to craft these responses, so =
+when someone ask if you=E2=80=99ve arrived somewhere, the suggestions shoul=
+d make the most sense for the moment you answer. According to the sample sc=
+reenshots, users can reply directly from their notifications.
+https://www.theverge.com/2018/2/14/17013292/google-reply-app-testing-androi=
+d-smart-reply-sms-slack-facebook-twitter
+
+* FACEBOOK WANTS TO SET UP YOUR PLAYDATES
+The quest for meaningful interactions has never seemed quite so infantilizi=
+ng:
+
+Last weekend, a friend showed me a notification on his Facebook app, saying=
+ that 26 people &quot;may want to meet up&quot; with him this week. He clic=
+ked into it and it displayed the profile pictures of 17 of his friends, wit=
+h the tantalizing promise that one of them had already said yes. (One of th=
+em happened to be his live-in girlfriend, who was already hanging out with =
+him, had never seen this feature and was just as amused.) He could select t=
+he profile pictures of people he wanted to see =E2=80=94and if they wanted =
+to see him back, a Messenger chat would automatically fire up, setting off =
+the planning for whatever rendezvous was supposed to occur.&quot;Answer hon=
+estly,&quot; Facebook prompted. &quot;Respond without social pressure.&quot=
+; It was like a dating app, but for people you already know.
+https://www.bloomberg.com/news/articles/2018-02-14/facebook-wants-to-set-up=
+-your-playdates
+
+* OVERTIME WANTS TO TURN HIGH SCHOOL JOCKS INTO SOCIAL MEDIA STARS
+Here's a new social app with a novel content and=C2=A0distribution strategy:
+
+While there are lots of digital media companies focused on high school spor=
+ts, Overtime has a different angle: It doesn=E2=80=99t care about scores, s=
+tats and recruiting narratives. It=E2=80=99s focused instead on a couple do=
+zen athletes it thinks have the charisma to become internet stars.Overtime =
+tracks its stars with the help of their classmates and other people who liv=
+e near them, paying stringers a few dollars per game to record them via a h=
+ome-grown video app. It also captures them through its own talk shows and o=
+ther programming, and distributes all of it around the web.
+https://www.recode.net/2018/2/14/17009016/overtime-mac-maclung-funding-dan-=
+porter-omgpop-kevin-durant-andreessen?utm_campaign=3Drecode.net&amp;utm_con=
+tent=3Dchorus&amp;utm_medium=3Dsocial&amp;utm_source=3Dtwitter
+
+* PINTEREST NOW LETS YOU ARCHIVE YOUR BOARDS AND REARRANGE PINS
+Not sure it speaks well of Pinterest that &quot;rearranging pins&quot; was =
+still an item on the product roadmap in 2018.
+
+
+https://venturebeat.com/2018/02/14/pinterest-now-lets-you-archive-your-boar=
+ds-and-rearrange-pins/
+
+
+** TAKES
+--------------------------------------
+
+There were no takes today, as everyone was consumed by love and did not wan=
+t to spoil the moment with any ill-tempered opinions.
+
+
+
+
+** AND FINALLY ...
+--------------------------------------
+
+* COMPUTER-GENERATED CANDY HEART MESSAGES EXIST &amp; THEY ARE TRULY BREATH=
+TAKING
+Oh my god what is Bustle doing in this newsletter? Why, they're telling us =
+about candy hearts generated by machine learning. If only someone had given=
+ me YOU ARE BAG this Valentine's Day!
+
+Some of the results the neural network created were actually kind of good =
+=E2=80=94 not far off from what you might actually see on a candy heart IRL=
+. =E2=80=9CLove Bot=E2=80=9D was one kind of on the nose example, and the A=
+I also generated =E2=80=9CMy Bear.=E2=80=9D But others toed the line betwee=
+n slightly off and completely surreal. =E2=80=9CCool Cud,=E2=80=9D =E2=80=
+=9CAm Good,=E2=80=9D and =E2=80=9CMe My &amp;lt;3=E2=80=9D formed the middl=
+e tier of good to weird phrases, and =E2=80=9CTime Hug,=E2=80=9D =E2=80=9CU=
+ Hack,=E2=80=9D and =E2=80=9CLove 2000 Hogsyea=E2=80=9D scraped the bottom =
+of the barrel. You can check out a more complete (and amazing) list at AI W=
+eirdness.Time hug!
+
+
+https://www.bustle.com/p/computer-generated-candy-heart-messages-exist-they=
+-are-truly-breathtaking-8186360
+
+
+** TALK TO ME
+--------------------------------------
+
+Questions? Comments? Valentines? casey@theverge.com=C2=A0
+
+
+
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Do you enjoy receiving this? Please share it:
+
+Twitter: https://www.twitter.com/share?url=3Dhttp://www.getrevue.co/profile=
+/caseynewton/archive/97407&amp;via=3Drevue&amp;text=3DFollowing%20the%20mon=
+ey%20behind%20Messenger%20Kids%20by%20%40CaseyNewton&amp;related=3Drevue
+
+Facebook: http://www.facebook.com/sharer/sharer.php?u=3Dhttp://www.getrevue=
+.co/profile/caseynewton/archive/97407
+--------------------------------------
+
+Carefully curated by The Interface with Revue (https://www.getrevue.co)
+
+If you don't want these updates anymore, please unsubscribe
+http://www.getrevue.co/profile/caseynewton/unsubscribe/uUMzqfcaakaGqp8ZJ73R=
+FA
+
+----==_mimepart_5a84db951a097_42abcf5ab3e842942a8
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">=20
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+  <title>Revue</title>
+  <style type=3D"text/css">
+    #outlook a {padding:0;}
+    body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%; margin:0; padding:0;-webkit-font-smoothing: antialiased;-moz=
+-osx-font-smoothing: grayscale;}=20
+    .ExternalClass {width:100%;}
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass f=
+ont, .ExternalClass td, .ExternalClass div, .ExternalClass blockquote {line=
+-height: 100%;}
+    .ExternalClass p, .ExternalClass blockquote {margin-bottom: 0; margin: =
+0;}
+    #backgroundTable {margin:0; padding:0; width:100% !important; line-heig=
+ht: 100% !important;}
+=20=20=20=20
+    img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubi=
+c;}=20
+    a img {border:none;}=20
+    .image_fix {display:block;}
+
+    p {margin: 1em 0;}
+    .revue-p + .revue-p, .revue-p + .revue-blockquote {margin-top: 14px !im=
+portant;}
+=20=20=20=20
+
+    h1, h2, h3, h4, h5, h6 {color: black !important;}
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: black;}
+    h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:=
+active {color: black;}
+    h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, =
+h6 a:visited {color: black;}
+
+    table td {border-collapse: collapse;}
+    table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt; }
+
+    a {color: #3498db;}
+    p.domain a{color: black;}
+
+    hr {border: 0; background-color: #d8d8d8; margin: 0; margin-bottom: 0; =
+height: 1px;}
+
+    @media (max-device-width: 667px) {
+      a[href^=3D"tel"], a[href^=3D"sms"] {
+        text-decoration: none;
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+
+      td[class=3D"description-before"] {
+        padding-bottom: 28px !important;
+      }
+      td[class=3D"description"] {
+        padding-bottom: 14px !important;
+      }
+      td[class=3D"description"] span, span[class=3D"item-text"], span[class=
+=3D"item-text"] span {
+        font-size: 16px !important;
+        line-height: 24px !important;
+      }
+
+      span[class=3D"item-link-title"] {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+
+      span[class=3D"item-header"] {
+        font-size: 22px !important;
+      }
+
+      span[class=3D"item-link-description"], span[class=3D"item-link-descri=
+ption"] span {
+        font-size: 14px !important;
+        line-height: 22px !important;
+      }
+
+      img.item-image-large {
+        margin-bottom: 14px !important;
+      }
+
+      .link-image {
+        width: 84px !important;
+        height: 84px !important;
+      }
+
+      .link-image img {
+        max-width: 100% !important;
+        max-height: 100% !important;
+      }
+
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width:=
+ 1024px) {
+      a[href^=3D"tel"], a[href^=3D"sms"] {
+        text-decoration: none;
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+  </style>
+  <!--[if gte mso 9]>
+    <style type=3D"text/css">
+      #contentTable {
+        width: 600px;
+      }
+    </style>
+  <![endif]-->
+</head>
+<body style=3D"width:100% !important;-webkit-text-size-adjust:100%;-ms-text=
+-size-adjust:100%;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" id=3D"backgroundTab=
+le" style=3D"margin:0; padding:0; width:100% !important; line-height: 100% =
+!important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt;" width=3D"100%">
+  <tr>
+    <td width=3D"10" valign=3D"top">&nbsp;</td>
+    <td valign=3D"top" align=3D"center">
+      <!--[if (gte mso 9)|(IE)]>
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color: #FFF; border-collapse:collap=
+se;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+        <tr>
+          <td>
+      <![endif]-->
+      <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"cent=
+er" style=3D"width: 100%; max-width: 600px; background-color: #FFF; border-=
+collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" id=3D"content=
+Table">
+        <tr>
+          <td width=3D"600" valign=3D"top" align=3D"center" style=3D"border=
+-collapse:collapse;">
+            <div style=3D'display:none;font-size:1px;color:#FFF;line-height=
+:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;'>Facebook mark=
+ed Valentine's Day by releasing Messenger for Kids, its controversial app d=
+esigned for c</div>
+<table align=3D'center' border=3D'0' cellpadding=3D'0' cellspacing=3D'0'>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 28px; padding-top: 28px;' val=
+ign=3D'top'>&nbsp;</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 20px;' valign=3D'top'>
+<table align=3D'center' border=3D'0' cellpadding=3D'0' cellspacing=3D'0' he=
+ight=3D'168' width=3D'168'>
+  <tr>
+    <td background=3D"https://s3.amazonaws.com/revue/profiles/images/000/03=
+0/244/thumb/Screen_Shot_2017-10-09_at_4.27.23_PM.png?1507593575" bgcolor=3D=
+"#fff" width=3D"168" height=3D"168" valign=3D"top">
+      <!--[if gte mso 9]>
+      <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" strok=
+e=3D"false" style=3D"width:168px;height:168px;">
+        <v:fill type=3D"frame" src=3D"https://s3.amazonaws.com/revue/profil=
+es/images/000/030/244/thumb/Screen_Shot_2017-10-09_at_4.27.23_PM.png?150759=
+3575" color=3D"#fff" />
+        <v:textbox inset=3D"0,0,0,0">
+      <![endif]-->
+      <div>
+          <a style=3D"text-decoration: none; display: block;" target=3D"_bl=
+ank" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TY=
+jgVd4g/h0/MKbwDG86HDZFRxFonRveoCwlQEZuUpaPdac3tOCAOF30DEroXrBQHprPN9yYxAYbj=
+IeJlEq3hF65yOV7qsbvxS62Skj2FxgDAmfL1nS1wPq3t2EVf0sQD5jfgNkw2Hxr-2BiDSSCPli1=
+DIjLXXKOemk8ZGN4tHfLxic4j4VIX6IWbbN51o-2FuxF2w7w6uTYgH6U">
+            <img width=3D"168" height=3D"168" style=3D"display: block;" alt=
+=3D"The Interface" src=3D"https://www.getrevue.co/assets/email/mask-f864be8=
+05fa95cdb9fddbbc20ea4944aa13cf572fb0bb803d012e71f95783979.png" />
+</a>      </div>
+      <!--[if gte mso 9]>
+        </v:textbox>
+      </v:rect>
+      <![endif]-->
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 56px;' valign=3D'top'>
+<h1 class=3D'profile-name' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; font-size: 32px; line-height: 40px; margin: 0=
+; margin-bottom: 8px; font-weight: 900;'>
+<a target=3D"_blank" style=3D"font-family: &quot;lato&quot;, &quot;Helvetic=
+a Neue&quot;, Helvetica, Arial, sans-serif; font-size: 32px; line-height: 4=
+0px; margin: 0; margin-bottom: 0; font-weight: 900; text-decoration: none; =
+color: #000;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1=
+qR5afZ7TYjgVd4g/h1/MKbwDG86HDZFRxFonRveoCwlQEZuUpaPdac3tOCAOF30DEroXrBQHprP=
+N9yYxAYbjIeJlEq3hF65yOV7qsbvxS62Skj2FxgDAmfL1nS1wPqVvWaNsqfXnPBKprJ8nJWZSMB=
+ouYSqI-2FFjdUsepMb-2B4Vab8oByFpLG3dsqz21kWF0-3D">The Interface</a>
+</h1>
+<span class=3D'issue-date' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; font-size: 18px; line-height: 28px;display: b=
+lock; font-size: 16px; line-height: 20px; color: #A7ADB5; margin: 0; margin=
+-bottom: 0; font-weight: 400;'>
+<span style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, san=
+s-serif; font-size: 18px; line-height: 28px;display: block; font-size: 16px=
+; line-height: 20px; color: #A7ADB5; margin: 0; margin-bottom: 0; font-weig=
+ht: 400; text-decoration: none;'>
+February 14 &middot; Issue #83 &middot; <a target=3D"_blank" style=3D"color=
+: #8b9dc3" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5=
+afZ7TYjgVd4g/h2/YIsQhoYrwDrJ5obeHyaQS7CpgVdBW1OY1yN3j2G6h1etPi-2BwHCyLfRq3y=
+0Si0h7fO9ZoPlqERWU5WEBDlA-2F-2F7vgQK1lN3KGqSjnakyB19RY0w1LVdTLjsKacUldmHh-2=
+FZDtDQbXJXSoVU-2F3AvH8JvKTw4Vh7ParWa6gYiOAkuVp7T1DjhAuADO1Jklqscrp6I-2FCLyT=
+QZN2HcZ7SlDYsd7B07Wh5p6AYjbl-2FfAyjpKXX8hXgMS8lMnk-2Ft14rmDogEJ">View onlin=
+e</a>
+</span>
+</span>
+<div style=3D'font-family: Georgia, "Times New Roman", Times, serif;font-si=
+ze: 18px; line-height: 28px;display: block; padding-top: 8px; color: #000; =
+max-width: 500px;'>
+An evening newsletter about Facebook, social networks, and democracy.
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' class=3D'description-before' style=3D'padding-bottom: =
+42px;' valign=3D'top'>
+<hr style=3D'border: 0; background-color: #d8d8d8; margin: 0; margin-bottom=
+: 0; height: 1px;'>
+</td>
+</tr>
+<tr>
+<td align=3D'left' class=3D'description' style=3D'padding-bottom: 28px;' va=
+lign=3D'top'>
+<span style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, san=
+s-serif; font-size: 18px; line-height: 28px;display: block; margin: 0; marg=
+in-bottom: 0;'><div style=3D"margin: 0;" class=3D"revue-p">Facebook marked =
+Valentine=E2=80=99s Day by <a href=3D"http://em.getrevue.co/mpss/c/JwE/1EoY=
+AA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h3/SZrPzbQR0Tj0WaBKLu6ypUneew7cmdZdPVV9CMlh=
+rp7XRUuP-2B3sJEVlT9VAmx-2F56-2FugJbJaCe5LXyj19WWItuG6HXY9LmyV-2FTKUIKK8xNjf=
+P2CtAtYhR-2BCVHjZisEc6G" style=3D"color: #8b9dc3" target=3D"_blank">releasi=
+ng Messenger for Kids</a>, its controversial app designed for children as y=
+oung as 6, as an Android app. It was previously available only on iOS. =E2=
+=80=9CThe app across all platforms will have special new masks, stickers, a=
+nd frames so kids can send special V-day messages to their friends,=E2=80=
+=9D <a href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7=
+TYjgVd4g/h4/SZrPzbQR0Tj0WaBKLu6ypUneew7cmdZdPVV9CMlhrp7XRUuP-2B3sJEVlT9VAmx=
+-2F56-2FugJbJaCe5LXyj19WWItuG6HXY9LmyV-2FTKUIKK8xNjfP2CtAtYhR-2BCVHjZisEc6G=
+" style=3D"color: #8b9dc3" target=3D"_blank">a press release said</a>. But =
+the launch was overshadowed by news of a different kind of frame job: the o=
+ne Facebook did in the initial release of the app, when the bulk of child d=
+evelopment experts the company reported working with turned out to have rec=
+eived undisclosed payments from the company.=C2=A0</div><div style=3D"margi=
+n: 0;" class=3D"revue-p">Nitasha Tiku <a href=3D"http://em.getrevue.co/mpss=
+/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h5/DK2F1RctFgAfJhRAy0wP2jZGNxN0v=
+9bT5OZP-2Beyh8znBx-2Bx4pCUpK-2BCEc7Mxfw-2BKw9fH35SkqK-2Bo0gmlMyqa5env1J9U1Q=
+ozPKOPhU-2BJJ1RsXC9bimPJAWLWClMEARbV5K5t9MF53TJ4-2FhxBe3Ku0FWFhQhgHqBbUEDO7=
+I6Oe7I-3D" style=3D"color: #8b9dc3" target=3D"_blank">had the scoop in Wire=
+d</a>:</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bott=
+om: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E=
+0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">On=
+e Facebook post said the company had =E2=80=9Ccollaborated=E2=80=9D with th=
+e National PTA, but it did not mention Facebook=E2=80=99s financial ties to=
+ the group, or others among its advisers. The National PTA says Facebook do=
+nated money for the first time in 2017, which the organization used to fund=
+ a survey and roundtables. Facebook says it previously donated =E2=80=9Csma=
+ll amounts=E2=80=9D unrelated to the app to Blue Star Families, a nonprofit=
+ for military families. Facebook funded the research at New Mexico State. A=
+t least seven members of Facebook 13-person advisory board have some kind o=
+f financial tie to the company. </div><div style=3D"margin: 0; display: blo=
+ck; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8;=
+ border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" cla=
+ss=3D"revue-blockquote">In 2017, Facebook donated money to Family Online Sa=
+fety Institute, which has two representatives on the board, as well as Conn=
+ect Safely, the Yale Center for Emotional Intelligence, and Telefono Azzurr=
+o, which each have one representative on the board. In 2017, Facebook also =
+donated at least $50,000 to MediaSmarts, which has two members on the board=
+. One board member, former Sesame Workshop executive Lewis Bernstein, now w=
+orks as a consultant advising Facebook on developing content for teens, unr=
+elated to Messenger Kids. Bernstein and other board members have gone on to=
+ write op-eds in The Hill and the San Jose Mercury News supporting Facebook=
+=E2=80=99s app.=C2=A0</div><div style=3D"margin: 0;" class=3D"revue-p">On o=
+ne hand, the fact that Facebook made modest financial contributions to thes=
+e organizations doesn=E2=80=99t mean their contributions to the app were in=
+valid. Arguably they deserved compensation for their time! But it creates t=
+he perception of a conflict of interest among the groups upon <a href=3D"ht=
+tp://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h6/kHByB=
+n15avCxJpGzlrW9uatK9mr-2F4Omdx0FDaWts43udYHqY44da-2B-2BXcjJYc39hOvhn26UclrR=
+37E-2BBb7-2FP-2Fjg-3D-3D" style=3D"color: #8b9dc3" target=3D"_blank">whose =
+credibility Facebook leaned heavily when it first released the app</a>. Her=
+e was Antigone Davis, Facebook=E2=80=99s global head of safety, on Dec. 4:<=
+/div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14p=
+x; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; =
+color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Over the =
+last 18 months, we=E2=80=99ve worked closely with leading child development=
+ experts, educators and parents as we prepared to build our first product f=
+or kids. We created an advisory board of experts. With them, we are conside=
+ring important questions like: Is there a =E2=80=9Cright age=E2=80=9D to in=
+troduce kids to the digital world?=C2=A0</div><div style=3D"margin: 0;" cla=
+ss=3D"revue-p">Davis told Tiku the company did not mean to hide the payment=
+s to its advisory board. =E2=80=9CThere was no attempt to not be upfront ab=
+out it,=E2=80=9D she said. But nor was there an effort to be upfront. And t=
+he fact that Facebook was not initially forthcoming about financial relatio=
+nships with its board of experts does not inspire much confidence in its co=
+nclusions.=C2=A0</div><div style=3D"margin: 0;" class=3D"revue-p">Last mont=
+h, I wrote here about how <a href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYA=
+A/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h7/MKbwDG86HDZFRxFonRveoCwlQEZuUpaPdac3tOCAO=
+F0BJ-2BAvKF1utIizM325np-2FbPoEULiJ3OArtb-2BIJytdnKQ3Ogj-2BlzXg7oMVfY8lhH5D6=
+n7na4N-2FxwNzz06EP-2FIxC" style=3D"color: #8b9dc3" target=3D"_blank">the st=
+rangest aspect of Messenger Kids was the timing of its launch</a>: at a tim=
+e when trust in American=E2=80=99s Facebook has possibly never been lower, =
+the company asked its users to trust them with some of their most sensitive=
+ communications.</div><div style=3D"margin: 0;" class=3D"revue-p">The Campa=
+ign for a Commercial-Free Childhood has called for Facebook to withdraw the=
+ app from app stores. In the meantime, though, consumers seem to shrugging =
+over the whole thing. Messenger Kids made a brief appearance in the 1,000 m=
+ost-downloaded iOS apps last month, according to App Annie, and tumbled off=
+ the list a few days later. I wonder whether Facebook will decide the app, =
+at least in this incarnation, is more trouble than it;s worth.=C2=A0=C2=A0<=
+/div>
+</span>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 56px;' valign=3D'top'>
+<hr style=3D'border: 0; background-color: #d8d8d8; margin: 0; margin-bottom=
+: 0; height: 1px;'>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Demo=
+cracy</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h8/BK-2FddZHorvpZqC=
+2XOaq6m0x8xmpk42BBo-2FEU8Vefgs581swTzczm-2Bd90zSdsx9MlWM1A81A2D0YTNZW9o1vkr=
+jporebesVBXg1AcGBgWdlR9TLQW-2BIM932O-2FOZSlevB4Z2JalxFc9md8DkMX8ODwBzprlVPU=
+pFf8OOaofJd5HuHHvUqmt-2FHBTe8z5lPRL3n7Wd8r4myMYf-2B7oDwQOeOPZTI5VWzeFRY2JTt=
+6PY62jRw-3D"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24p=
+x;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws=
+.com/revue/items/images/002/688/733/thumb/180213-kelli-ward-ap-1-1160.jpg?1=
+518622935" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h9/BK-2FddZH=
+orvpZqC2XOaq6m0x8xmpk42BBo-2FEU8Vefgs581swTzczm-2Bd90zSdsx9MlWM1A81A2D0YTNZ=
+W9o1vkrjporebesVBXg1AcGBgWdlR9TLQW-2BIM932O-2FOZSlevB4Z2JalxFc9md8DkMX8ODwB=
+zprlVPUpFf8OOaofJd5HuHHvUqmt-2FHBTe8z5lPRL3n7Wd8r4myMYf-2B7oDwQOeOPZTI5VWze=
+FRY2JTt6PY62jRw-3D">Kelli Ward touts endorsement from fake-news site </a></=
+span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h10/eGrsxKYv7RDscv8KsEBkxGEOuOB0Bh=
+R1-2BUvb7If-2B2KHTtGFyEY93PUJFTq0zvj3dNfB-2FBhg3gMGv1gQdwx4VTBtfpZ-2FV-2Fff=
+dLDBnVabI99vDYKkDz2YZMVxlNpMvmE0RQedLX6Ib83b6f92jRCs1AA-3D-3D">www.politico=
+.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h11/eGrsxKYv7RDscv8KsEBkxGEOuOB0BhR1-2BUvb7If-2B2KHTtGFyEY93P=
+UJFTq0zvj3d4-2BF8oT8f59qeA9FGSj-2Fypba4mxZzoRfb6YaV8-2F5NS037fJYNNxCZJk8y1j=
+whj-2Fwt1k3SguOiF1AwsIJDGLWI9g-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">This story doesn=E2=80=99t quite live up to its headline, but it=
+=E2=80=99s still amusing to see a political candidate touting an endorsemen=
+t from a blog that seems to have been started for the express purpose of en=
+dorsing her:</div><div style=3D"margin: 0; display: block; Margin: 0; Margi=
+n-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px so=
+lid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquo=
+te">Despite its reputable sounding name, the Arizona Monitor is not a real =
+news site. It is an anonymous, pro-Ward blog that has referred to her prima=
+ry opponent Martha McSally as =E2=80=9CShifty McSally,=E2=80=9D frequently =
+blasted Flake and, at the top of its home page, proclaims its mission as =
+=E2=80=9CStriking Fear into the Heart of the Establishment.=E2=80=9D The si=
+te launched just a few weeks before publishing the endorsement, and its dom=
+ain registration is hidden, masking the identity of its owner. On its Faceb=
+ook page, it is classified as a news site, but scant other information is o=
+ffered.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h12/3iaThca61p2tcSw=
+qPS1jRmbXWc2FhJaT-2BUVsOiNBFX0ZZ2dMkiPnwoL1aasRXyPrLpTl6wUY7nHCSewzmHZis58e=
+HFS9tQxl-2FL730J8TFM-2F5n7qZlV3SNY9m1r7eVLA1ekHJg5qqmfwSy1zi70PKbL6PsGj1GNg=
+eS2qpkeafNFcBlIp2octigU5s0K1aLTSAevRhKjWzRpLJ3F3dNxNfb5vi2-2B7dj5aRkEkc0cP0=
+iiI-3D"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;pad=
+ding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/=
+revue/items/images/002/690/153/thumb/Julian-Assanage-wikileaks-1517348127-f=
+eature-hero.jpg?1518641209" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h13/3iaThca6=
+1p2tcSwqPS1jRmbXWc2FhJaT-2BUVsOiNBFX0ZZ2dMkiPnwoL1aasRXyPrLpTl6wUY7nHCSewzm=
+HZis58eHFS9tQxl-2FL730J8TFM-2F5n7qZlV3SNY9m1r7eVLA1ekHJg5qqmfwSy1zi70PKbL6P=
+sGj1GNgeS2qpkeafNFcBlIp2octigU5s0K1aLTSAevRhKjWzRpLJ3F3dNxNfb5vi2-2B7dj5aRk=
+Ekc0cP0iiI-3D">In Leaked Chats, WikiLeaks Discusses Preference for GOP Over=
+ Clinton, Russia, Trolling, and Feminists They Don=E2=80=99t Like</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h14/gnNF2uoNh2216GlVdzLM3vy1nXSCws=
+YZz-2FsW4YuOqvj-2Bkf6knO2sW8-2B7K-2Bzl3w8udkugi-2FgQtg0uxbYKMcanTL8GeWj6xWj=
+9GUP5u9Qm53diA5wOH1qHmhPHtj7Us65be8QLZRvWnroqG0ONKS31dw-3D-3D">theintercept=
+.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h15/gnNF2uoNh2216GlVdzLM3vy1nXSCwsYZz-2FsW4YuOqvj-2Bkf6knO2sW=
+8-2B7K-2Bzl3w8uDPS7f8MVojCpQDs7-2BpzJ4m9yKlRV-2BNtS82e5urgDxGvyaxCVEuLNVYcn=
+3yDnoWm-2BMORaWG-2BnuCLCt4hxsVcKnw-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p">The Intercept reads Wikileaks=E2=80=99 DM=
+s and they are exactly what you would expect.=C2=A0</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h16/HMxEvP3xivjSves=
+8Cd-2F4iFlDwue4C9M3RDjRK72LUUJL-2BvtGA6FbpXWbTwfDvHVuv5KR2mxcTLtqqM2Cv-2F9j=
+5SV1PXTvwZlKMPk3OHrQB0bWIip9nd1ZCpzfHfWZQuVrKuY6iXcsFfPTjg5eDhX9YbQvR-2FQgi=
+pYPI0rt1TfdAYnii-2FC4vnHJxSocE9-2Bw1jF7"><img width=3D"112" height=3D"112" =
+style=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right"=
+ src=3D"https://s3.amazonaws.com/revue/items/images/002/688/691/thumb/Unive=
+rsity_20of_20Missouri_20Turmoil_20Student_20Leader?1518621898" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h17/HMxEvP3x=
+ivjSves8Cd-2F4iFlDwue4C9M3RDjRK72LUUJL-2BvtGA6FbpXWbTwfDvHVuv5KR2mxcTLtqqM2=
+Cv-2F9j5SV1PXTvwZlKMPk3OHrQB0bWIip9nd1ZCpzfHfWZQuVrKuY6iXcsFfPTjg5eDhX9YbQv=
+R-2FQgipYPI0rt1TfdAYnii-2FC4vnHJxSocE9-2Bw1jF7">2015 Mizzou protests: Russi=
+an Twitter trolls stoked KKK fears</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h18/EBJdFrHQgwzFW4HSi-2BCXyPJGj0Nv=
+lJihZVeqICe3S-2FUOyuOu4DG4uLS2tu9zJ46ElvSGucENhbsOEIBW9MwKIjoT6SQH5iHpGJQVN=
+2H-2BbcEw-2BdNHfRAC3hmhplDmRPRFE81tg6c-2BtfR1z-2BPPYA8n-2Bw-3D-3D">www.kans=
+ascity.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h19/EBJdFrHQgwzFW4HSi-2BCXyPJGj0NvlJihZVeqICe3S-2FUOyuOu4DG4u=
+LS2tu9zJ46E6C7-2BBTaip4Bbu-2B3kQpyr8-2BcsHSCveK2lOcZSlcRvRErW4ZRvR8hXn8GoLf=
+MokM3vNGCloY1swZe1ktpPqSAmQw-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">The Kansas City Star has this intriguing story about how Russian t=
+rolls warmed up for the 2016 election by promoting a false story about cops=
+ marching with the KKK. This story gets extra points for using the amazing =
+phrase =E2=80=9Cmasterminded a tweet=E2=80=9D:</div><div style=3D"margin: 0=
+; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-c=
+olor: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height:=
+ inherit;" class=3D"revue-blockquote">Russian Twitter trolls masterminded a=
+ tweet that fueled erroneous reports that the Ku Klux Klan was patrolling M=
+izzou=E2=80=99s campus during the 2015 student protests at the University o=
+f Missouri, a U.S. Air Force officer wrote in an article on =E2=80=9Cinform=
+ation-age warfare=E2=80=9D published in Strategic Studies Quarterly late la=
+st year.</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bo=
+ttom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid =
+#E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=
+The hoax was part of a calculated and government-supported effort by Russia=
+ to disrupt democracies, and a warm-up to subsequent efforts to use social =
+media to manipulate public opinion during the 2016 presidential election.</=
+div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h20/ZkP-2F1-2FWYBxO=
+nwBy0o-2FPyG5BiFQ7d5qp8SDBBL0r13PCXii2-2Bax7Jv8QldLApXaaejRXwkW8lz0axMcAnua=
+uQSuAI5iJpd78aQ9YpF3H6U4pZeoGpl1CUMrZ1AgOdJHFbM5sJcOKuyBJ-2BlkgLnTlwwiFQIzU=
+031G2861jsyJ6s0mj8vh6vO80Hm1bn2KQBQlIfyRIHFSazkDUv-2F1t6R8yu9fF7-2FS1vATGTJ=
+OIfHs2oEjWcUDg8c5vyz7XTgymyrOcSCFNyvMN4bxmlUN8oyXSLg-3D-3D"><img width=3D"1=
+12" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px;" alt=
+=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/images/00=
+2/688/687/thumb/161107-twitter-jpo-1216p_a8a1bb684161be7868e8967eb33df6e1.1=
+200_630_7_70_5.jpg?1518621731" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h21/ZkP-2F1-=
+2FWYBxOnwBy0o-2FPyG5BiFQ7d5qp8SDBBL0r13PCXii2-2Bax7Jv8QldLApXaaejRXwkW8lz0a=
+xMcAnuauQSuAI5iJpd78aQ9YpF3H6U4pZeoGpl1CUMrZ1AgOdJHFbM5sJcOKuyBJ-2BlkgLnTlw=
+wiFQIzU031G2861jsyJ6s0mj8vh6vO80Hm1bn2KQBQlIfyRIHFSazkDUv-2F1t6R8yu9fF7-2FS=
+1vATGTJOIfHs2oEjWcUDg8c5vyz7XTgymyrOcSCFNyvMN4bxmlUN8oyXSLg-3D-3D">Twitter =
+deleted 200,000 Russian troll tweets. Read them here.</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h22/xV6ldhJqI-2FdwJspJc7zXqkyJCxIH=
+Mgi5s85ILaJtRNDpfcqg9hZGH-2BWYmlE3to384KMl5xbjqOGqmZXgf876zahScJJASkFQWckql=
+P1RXyRpxoT35mjQScJLj5EMxhPj2cIIi1UBGjcPvuAPHU9gmw-3D-3D">www.nbcnews.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h23/xV6ldhJqI-2FdwJspJc7zXqkyJCxIHMgi5s85ILaJtRNDpfcqg9hZGH-2=
+BWYmlE3to38zLtOFqJ6f1iaO3XTJzlfyTkU-2B24uOH3mfQDrqfkPMxYTsopZS-2BZHC8C-2FYZ=
+IIfkw-2FXw0725L3noCad7qqeqYxLA-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Celebrate Valentine=E2=80=99s Day by reading 200,000 deleted Russi=
+an troll tweets:</div><div style=3D"margin: 0; display: block; Margin: 0; M=
+argin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2p=
+x solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-bloc=
+kquote">These accounts, working in concert as part of large networks, pushe=
+d hundreds of thousands of inflammatory tweets, from fictitious tales of De=
+mocrats practicing witchcraft to hardline posts from users masquerading as =
+Black Lives Matter activists. Investigators have traced the accounts to a K=
+remlin-linked propaganda outfit founded in 2013 known as the Internet Resea=
+rch Association (IRA). The organization has been assessed by the U.S. Intel=
+ligence Community to be part of a Russian state-run effort to influence the=
+ outcome of the 2016 U.S. presidential race. And they=E2=80=99re not done.<=
+/div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Else=
+where</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h24/SZrPzbQR0Tj0WaB=
+KLu6ypUneew7cmdZdPVV9CMlhrp4x4bmOpE-2Bloy-2BdgIPjkN1Gu7xCN-2B-2FeA0Zs-2B8Rq=
+sBFg8BARr-2Ba3TdDaYGs-2F1eo3MqXUW-2FDuzdAaFd0YgZJXWHAVJ1oouwgwYY6TPuHJTV4HQ=
+vTcYvKPTitjucLATRnK7q4nDi9jb3OEArGy76nykl8FkNawY22JniTG6ki1dSIYHVfOm81uw7tf=
+ZSx6YZqjr5TXRpKnC7hJs97lojfRiwCwmw6ZxaD3b-2BKQygFH9lSaNw-3D-3D"><img width=
+=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px;" =
+alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/images=
+/002/690/447/thumb/acasto_180123_1777_0003_v2.jpg?1518650624" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h25/SZrPzbQR=
+0Tj0WaBKLu6ypUneew7cmdZdPVV9CMlhrp4x4bmOpE-2Bloy-2BdgIPjkN1Gu7xCN-2B-2FeA0Z=
+s-2B8RqsBFg8BARr-2Ba3TdDaYGs-2F1eo3MqXUW-2FDuzdAaFd0YgZJXWHAVJ1oouwgwYY6TPu=
+HJTV4HQvTcYvKPTitjucLATRnK7q4nDi9jb3OEArGy76nykl8FkNawY22JniTG6ki1dSIYHVfOm=
+81uw7tfZSx6YZqjr5TXRpKnC7hJs97lojfRiwCwmw6ZxaD3b-2BKQygFH9lSaNw-3D-3D">Face=
+book=E2=80=99s two-factor authentication system auto-posts replies on your =
+profile</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h26/EBJdFrHQgwzFW4HSi-2BCXyPit0OWt=
+v5NlcDhv9wbboMG7GVtGSrZgsr9Kj9C9PGtlsvYADf18FVVzLwra3tjFzVkvbsFK99ugUjmIxFp=
+PsvZvP-2FpOePXYysJe3OhsCo4AHGfhlXGGJw98DJvUqKtByA-3D-3D">www.theverge.com</=
+a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h27/EBJdFrHQgwzFW4HSi-2BCXyPit0OWtv5NlcDhv9wbboMG7GVtGSrZgsr9=
+Kj9C9PGtlqEV60MJuwohaGHsZNMikgrjpSq1D31ZDDJJBaMwlDdCN9BvGtnNClK0sLqqmI7KDut=
+fQ4DxYHVDXJ-2FBosi9dPA-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">This feels like a bug, and it=E2=80=99s a very strange one. Nick S=
+tatt:</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-botto=
+m: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0=
+E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Fac=
+ebook=E2=80=99s two-factor authentication (2FA) system has come under fire =
+today for some bizarre design elements that seem to have gone largely unnot=
+iced for quite some time. Bay Area software engineer Gabriel Lewis noticed =
+earlier this week that Facebook was using the same phone number he used for=
+ 2FA, which offers a more secure way to log into an online account by askin=
+g for secondary confirmation of the user=E2=80=99s identity, to notify him =
+about friends=E2=80=99 posts.</div><div style=3D"margin: 0; display: block;=
+ Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; bo=
+rder-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=
+=3D"revue-blockquote">Even worse, it seems that replying to this message wi=
+th any message, such as =E2=80=9CPlease stop,=E2=80=9D auto-posts that mess=
+age to your Facebook profile. (It doesn=E2=80=99t cause the messages to sto=
+p, either.) The Verge confirmed that this behavior occurs with any reply to=
+ a Facebook 2FA text message, and other users have popped up on Twitter to =
+say both Facebook and Instagram have spammed them with notifications to the=
+ir 2FA phone number. In Lewis=E2=80=99 case, he says he never opted in to n=
+otifications via text messaging in the first place.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetica Ne=
+ue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-s=
+ize: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=3D"_b=
+lank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http://em.ge=
+trevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h28/h7OLoDyNc-2FOQ=
+1Yu4hZDkJs7VokjmD7fp3SwTLZMN6VlHNikChwABKFsfbirV7eH49xkiN0P-2Bn6UMa3qun7ATb=
+m9UUW7KM9mSgbSi69GbJkteV3KaD2eFwE8qAP4-2B8vmarDfKRPuALfOgOTkC8TzXG8LO-2BiSp=
+C9aslXRySVgq164GXHW3uJWpcPuFjlxMQoVmwKsbW3amirXk2BLJTQVe3A-3D-3D">The Faceb=
+ook Hackers Gaming Its Video Algorithm</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h29/oXkmPGd1ny9ABWOzrZJVJXBhEgW0vg=
+IQicTqpbsi1vVwqJkH3AaGB72dMjhkCP393EPBqC-2BCOKftQ-2BKkfia7EA8WomiroY4dbAoYF=
+2o4VPw74yth6e0UXcPVWW1bg7V0awTOIO166GY-2FCqbgg1Afmw-3D-3D">www.thedailybeas=
+t.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h30/oXkmPGd1ny9ABWOzrZJVJXBhEgW0vgIQicTqpbsi1vVwqJkH3AaGB72dM=
+jhkCP39WNT6b91exAWAcYbx71cBnjQfwq4lcq1YnmK0jWSAj1b0XsdG5dKIRn5B6ip4KkJEZvCM=
+6JrtqIKiiE2nFzilAA-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Taylor Lorenz finds that rascally meme pages are gaming Facebook=
+=E2=80=99s video-thirsty algorithm by turning static images into content th=
+at is just barely video:</div><div style=3D"margin: 0; display: block; Marg=
+in: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-=
+left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"re=
+vue-blockquote">By doctoring videos to skirt Facebook=E2=80=99s sophisticat=
+ed spam detection software, some of the platform=E2=80=99s biggest meme pag=
+es have grown their audience and generated millions of Facebook video views=
+ simply by exploiting a video hack that you may have seen in action:</div><=
+div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; pad=
+ding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color:=
+ #7A889A; line-height: inherit;" class=3D"revue-blockquote">Suspicious arro=
+ws or triangles float almost transparently over static images of memes or f=
+unny tweets. The Facebook post plays as a video, but aside from the soft, a=
+lmost imperceptible arrows crawling around on top of the meme, to the casua=
+l viewer it looks just like an image post.</div><div style=3D"margin: 0; di=
+splay: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color=
+: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inh=
+erit;" class=3D"revue-blockquote">Big time meme pages like Female Thoughts,=
+ Funny Texts, Bad Thoughts, Mean Girls, and Memes pump out these videos by =
+the hundreds. They spread like a web through Facebook, racking up millions =
+of views and collecting hundreds of thousands of comments and tags on the w=
+ay.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h31/SZrPzbQR0Tj0WaB=
+KLu6ypUneew7cmdZdPVV9CMlhrp5tt-2Fyw-2BV0fh31QGA8SDVn6frlApXrMpyobi5nezVtTfj=
+I7uxTHpEctVbd7K7lCrZtTY6DtvBui0zJUGge-2BhPjbTO8yR2KWx20fg9xgFmq2Nzusf-2F8Ot=
+pjrK6sZmLqLEoA8moFzBKjf-2FjG5ylpJ7auRyppFIj3Jl4VUGTlQydxyYj41FV6NFr796csKto=
+KoqEdXtocvnLi3VhM-2BA0s9b7TU-2FHJOpuJhszf1DGm7lDejdQ-3D-3D"><img width=3D"1=
+12" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px;" alt=
+=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/images/00=
+2/688/690/thumb/REC_ASA_CM18_20180213_160426_9721_preview.0.1518569428.jpeg=
+?1518621876" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h32/SZrPzbQR=
+0Tj0WaBKLu6ypUneew7cmdZdPVV9CMlhrp5tt-2Fyw-2BV0fh31QGA8SDVn6frlApXrMpyobi5n=
+ezVtTfjI7uxTHpEctVbd7K7lCrZtTY6DtvBui0zJUGge-2BhPjbTO8yR2KWx20fg9xgFmq2Nzus=
+f-2F8OtpjrK6sZmLqLEoA8moFzBKjf-2FjG5ylpJ7auRyppFIj3Jl4VUGTlQydxyYj41FV6NFr7=
+96csKtoKoqEdXtocvnLi3VhM-2BA0s9b7TU-2FHJOpuJhszf1DGm7lDejdQ-3D-3D">Magic Le=
+ap CEO thinks volumetric video will be part of live TV in five years</a></s=
+pan>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h33/6k-2B-2Fqq0wwduPJ6Ktmve0EzrHvI=
+nzWrfBW2Ol60qIuqr76dOzkCzy8AbE5IGKN1yspS6eblslp83TjptW0KFrui5AGBp0QCSGzWxOQ=
+13-2B8z0GuDcnRx-2F9okR2CEG4PVp0qPoLSlkCxLLVmXY95p9pyQ-3D-3D">www.theverge.c=
+om</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h34/6k-2B-2Fqq0wwduPJ6Ktmve0EzrHvInzWrfBW2Ol60qIuqr76dOzkCzy8=
+AbE5IGKN1yslkIp6KhHgrSfbK9b9AV8ogqAlRXlvigGL44t76X1ul-2BupGkJXY5pJBPLJ3JDTm=
+9bs-2FoH4pgaOkxx-2F36Sa-2Bkzzw-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">If there=E2=80=99s one consistent thing about Magic Leap, it=E2=80=
+=99s that any promised leap takes plae years in the future:</div><div style=
+=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 2=
+0px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A;=
+ line-height: inherit;" class=3D"revue-blockquote">In an interview with The=
+ Verge, Abovitz said that within =E2=80=9Ctwo to five years,=E2=80=9D it wi=
+ll be technically possible for people wearing Magic Leap goggles to watch a=
+n NBA game (or other media) live, but in a holographic, interactive form.</=
+div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px=
+; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; c=
+olor: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=E2=80=9CY=
+ou can stream over the top and to the screens, the virtual screens =E2=80=
+=94 you can do that now,=E2=80=9D he said. =E2=80=9CWe=E2=80=99re looking a=
+t, how do you derive the information to move the volumetric stuff from that=
+? And then, how do you do volumetric live-streaming as well =E2=80=A6 if yo=
+u time where processing power is going, particularly backends, you=E2=80=99=
+re single-digit years away from that happening.=E2=80=9D</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h35/SZrPzbQR0Tj0WaB=
+KLu6ypUneew7cmdZdPVV9CMlhrp4AtNLwA3logttMntaZBZMfCAVoyIBPXr1IO1wsJ1V6q-2Bwj=
+hB15g-2FwUzFdt-2BgrNdECs-2B5RHIgpP1zd5xWI36frfXwvb9a1zqH0JaYmQi3F8X2YVPjEgq=
+8VVmcfk9v08eMkTCda8IIjT4OS8aeZ-2FSg0zg1RQJPSCdXstg2yNfhYlXXY8joa62wmmEvtlrQ=
+O9yCI-3D"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;p=
+adding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.co=
+m/revue/items/images/002/688/708/thumb/acastro_171002_1989_0001_v2.jpg?1518=
+622124" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h36/SZrPzbQR=
+0Tj0WaBKLu6ypUneew7cmdZdPVV9CMlhrp4AtNLwA3logttMntaZBZMfCAVoyIBPXr1IO1wsJ1V=
+6q-2BwjhB15g-2FwUzFdt-2BgrNdECs-2B5RHIgpP1zd5xWI36frfXwvb9a1zqH0JaYmQi3F8X2=
+YVPjEgq8VVmcfk9v08eMkTCda8IIjT4OS8aeZ-2FSg0zg1RQJPSCdXstg2yNfhYlXXY8joa62wm=
+mEvtlrQO9yCI-3D">What remains of Chatroulette: it=E2=80=99s gone to the do(=
+n)gs</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h37/rtoq4C8u6-2FWR4L7oXkYCOlaJvkLu=
+rU-2B2ZkOaPNhEmFGBednkCFyBrnmoMwTmV847FUR0yEXDh13OvV10saVrEUELKlMdbO69N1S-2=
+B5XAXt7q-2BkGJqwxoDwlWEzb1D6gJqCwHymHsGImvX0k-2BFMLNe8g-3D-3D">www.theverge=
+.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h38/rtoq4C8u6-2FWR4L7oXkYCOlaJvkLurU-2B2ZkOaPNhEmFGBednkCFyBr=
+nmoMwTmV8479H-2BoZkteSQLPQBq9LR0I1xjG6WaLICso59GPfZm7ltS5zeqLaPtYtFcY6PLWeC=
+nXUnjB2HIl1XPHcF-2F8Tho-2BXg-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">My colleague Megan Farrokhmanesh checks in with Chatroulette after=
+ all these years and finds that it is =E2=80=A6 basically exactly the same:=
+</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14=
+px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8;=
+ color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Browsing=
+ the site today, you=E2=80=99ll find an interface slightly more sleek than =
+the original AIM-like screen. It=E2=80=99s been eight years since the site=
+=E2=80=99s supposed death, but a small community persists. The men who rema=
+in =E2=80=94 and make no mistake, they are overwhelmingly men =E2=80=94 sti=
+ll consider it a place to waste a little time online. Between the occasiona=
+l, curious user who is truly interested in just chatting, are the ones ever=
+yone has come to expect: the on-cam men jerking off.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h39/5AERylSNVCCwj1p=
+UwpeO2QtNYDiK-2FZC7X9T0SXzgzbMEtXIvIyy4MkKQw7KWLCCSFymfasLJUCMgdTJ4VCc0qzkG=
+ud1cXXKh-2F4Dmo-2FN0ctMinfjARqqLGg8IFnkJRUDeccaGHSAmh7TEit4UKmclIE2IpB6Y1nH=
+a3W8C2DcAsJ86BUUdM6tVYNbgx1FGFaZyeaiXLzYUPUq1QPkaw0Xr2NnoV7Mb-2Bdgq7UrORFkt=
+NaFp-2FXOUpLBRA6DcNzf6LLe6"><img width=3D"112" height=3D"112" style=3D"padd=
+ing-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https=
+://s3.amazonaws.com/revue/items/images/002/688/706/thumb/1200x800.jpg?15186=
+22109" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h40/5AERylSN=
+VCCwj1pUwpeO2QtNYDiK-2FZC7X9T0SXzgzbMEtXIvIyy4MkKQw7KWLCCSFymfasLJUCMgdTJ4V=
+Cc0qzkGud1cXXKh-2F4Dmo-2FN0ctMinfjARqqLGg8IFnkJRUDeccaGHSAmh7TEit4UKmclIE2I=
+pB6Y1nHa3W8C2DcAsJ86BUUdM6tVYNbgx1FGFaZyeaiXLzYUPUq1QPkaw0Xr2NnoV7Mb-2Bdgq7=
+UrORFktNaFp-2FXOUpLBRA6DcNzf6LLe6">Snap Will Use Data to Lure Digital Stars=
+ Back From Instagram</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h41/tE8BZfmfc5TddB6ZNOjhJKR0Jzxkjz=
+UJxR1-2BOnmOjit-2BSoGBg8LyiyQmj-2F0WRaPmsk9zwscoUpAk9oONTz8NDsm3S4jAomx7Y-2=
+FQAbaNp-2BZoeg2gUGsrRukuDQFe5NSGQEZ6YGkm1Akov3Oh-2BREr-2F4Q-3D-3D">www.bloo=
+mberg.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h42/tE8BZfmfc5TddB6ZNOjhJKR0JzxkjzUJxR1-2BOnmOjit-2BSoGBg8Lyi=
+yQmj-2F0WRaPmynA8keFHMM2co-2BgW30cimY6JKkxJWVKmS3GPpHVfUdaYjF7xZp-2Fup4L6Q5=
+m4Qv6p-2FJoepMMANi6T1pkXm0FLFA-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">It=E2=80=99s going to need more than these table-stakes analytics =
+to lure those stars back, but it=E2=80=99s a start:</div><div style=3D"marg=
+in: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; bor=
+der-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-he=
+ight: inherit;" class=3D"revue-blockquote">Snap is going to give tens of th=
+ousands of digital content creators, known as influencers, information abou=
+t how often people view their Snapchat stories, the time spent watching the=
+m and details about their audience, among other data, the company said Wedn=
+esday.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Laun=
+ches</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h43/SZrPzbQR0Tj0WaB=
+KLu6ypUneew7cmdZdPVV9CMlhrp68MoLMqY5dd9Bf9wRzcukhqc6teJWzx5zcd3DOX-2BWk-2BB=
+oB3Q-2FGZSUsOS76SBFjgUjqxk6hESKMT667CHy-2BLjQq9kzACqBkKTZTF12lMWQ4LHGCBFns1=
+Ama7etw9lU0ELAFNnihVUxW2im7AJHNBwZ-2FnhvQKNikYeaY-2BmAYy45toFmZ-2BbUOm22VTP=
+o-2B8zbrbP3vbaRQRV51HYvr98uFa0OfBnHEJXJcmm-2Bb7p73-2F7olGQ-3D-3D"><img widt=
+h=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px;"=
+ alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/image=
+s/002/690/155/thumb/Reply_app_hed.jpg?1518641277" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h44/SZrPzbQR=
+0Tj0WaBKLu6ypUneew7cmdZdPVV9CMlhrp68MoLMqY5dd9Bf9wRzcukhqc6teJWzx5zcd3DOX-2=
+BWk-2BBoB3Q-2FGZSUsOS76SBFjgUjqxk6hESKMT667CHy-2BLjQq9kzACqBkKTZTF12lMWQ4LH=
+GCBFns1Ama7etw9lU0ELAFNnihVUxW2im7AJHNBwZ-2FnhvQKNikYeaY-2BmAYy45toFmZ-2BbU=
+Om22VTPo-2B8zbrbP3vbaRQRV51HYvr98uFa0OfBnHEJXJcmm-2Bb7p73-2F7olGQ-3D-3D">Go=
+ogle=E2=80=99s testing an Android app that adds Smart Reply to Slack, Faceb=
+ook Messenger, and more</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h45/358Lq8opm85jLyzy-2FMNk33Lsty7j=
+p-2BRIwhrf0H1QSsMszAfuMGav4QSF8-2FiUu7PGi2zIvBlWvb9qs-2FsQuqBoKPu2PMzIerFUP=
+WsM6qI28JScF-2B-2FzTrc6cEhJA5o-2BGoYcT3Ot1itREM-2FnLgNlAhaSmQ-3D-3D">www.th=
+everge.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h46/358Lq8opm85jLyzy-2FMNk33Lsty7jp-2BRIwhrf0H1QSsMszAfuMGav4=
+QSF8-2FiUu7PGttM-2BRKQum2i6bsLGQP6wSsr40LWftGBeSjFOQa-2FybnJwDI0AGt8MgNkPze=
+tob0AU6zBxlN8daL5JMW9wKMId5w-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">A consequence of Google=E2=80=99s failure at social software is th=
+at it has to go play in other people=E2=80=99s apps:</div><div style=3D"mar=
+gin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; bo=
+rder-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-h=
+eight: inherit;" class=3D"revue-blockquote">Google=E2=80=99s messaging app =
+strategy is a huge mess, but one surprisingly useful feature that has exten=
+ded from Inbox to Gmail to Allo and Android Messages is Smart Reply, which =
+offers three responses based on context for you to quickly reply to your co=
+ntacts. Google is now working to expand this beyond its own suite of produc=
+ts, and is opening up a limited test to Android users to add the feature to=
+ other chat apps, such as Slack and Skype.</div><div style=3D"margin: 0; di=
+splay: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color=
+: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inh=
+erit;" class=3D"revue-blockquote">According to a sign-up page for the app a=
+ppropriately called Reply, Google is potentially interested in making the f=
+eature work on Facebook Messenger, WhatsApp, Line, WeChat, and Twitter DMs.=
+ Smart Reply can already figure out basic context to a conversation =E2=80=
+=94 for example, if a person sends you an email asking to meet, you=E2=80=
+=99ll often get three suggestions that basically amount to =E2=80=9CYes,=E2=
+=80=9D =E2=80=9CNo,=E2=80=9D or =E2=80=9CLet me get back to you.=E2=80=9D I=
+t=E2=80=99ll also take into account your calendar availability and current =
+location to craft these responses, so when someone ask if you=E2=80=99ve ar=
+rived somewhere, the suggestions should make the most sense for the moment =
+you answer. According to the sample screenshots, users can reply directly f=
+rom their notifications.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h47/5AERylSNVCCwj1p=
+UwpeO2QtNYDiK-2FZC7X9T0SXzgzbMEtXIvIyy4MkKQw7KWLCCS4SnXWiBGfoztY-2FvNZD4D2u=
+WIqueSwq54J-2FEk3J28-2FDcfAMiPHLfgQwr4fLDakU7ZdaCaamfdQruTxS2JGg20gk6EYb8Qi=
+LQNf1pHBlPNhpoRKNRYtsBKxWcQUgTDowngLkCqJfqd4ivSlAQEMWA62XbiI9n8j-2FvXbI5Exa=
+mHYIs-3D"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;p=
+adding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.co=
+m/revue/items/images/002/690/145/thumb/1200x832.jpg?1518641101" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h48/5AERylSN=
+VCCwj1pUwpeO2QtNYDiK-2FZC7X9T0SXzgzbMEtXIvIyy4MkKQw7KWLCCS4SnXWiBGfoztY-2Fv=
+NZD4D2uWIqueSwq54J-2FEk3J28-2FDcfAMiPHLfgQwr4fLDakU7ZdaCaamfdQruTxS2JGg20gk=
+6EYb8QiLQNf1pHBlPNhpoRKNRYtsBKxWcQUgTDowngLkCqJfqd4ivSlAQEMWA62XbiI9n8j-2Fv=
+XbI5ExamHYIs-3D">Facebook Wants to Set Up Your Playdates</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h49/TxRHb4fQ7bnDoeY9-2B50lEX9BO9mr=
+21pBu7WwlYXeYGL6Fq4WaZTlitiXn5ClYPrDPrWPSy1poGffhACGQ-2FV1Eva5Bn5cPHqfA8cxY=
+eoXCKMnbhou9s-2FWQnlAe3YRBLQGOTJnYRpTddYC07o7R7JBEA-3D-3D">www.bloomberg.co=
+m</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h50/TxRHb4fQ7bnDoeY9-2B50lEX9BO9mr21pBu7WwlYXeYGL6Fq4WaZTliti=
+Xn5ClYPrDcSwE7rgqRhQHy3VLxHivCLl3yldCyiPisMMCFl-2FuAG8Brh6LCvcX5X9x52gF-2Bh=
+f4GbmPd87JbKpFMvkIJAykrw-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">The quest for meaningful interactions has never seemed quite so in=
+fantilizing:</div><div style=3D"margin: 0; display: block; Margin: 0; Margi=
+n-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px so=
+lid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquo=
+te">Last weekend, a friend showed me a notification on his Facebook app, sa=
+ying that 26 people =E2=80=9Cmay want to meet up=E2=80=9D with him this wee=
+k. He clicked into it and it displayed the profile pictures of 17 of his fr=
+iends, with the tantalizing promise that one of them had already said yes. =
+(One of them happened to be his live-in girlfriend, who was already hanging=
+ out with him, had never seen this feature and was just as amused.) He coul=
+d select the profile pictures of people he wanted to see =E2=80=94and if th=
+ey wanted to see him back, a Messenger chat would automatically fire up, se=
+tting off the planning for whatever rendezvous was supposed to occur.</div>=
+<div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; pa=
+dding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color=
+: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=E2=80=9CAnswe=
+r honestly,=E2=80=9D Facebook prompted. =E2=80=9CRespond without social pre=
+ssure.=E2=80=9D It was like a dating app, but for people you already know.<=
+/div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h51/3PddIM770X7yCq-=
+2Br3p8Ogpjxb5VIhc2uATWEaT0KVgWsXxngL2BD3HYCVKqdbjyuEY3hqFzE8sG7UMfaW1-2FXK7=
+A-2F0fkhSg-2BmMSwMrkO0JHGY-2BbZy6JCk92rVxcEgS8QMIl66fSp4t8jY5qoRXovSZ1u2wll=
+HBw7IIO1OXbsOdrEI-2Fuo3I1gIVEN2iUA2E3aJ68HgyQ02NWrDImBRRJf4oo0swHRh6TNstOzM=
+YGa490e-2FHEznR7RutGk3MwbHS41q"><img width=3D"112" height=3D"112" style=3D"=
+padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"h=
+ttps://s3.amazonaws.com/revue/items/images/002/688/759/thumb/Overtime_athle=
+teAnthony_Nelson_credit_Bryant_Alexander_preview.jpeg?1518623780" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h52/3PddIM77=
+0X7yCq-2Br3p8Ogpjxb5VIhc2uATWEaT0KVgWsXxngL2BD3HYCVKqdbjyuEY3hqFzE8sG7UMfaW=
+1-2FXK7A-2F0fkhSg-2BmMSwMrkO0JHGY-2BbZy6JCk92rVxcEgS8QMIl66fSp4t8jY5qoRXovS=
+Z1u2wllHBw7IIO1OXbsOdrEI-2Fuo3I1gIVEN2iUA2E3aJ68HgyQ02NWrDImBRRJf4oo0swHRh6=
+TNstOzMYGa490e-2FHEznR7RutGk3MwbHS41q">Overtime wants to turn high school j=
+ocks into social media stars</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h53/49ICq7wj0kEO-2FMkaVcIhpitdXkCk=
+6HX8fmlSPTzSdTwNRnLOQIrwyONS8fUa4t-2BqOFmuuF3iS0YThKoThm-2BHz1hyy6ZdXJUP3GP=
+0TW5HIfgR2T5DsGqddP0jvGZs4YmhqDXgcYWamVKnm9H7bB66sg-3D-3D">www.recode.net</=
+a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h54/49ICq7wj0kEO-2FMkaVcIhpitdXkCk6HX8fmlSPTzSdTwNRnLOQIrwyON=
+S8fUa4t-2Bq1Gr9boLAMcS2BNqQ6iyLaLUefmRUfydCwv-2FvqxKTP3w9OAg78rSo4eHk2KkGUU=
+BYVl7QGwnSjce4P99P0nJubA-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"=
+revue-p">Here=E2=80=99s a new social app with a novel content <i>and=C2=A0<=
+/i>distribution strategy:</div><div style=3D"margin: 0; display: block; Mar=
+gin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border=
+-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"r=
+evue-blockquote">While there are lots of digital media companies focused on=
+ high school sports, Overtime has a different angle: It doesn=E2=80=99t car=
+e about scores, stats and recruiting narratives. It=E2=80=99s focused inste=
+ad on a couple dozen athletes it thinks have the charisma to become interne=
+t stars.</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bo=
+ttom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid =
+#E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=
+Overtime tracks its stars with the help of their classmates and other peopl=
+e who live near them, paying stringers a few dollars per game to record the=
+m via a home-grown video app. It also captures them through its own talk sh=
+ows and other programming, and distributes all of it around the web.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h55/bP6HBbkEWt-2BfI=
+LuHHIpga0RU7nWG2Lddz3McZIIagbXAD57Z-2Fg8QxkmQs-2FjdnAGhQ1G0jRDJ-2FjpkmyUbkw=
+TDKVFzhJP-2BKGy8HpRWbEFp4SEpIEVct527IE3ryP7LTqkl-2BQ-2FYRcoiVWGuNODv4cql85X=
+rPI0PR-2FUi5ma10dDesEKbXJ84XpcuCi7F3Xlfo18dvPR421U0jVLVXGTaRv6JRjMhU5TPx58r=
+LZ8vm4wypbue7-2BDKXun1kgo5iixSqqvK"><img width=3D"112" height=3D"112" style=
+=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=
+=3D"https://s3.amazonaws.com/revue/items/images/002/688/681/thumb/IMG_9461.=
+jpg?1518621679" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h56/bP6HBbkE=
+Wt-2BfILuHHIpga0RU7nWG2Lddz3McZIIagbXAD57Z-2Fg8QxkmQs-2FjdnAGhQ1G0jRDJ-2Fjp=
+kmyUbkwTDKVFzhJP-2BKGy8HpRWbEFp4SEpIEVct527IE3ryP7LTqkl-2BQ-2FYRcoiVWGuNODv=
+4cql85XrPI0PR-2FUi5ma10dDesEKbXJ84XpcuCi7F3Xlfo18dvPR421U0jVLVXGTaRv6JRjMhU=
+5TPx58rLZ8vm4wypbue7-2BDKXun1kgo5iixSqqvK">Pinterest now lets you archive y=
+our boards and rearrange pins</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h57/IEGmWCVUHE8n1fAbyA0Q9oJaMrmgTw=
+u4FzM5HVh1qBZSC3qFECsDd4ewTzCWo0IkCCbxdg2BtzHdHc7LLnG2UPRHE-2BgMBl-2Bvh6sM3=
+p65fk03Fz3nOs3RHafMbGrXI98GiEaDnxiS959atqxsFZLsXA-3D-3D">venturebeat.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h58/IEGmWCVUHE8n1fAbyA0Q9oJaMrmgTwu4FzM5HVh1qBZSC3qFECsDd4ewT=
+zCWo0Ikg2jY-2FNMSR48Ey4UExe2pUqFDKbfWNG6UvX0tAXpWx2gsONMTsh4B4awO51FkiXQMBm=
+Dr7qHHC7Qbvb-2FZObhBTg-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p">Not sure it speaks well of Pinterest that=
+ =E2=80=9Crearranging pins=E2=80=9D was still an item on the product roadma=
+p in 2018.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Take=
+s</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<div class=3D'item-text' style=3D'font-family: "lato", "Helvetica Neue", He=
+lvetica, Arial, sans-serif; font-size: 18px; line-height: 28px;display: blo=
+ck; margin: 0; margin-bottom: 0;'><div style=3D"margin: 0;" class=3D"revue-=
+p">There were no takes today, as everyone was consumed by love and did not =
+want to spoil the moment with any ill-tempered opinions.</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>And =
+finally ...</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h59/rG1f3X-2BeKDNW7=
+7P67Ql5Dds31j-2BMKNPhSRed1YlVXTHcw2lXbu2lqVW3ZlczLTCx0N9vLlfrvkNbHsKV1hiT3A=
+kOX-2FwmbpkGEprgVstTpqPUn5WsB0r0yAtC-2BYvHJamrTNGiVScTbqvLWxKNFAmQrajzS-2Fy=
+aKvQuNH837xi4n4O1J-2B9vDwrpoR6qjL-2BdPFH9u1FSkveXN8yMyq9Umhe2TKkpwl6iF5hKfZ=
+-2Fa0Q56iSeuDFEyCiMHoySxAwujksDl"><img width=3D"112" height=3D"112" style=
+=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=
+=3D"https://s3.amazonaws.com/revue/items/images/002/689/934/thumb/8086278d-=
+9100-4769-9c9b-de3064c7ec4b-3435754e-8ace-4c5f-a016-5f04d341263c-getty-9109=
+97744.jpg?1518637495" />
+</a><span class=3D'item-link-title' style=3D'font-family: "lato", "Helvetic=
+a Neue", Helvetica, Arial, sans-serif; display: block; font-weight: 600; fo=
+nt-size: 20px; line-height: 28px; margin: 0; margin-bottom: 0;'><a target=
+=3D"_blank" style=3D"color: #8b9dc3; text-decoration: none;" href=3D"http:/=
+/em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h60/rG1f3X-2=
+BeKDNW77P67Ql5Dds31j-2BMKNPhSRed1YlVXTHcw2lXbu2lqVW3ZlczLTCx0N9vLlfrvkNbHsK=
+V1hiT3AkOX-2FwmbpkGEprgVstTpqPUn5WsB0r0yAtC-2BYvHJamrTNGiVScTbqvLWxKNFAmQra=
+jzS-2FyaKvQuNH837xi4n4O1J-2B9vDwrpoR6qjL-2BdPFH9u1FSkveXN8yMyq9Umhe2TKkpwl6=
+iF5hKfZ-2Fa0Q56iSeuDFEyCiMHoySxAwujksDl">Computer-Generated Candy Heart Mes=
+sages Exist &amp; They Are Truly Breathtaking</a></span>
+<div class=3D'domain' style=3D'font-family: "lato", "Helvetica Neue", Helve=
+tica, Arial, sans-serif; display: block; line-height: 24px; margin: 0; marg=
+in-bottom: 0; color: #A7ADB5; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #A7ADB5; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://em.getrevue.co/mpss/c=
+/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h61/18nIX-2FvfH3yLvFpnvcekwseveOmR=
+JMQiG-2BnQ4CcppQt-2BTTp7wRy9ssmiZT7ub92ZhA-2BLsi-2B0NTDN1pO1H8mMgbWlFUdGQ-2=
+BePP6n0t7dNR0rYI-2FkbqxtAS5nCJeGe9NPh-2FkqLP84cUe46QF-2FeUUmP7A-3D-3D">www.=
+bustle.com</a>
+&ndash;
+<a target=3D"_blank" style=3D"color: #8b9dc3; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR=
+5afZ7TYjgVd4g/h62/18nIX-2FvfH3yLvFpnvcekwseveOmRJMQiG-2BnQ4CcppQt-2BTTp7wRy=
+9ssmiZT7ub92ZmmkUp-2B-2Fd3j9aar-2FIU4CpRVMOt6fJUuSV7crkcpz9JVUH9D-2FpSS5EfZ=
+wEFQ1nFGSqsKjaRlMWt5ki7WGq4jgqUQ-3D-3D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: "lato", "Helveti=
+ca Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ display: block; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=
+=3D"margin: 0;" class=3D"revue-p">Oh my god what is Bustle doing in this ne=
+wsletter? Why, they=E2=80=99re telling us about candy hearts generated by m=
+achine learning. If only someone had given me YOU ARE BAG this Valentine=E2=
+=80=99s Day!</div><div style=3D"margin: 0; display: block; Margin: 0; Margi=
+n-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px so=
+lid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquo=
+te">Some of the results the neural network created were actually kind of go=
+od =E2=80=94 not far off from what you might actually see on a candy heart =
+IRL. =E2=80=9CLove Bot=E2=80=9D was one kind of on the nose example, and th=
+e AI also generated =E2=80=9CMy Bear.=E2=80=9D But others toed the line bet=
+ween slightly off and completely surreal. =E2=80=9CCool Cud,=E2=80=9D =E2=
+=80=9CAm Good,=E2=80=9D and =E2=80=9CMe My &lt;3=E2=80=9D formed the middle=
+ tier of good to weird phrases, and =E2=80=9CTime Hug,=E2=80=9D =E2=80=9CU =
+Hack,=E2=80=9D and =E2=80=9CLove 2000 Hogsyea=E2=80=9D scraped the bottom o=
+f the barrel. You can check out a more complete (and amazing) list at AI We=
+irdness.</div><div style=3D"margin: 0;" class=3D"revue-p">Time hug!</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 28px;' valign=3D'top'>
+<div class=3D'item-header' style=3D'font-family: "lato", "Helvetica Neue", =
+Helvetica, Arial, sans-serif; display: block; font-weight: 600; font-size: =
+24px; line-height: 28px; margin: 0; margin-bottom: 0; color: #3b5998;'>Talk=
+ to me</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<div class=3D'item-text' style=3D'font-family: "lato", "Helvetica Neue", He=
+lvetica, Arial, sans-serif; font-size: 18px; line-height: 28px;display: blo=
+ck; margin: 0; margin-bottom: 0;'><div style=3D"margin: 0;" class=3D"revue-=
+p">Questions? Comments? Valentines? casey@theverge.com=C2=A0</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding: 20px 0; background-color: #FAFAFB;' =
+valign=3D'top'>
+<table border=3D'0' cellpadding=3D'0' cellspacing=3D'0' style=3D'border-col=
+lapse: collapse;mso-table-lspace:0pt; mso-table-rspace:0pt;' width=3D'100%'>
+<tr>
+<td align=3D'right' valign=3D'top' width=3D'56%'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 36px; ma=
+rgin: 0; margin-bottom: 0; text-align: right;'>Did you enjoy this issue?</d=
+iv>
+</td>
+<td align=3D'left' style=3D'padding-left: 10px;' valign=3D'top' width=3D'44=
+%'>
+<table border=3D'0' cellpadding=3D'0' cellspacing=3D'0' style=3D'border-col=
+lapse: collapse;mso-table-lspace:0pt; mso-table-rspace:0pt;' width=3D'81'>
+<tr>
+<td align=3D'right' height=3D'36' valign=3D'top' width=3D'41'>
+<a style=3D"padding: 0; border:0; text-decoration: none;" href=3D"http://em=
+.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h63/YIsQhoYrwDr=
+J5obeHyaQS7CpgVdBW1OY1yN3j2G6h1etPi-2BwHCyLfRq3y0Si0h7fO9ZoPlqERWU5WEBDlA-2=
+F-2F7vgQK1lN3KGqSjnakyB19RY0w1LVdTLjsKacUldmHh-2FZBNinl-2BrOrk4isblcYOOqoAN=
+F1SYtm9-2FJHjyskVhQ67SmiApeiqUAQsz9byVnd7Ml"><img style=3D"outline:none; te=
+xt-decoration:none; -ms-interpolation-mode: bicubic;border: 0;" width=3D"41=
+" height=3D"36" src=3D"https://www.getrevue.co/assets/email/thumbs_up-1ae5a=
+7bdfcd3220e2b376aa0c1607bc5edaba758e5dd83b482d03965219a220b.png" alt=3D"Thu=
+mbs up 1ae5a7bdfcd3220e2b376aa0c1607bc5edaba758e5dd83b482d03965219a220b" />
+</a></td>
+<td align=3D'left' height=3D'36' valign=3D'top' width=3D'40'>
+<a style=3D"padding: 0; border:0; text-decoration: none;" href=3D"http://em=
+.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h64/YIsQhoYrwDr=
+J5obeHyaQS7CpgVdBW1OY1yN3j2G6h1etPi-2BwHCyLfRq3y0Si0h7fO9ZoPlqERWU5WEBDlA-2=
+F-2F7vgQK1lN3KGqSjnakyB19RY0w1LVdTLjsKacUldmHh-2FZBNinl-2BrOrk4isblcYOOqoAN=
+F1SYtm9-2FJHjyskVhQ67RqYaK72e7hfpTKqo3cgry5"><img style=3D"outline:none; te=
+xt-decoration:none; -ms-interpolation-mode: bicubic;border: 0;" width=3D"40=
+" height=3D"36" src=3D"https://www.getrevue.co/assets/email/thumbs_down-e13=
+779fa29e2935b47488fb8f82977fedcf689a0cc0cc3c19fa3c6bb14d1493b.png" alt=3D"T=
+humbs down e13779fa29e2935b47488fb8f82977fedcf689a0cc0cc3c19fa3c6bb14d1493b=
+" />
+</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-top: 28px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"border: 0; outline: none; text-decoration: no=
+ne; -webkit-text-size-adjust:none;mso-hide:all;padding-right: 5px;" href=3D=
+"http://em.getrevue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h65/9=
+4d0KlU9iJ-2FHN3q9PYEl65-2BfBBvv8-2FwnOPhdJct0qnDt3hkG65X0sM98GzvAFV6IzXSeV0=
+6Vf-2BCZF6dv5rcTxGg3VjwNS8CzkhMnARSGM7yCEeMNJzntCNj5SSnMsiYjBt4LTGLRp8xaD-2=
+FYD5-2BQcqa7AndnKlS6HUKTQ-2FanBAqbUWuudJ3Lmk0exDQlhaS0HS7aiYQQ6MjVbyzUA-2Bq=
+AxpseyVah6Mr1zCSLDobjTyGGf4xYb2nLnJKugQUOi1QFTB8xakCW4xQ4OGH-2FRtc3T3BVxuUy=
+bvJv4uNSr5-2FpbsPW-2FuENLrMBjo2dhoHtKa00f"><img alt=3D"" width=3D"28" heigh=
+t=3D"28" src=3D"https://www.getrevue.co/assets/email/share_twitter-1d50bcd7=
+4851bdf7f9c51e5942c9ca4bef741c6a69c9380e53ea84ddf23936f6.png" />
+</a><a target=3D"_blank" style=3D"border: 0; outline: none; text-decoration=
+: none; -webkit-text-size-adjust:none; mso-hide:all;" href=3D"http://em.get=
+revue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h66/9ZtgBbtsz-2BGzB=
+X39C579VPKnH9tskLwOyTqqbK1ygPqs8217KqFAVvk8eu7ngPtHv-2BB8jKAlifF2SyHN0gH2YP=
+ov5wOMlrbkMPmLi26TNNvj3r60gmyjYreNzz0ixe6XCbxKtCD31XK2zCqb1zxzkNLop4KdcbzzY=
+6Edz0IUcmlNCg7dJh80zzl2BAN7xNWV"><img alt=3D"" width=3D"28" height=3D"28" s=
+rc=3D"https://www.getrevue.co/assets/email/share_facebook-de794f7bb7cf43d1d=
+511fb0ffa88ae43436a3f09811ee338a7fa38b413fb659e.png" />
+</a></td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding: 56px 0 28px 0;' valign=3D'top'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 28px; co=
+lor: #999; margin: 0; margin-bottom: 0;'>Carefully curated by Casey Newton =
+with <a target=3D"_parent" style=3D"color: #8b9dc3" href=3D"http://em.getre=
+vue.co/mpss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h67/MKbwDG86HDZFRxFon=
+RveoObD58FxZCDpwkLBQZJxemNYqJn0ywBomIXQRjAANUnesy50UnK-2FODFEopI9ejTAILH-2F=
+SFiH4WEhfocp1FihxOAvQ5Js33yWhNt4kvmMC3jKPCBCAK68JRl6JVxhZXUWDQ-3D-3D">Revue=
+</a>.</div>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 28px; co=
+lor: #999; margin: 0; margin-bottom: 0;'>
+If you were forwarded this newsletter and you like it, you can subscribe <a=
+ target=3D"_blank" style=3D"color: #8b9dc3" href=3D"http://em.getrevue.co/m=
+pss/c/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h68/MKbwDG86HDZFRxFonRveoCwlQ=
+EZuUpaPdac3tOCAOF30DEroXrBQHprPN9yYxAYbjIeJlEq3hF65yOV7qsbvxSBeCL8AZkf7E6w-=
+2FCCEb6TuX-2FO4cSD0U-2B6-2F-2BGb3aFXHWU1tNXApd35mwa8perVLD2Dj8hs5NX52N4Bici=
+AE6w9U-3D">here</a>.
+</div>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; color: #666; line-height: 28px; co=
+lor: #999; margin: 0; margin-bottom: 0;'>
+If you don't want these updates anymore, please unsubscribe <a target=3D"_b=
+lank" style=3D"color: #8b9dc3" href=3D"http://em.getrevue.co/mpss/c/JwE/1Eo=
+YAA/t.2f0/IDxk2p1qR5afZ7TYjgVd4g/h69/YIsQhoYrwDrJ5obeHyaQS7CpgVdBW1OY1yN3j2=
+G6h1dCi2TqRCmZfVIjatzJ-2FkyhQUSoyUeUmTEDIPbQM4ROqmDY-2FZDw7xMbpS7wK8-2By9qB=
+SrhySasNGp4Fhd1P56anOwG1NYrEw3backDkxRCNhuDX1xw5IUQiJo-2BlamGtB8lDvRqjn87Qt=
+HTHOReKJpbuOGPhxM7hcAo-2Fxb1oHq6rnz1nyqVjTdmXILetw3GTLhL0-3D">here</a>.
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' valign=3D'top'>
+<div style=3D'font-family: "lato", "Helvetica Neue", Helvetica, Arial, sans=
+-serif; display: block; font-size: 16px; line-height: 28px; color: #fff; ma=
+rgin: 0; margin-bottom: 0;'>&nbsp;</div>
+</td>
+</tr>
+</table>
+
+          </td>
+        </tr>
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    </td>
+    <td width=3D"10" valign=3D"top">&nbsp;</td>
+  </tr>
+</table>=20
+
+<img src=3D"http://em.getrevue.co/mpss/o/JwE/1EoYAA/t.2f0/IDxk2p1qR5afZ7TYj=
+gVd4g/o.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height=
+:1px !important;width:1px !important;border-width:0 !important;margin-top:0=
+ !important;margin-bottom:0 !important;margin-right:0 !important;margin-lef=
+t:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding=
+-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+----==_mimepart_5a84db951a097_42abcf5ab3e842942a8--

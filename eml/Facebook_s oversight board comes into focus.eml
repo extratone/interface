@@ -1,0 +1,2494 @@
+Delivered-To: ihadtopee@gmail.com
+Received: by 2002:a1c:a652:0:0:0:0:0 with SMTP id p79csp2735679wme;
+        Thu, 27 Jun 2019 17:02:33 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwOlaOEBdvzu1yby7fSDIHfFYDnUJrGs3J8u1fqLT1rAQ0jBmGp3Vg+eT3sh6/gvrF7/Yvz
+X-Received: by 2002:a50:ad2c:: with SMTP id y41mr7606734edc.300.1561680153157;
+        Thu, 27 Jun 2019 17:02:33 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1561680153; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nIYWTac5UfktdO5Y44poQxsDdf0Z04Z45IcVLk36hVripDcWhtAWt8DM11zX9FyXw+
+         GAGD0KTivfPXSPsUokT1Mg2SNoXdMaV1N88tOxP4+ZywKhbh496/Zhg1YyI4b4omfnoF
+         3Gk24nv5gNwpuOEdsHEKMnK3YfJF2tlORzBDeRniFE0B+FRwQfbrRNEkt/7TFiVr84XH
+         i5RxF571b9zlWtd9TjFao+8P602pEA8b6CKZ1q8bEB9yzUoQdmpIWKoSB5tgKkDPzb33
+         +oXOH8jlI63tYPtzYEmbkOKWY54z8FIdimx+IVHX5eSFub5kNGqNf48VgaFJRBUMUCZm
+         DneA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to
+         :reply-to:from:date:dkim-signature:dkim-signature;
+        bh=dPebe7oGZwTrZPzKf+fHage0jN7Yv7Zoo8Cdhwq8JNk=;
+        b=DOXtYfW9V+wVZEgAi8mjIaAXsyZIk37mG27NPTQ2qs1uR/BbcqNFMtgAZ2n8S+ykSu
+         mN98qrb/SKYByzPz8KsUhWLWBeDDdDo7DOwVXdyiNbQz8GN+XguQa1WAhEOI2pU8TF2z
+         hKKxBl/9vc0TxQc/mM0MKTg1Dn/+K/OQpmZIPSWSkW578uAcF0pDGph+VUZ1LMT8dAO1
+         5XIpOP9SY1AnDiJEsAaJa3VZPhzxLJmXMkqKI8TkzHYdOiwzX0pBTH2bSsw6R6B9FSHL
+         uUpTmsziieZN+ieDR4kTDl/N40pRuoAlJDzThu16d69MouPl1rUVUblZA0URqkYeGXQq
+         H0XQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@revue.email header.s=s1 header.b=aMmK6u0U;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=NuIqeJVt;
+       spf=pass (google.com: domain of bounces+7458672-ab71-ihadtopee=gmail.com@publisher.revue.email designates 168.245.2.253 as permitted sender) smtp.mailfrom="bounces+7458672-ab71-ihadtopee=gmail.com@publisher.revue.email"
+Return-Path: <bounces+7458672-ab71-ihadtopee=gmail.com@publisher.revue.email>
+Received: from o5.publisher.revue.email (o5.publisher.revue.email. [168.245.2.253])
+        by mx.google.com with ESMTPS id c17si546452eds.77.2019.06.27.17.02.31
+        for <ihadtopee@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 27 Jun 2019 17:02:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+7458672-ab71-ihadtopee=gmail.com@publisher.revue.email designates 168.245.2.253 as permitted sender) client-ip=168.245.2.253;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@revue.email header.s=s1 header.b=aMmK6u0U;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=NuIqeJVt;
+       spf=pass (google.com: domain of bounces+7458672-ab71-ihadtopee=gmail.com@publisher.revue.email designates 168.245.2.253 as permitted sender) smtp.mailfrom="bounces+7458672-ab71-ihadtopee=gmail.com@publisher.revue.email"
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=revue.email; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding; 
+	s=s1; bh=ZqkOGH958txZPHPT+nPud7p6zBM=; b=aMmK6u0USCuoY35mG8dcyM2
+	W1n4pIqWzkqqBCezxpN3ZH2kqYNcGuLb2kLZ4lH3vdMC/EZ4NJWZOVbfwZjmgMi5
+	5341FxlK5WymSeDFaGqZ8waVn6/Ulvk4r7p8zvP8bwl4d1kdoI+Opr0K0NooagMC
+	qW0W8PHBbmuJd690KeQ4=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=sendgrid.info; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding:x-feedback-id; 
+	s=smtpapi; bh=ZqkOGH958txZPHPT+nPud7p6zBM=; b=NuIqeJVtkiSHBDPENp
+	hSi5pjkgESbcxEyljTDIbuTx8nBADYZhZXhZPiIZfrITNashpUEdGasN0m+Ppb9a
+	I+W21nYS7n1Vdwu1BZx9iUbC2ZQjwiqmBKExb675S6sG/tcq+/ALJix0lf0Ak5ht
+	lMAucRaHchFXCOmbqjqLmEAUM=
+Received: by filter0261p1iad2.sendgrid.net with SMTP id filter0261p1iad2-9428-5D155888-49
+        2019-06-28 00:00:09.098569635 +0000 UTC m=+9290.636019197
+Received: from heroku.com (ec2-3-84-145-131.compute-1.amazonaws.com [3.84.145.131])
+	by ismtpd0045p1mdw1.sendgrid.net (SG) with ESMTP id 264FVYiYRxWx82hd_k07uQ
+	for <caseynewton@getrevue.co>; Fri, 28 Jun 2019 00:00:08.581 +0000 (UTC)
+Date: Fri, 28 Jun 2019 00:02:31 +0000 (UTC)
+From: Casey Newton <caseynewton@getrevue.co>
+Reply-to: casey@theverge.com
+To: ihadtopee@gmail.com
+Message-ID: <5d155884341ce_42afcf142f98c10408b@b55b7cf7-6631-4c47-85c7-6016f3d105ed.mail>
+Subject: Facebook's oversight board comes into focus
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d1558842f184_42afcf142f98c103991";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-SG-EID: Z0Ma3PVa3KP08UxHA6Ac+gcl0ut3Lr3kpJXNwGOW47tQ6DnKGCOCVHNF1r+ZHZxtheAe+NRLRL0fgl
+ QeFS0LhYEnjH8B7ytAxUx4JDKNQ6g6UzVx24ecVVbOsSnQnszbFSP4RTyC4ia2cD21SyP+1xLeYw++
+ a3Dw6Il4IK9wsiWrAGyj39Bw2vbsh2ns298DCAwFb+7NuyJ0KScx7rkYrE8BXlbZbarYpDKRuOpaXk
+ 4=
+X-SG-ID: I8gSxS5yYomv22gV92RjxYo4L63rhiUP0ECTh9ya90Us1oQQlbrBoqZniJwITPegDv7gScYoMDD0TQ
+ ZyFDierj0LdNt4X5ICijmDzBqv5G/AKijNAqXTZks0sjMiJ08STw8tlmuHd7Xg+U1hW9golH2b2WY7
+ p7xJIgo617nAdp7HzVDwuLSVyh7S2OscTjHY
+X-Feedback-ID: 7458672:AfiFVSW341D1kvtKa66WWksRSq7oLQyRPz/f0jNi+MU=:AfiFVSW341D1kvtKa66WWksRSq7oLQyRPz/f0jNi+MU=:SG
+
+----==_mimepart_5d1558842f184_42afcf142f98c103991
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+The Interface
+June 27 - Issue #349
+
+
+Yesterday, Mark Zuckerberg made an appearance at the Aspen Ideas Festival. =
+In keeping with the spirit of the event, Zuckerberg brought some ideas. The=
+ big ones:
+
+Facebook was right not to remove the doctored video of House Speaker Nancy =
+Pelosi (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6S=
+UmbQ/t102/vdNZmFRbxrM223Jp6VZ3HX-2FPnXqdXEgpP8NNyuH77yiqFVR315Yo9khwTAwZUMj=
+cheub1ORHYCGAzmSmzMB-2FBpIWc8qPXZyab3qAWJ-2FLUbLciPJ8yiXKjGQmSernOZDPwKEiXz=
+9vNezYyWkhT6hbZA-3D-3D/IzhZ target=3D&quot;_blank). Zuckerberg said it shou=
+ld have been flagged as misleading more quickly, but defended leaving it up=
+. (I basically agree with him on this one.)
+
+&quot;This is a topic that can be very easily politicized,&quot; Zuckerberg=
+ said. &quot;People who don't like the way that something was cut...will ki=
+nd of argue that...it did not reflect the true intent or was misinformation=
+. But we exist in a society...where we value and cherish free expression.&q=
+uot;But Facebook will treat deepfakes differently than other forms of misin=
+formation (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5q=
+n6SUmbQ/t103/Y-2BPSLfHKcNVaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5=
+PleG9isca1-2FmGxCF7ggc3hNFaAtqBJ7R40-2B2KG7t3U0pAmeEteSmsm5CRXR166ytJV2TO5S=
+d5xqtYB4aanKcY4Oc5DcaOYNgW33sOM8Wocj2Ar-2BGQpDYCtA9jKw-2B8Qbwt2AX0fF0UStJx-=
+2BKHO0u7DjFiXzSR-2Fw-3D-3D/yWtd target=3D&quot;_blank). Zuckerberg said tha=
+t the company's policy team is currently considering it: =E2=80=9CThere is =
+a question of whether deepfakes are actually just a completely different ca=
+tegory of thing from normal false statements overall, and I think there is =
+a very good case that they are.=E2=80=9D
+
+Facebook can't protect against election interference alone (http://click.re=
+vue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t104/L1yYvrz6w4NUE=
+N7AAKQk96aE5SMsJhPts0msJ7dUljDVpChjWNRBhOThcdSksRIyZNKY3x2RROqMfkQoHaRrS2E4=
+x-2F3FuFLvME9Tp2C-2F-2FgAwqRiI3-2BrjtmJQyh9lg2lhBuFqpFbxuyD4I9j921Y1fmqo55h=
+dniiBk1nDAdX2RyQ-3D/pxv1 target=3D&quot;_blank). Zuckerberg was rightly cri=
+tical of the US government's extremely weak response to Russian attacks lea=
+ding up to the 2016 election, saying:=20
+
+&quot;One of the mistakes that I worry about is that after 2016 when the go=
+vernment didn=E2=80=99t take any kind of counteraction. The signal that was=
+ sent to the world was that =E2=80=9CO.K. We=E2=80=99re open for business.=
+=E2=80=9D Countries can try to do this stuff and our companies will try the=
+ir best to try to limit it, but fundamentally, there isn=E2=80=99t going to=
+ be a major recourse from the American government. &quot;Since then, we=E2=
+=80=99ve seen increased activity from Iran and other countries, and we are =
+very engaged in ramping up the defenses.&quot;On Tuesday, some reports had =
+suggested that Zuckerberg was going to unveil a surprise new &quot;constitu=
+tion&quot; for Facebook. Instead, on Thursday the company released a report=
+ (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t=
+105/zianfujKjgoKaTqDtPLU7j4Zpcoh-2FECRcLYWh7RmU8pbUubWSXs6am-2FMCqaod5JpBVi=
+5AD8iWsFk3sgdlf3J7VF6kmN1gQoaM9NLCfjY5kI-3D/uigu target=3D&quot;_blank) det=
+ailing the progress it is making in building an independent oversight board=
+ for review. The board is connected to Zuckerberg's big ideas =E2=80=94=C2=
+=A0this is the body that could someday make a binding, independent evaluati=
+on of whether a video like the Pelosi fake could stay up on the site.
+
+Since proposing the idea last year, Facebook has held six workshops around =
+the world, which included more than 650 people from 88 countries. Among oth=
+er things, the company has been conducting a kind of mock trial =E2=80=94=
+=C2=A0having participants debate what to do with particular pieces of contr=
+oversial content, as part of the work of developing a fair process for the =
+board to implement in the future.
+
+The idea remains to build a board of 40 people who will make content review=
+ decisions in small panels. But all of the details are up for discussion, a=
+nd you can read about the infinitely branching debates the company is now h=
+aving in the report itself (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2s=
+u/Vn7oL8A1QUSNF5qn6SUmbQ/t106/WkNtz-2FSzkH-2FMfHT-2FKDaZhlI9D0VUSRoXxAMK6pj=
+s60vlMFWuSXq06rv1CwyEjn9emP8LndWZrtW6g33Fc7aQKqgn-2BLLgDPz6NgTi6EQ0aNX3ql5O=
+bBThWC70paRqzKyl/4b3T target=3D&quot;_blank). It makes for a surprisingly b=
+risk read =E2=80=94=C2=A0for one thing, it goes out of its way to find and =
+cite examples of people calling the board a stupid idea. And it's much more=
+ entertaining than this halting, uncertain conversation between Zuckerberg =
+and two prominent law professors (http://click.revue.email/mps2/c/GQE/cM9xA=
+A/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t107/zianfujKjgoKaTqDtPLU7j4Zpcoh-2FECRcLYWh=
+7RmU8pXy-2FDWm6AbGkyAMh-2F93AAOsv0TTZId-2BT8TRd614opRLC-2BNvh8dNstMS7sBLa2H=
+9R-2F8sanfSm-2F9Ib9wAFlKpkAD/-AZt target=3D&quot;_blank), which attempts to=
+ bring a sense of history to the conversation but mostly just magnifies the=
+ historical weirdness of absolutely everything under discussion.
+
+Mostly, though, it's just wild to watch a public company staging a miniatur=
+e constitutional convention in 2019. The main problem is that almost anythi=
+ng is possible. To wit, from Facebook's report today:=20=20
+
+Facebook has suggested that Board members serve a fixed term of three years=
+, renewable once. Other suggestions included varied term lengths;  staggere=
+d appointments; and shorter term lengths, given the =E2=80=9Crapid pace of =
+change=E2=80=9D in content and technology. However, while some felt that th=
+ree years was too long, others felt it was not long enough. The latter beli=
+eved that more time is necessary for members to become acquainted with thei=
+r responsibilities, as well as the complexities of content governance. Feed=
+back was similarly split on the size of the Board. Facebook has suggested u=
+p to 40 members on the initial Board, which would be global in nature and o=
+rganized to operate and decide on cases in panels. Some felt this number wa=
+s too small and expressed concern over =E2=80=9Cdocket management=E2=80=9D =
+and =E2=80=9Ccaseloads.=E2=80=9D Others, conversely, found the number to be=
+ unwieldy and unmanageable. Still others, on a more practical level, sugges=
+ted that the Board include 41 members, in case a tiebreak would be required=
+.It goes on like this for 38 pages. (The appendices (http://click.revue.ema=
+il/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t108/WkNtz-2FSzkH-2FMfHT-=
+2FKDaZhlI9D0VUSRoXxAMK6pjs60vlMFWuSXq06rv1CwyEjn9emP8LndWZrtW6g33Fc7aQKqgn-=
+2BLLgDPz6NgTi6EQ0aNU4zsZKdqLXah2DrtmWm-2FrEm2YqiQZBNmcG-2B7SrSDomvQ-3D-3D/Q=
+KA7 target=3D&quot;_blank) go on for another 177.)=20
+
+Many important decisions appear to remain totally up in the air. For exampl=
+e, I assumed that one benefit of developing an independent oversight board =
+would be to allow the board to create precedents =E2=80=94=C2=A0a kind of c=
+ase law for future board cases to refer to. But according to the progress r=
+eport, many participants have frowned on the idea of precedents at all:
+
+Overall, feedback generally supported some sort of precedent-setting arrang=
+ement. Most expressed hope that the Oversight Board could support =E2=80=9C=
+some idea of =E2=80=A6 continuity, some idea of stare decisis=E2=80=9D that=
+ could evaluate =E2=80=9Cmultiple fact patterns and have some precedential =
+weight.=E2=80=9D  Response from the public questionnaire suggested the same=
+. The majority of respondents (66%) stated that =E2=80=9Cconsidering past d=
+ecisions is extremely to quite important,=E2=80=9D while almost a third (28=
+%) consider past decisions as =E2=80=9Csomewhat important=E2=80=9D. Others =
+felt that precedent would need =E2=80=9Cto be considered carefully, as =E2=
+=80=A6 there will need to be overruling rules articulated in order to rever=
+se panel decisions that are later seen to be out of step with changing circ=
+umstances.=E2=80=9D Furthermore, it was argued, =E2=80=9Ca strict coherence=
+ rule may cause a situation where the first panel to discuss a certain issu=
+e might set a standard that may not be reconsidered later. This will create=
+ a sense of arbitrariness and stagnation.=E2=80=9D Others argued that since=
+ social media is a rapidly changing industry, precedent should not prevent =
+review of future, similar content. In the end, many argued for balance: an =
+understanding of precedent that would help ensure consistency but not neces=
+sarily be determinative.The report doesn't make clear how these questions h=
+ave been resolved, though it seems likely that many have been. Facebook say=
+s a final charter for the board will be released in August, and that it wil=
+l work to stand up the first group of panelists shortly thereafter.
+
+There are at least two good reasons to support Facebook's board initiative.=
+ One is that it shows that the company understands its power over public sp=
+eech is untenable, and is seeking to devolve some of that power back to the=
+ public. Two is that by returning some of that power to the people, Faceboo=
+k can become more accountable to its user base over time. The details are a=
+ll messy, and of course they are =E2=80=94=C2=A0it's a pseudo-constitutiona=
+l convention! But the goal still strikes me as a worthy one, and Facebook i=
+s moving ahead with a caution that is as welcome as it is rare.
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+** DEMOCRACY
+--------------------------------------
+
+* TWITTER WILL NOW HIDE =E2=80=94 BUT NOT REMOVE =E2=80=94 HARMFUL TWEETS F=
+ROM PUBLIC FIGURES
+In a significant step, Twitter says it will now put a content warning over =
+certain inflammatory tweets posted by big accounts, Makena Kelly reports:
+
+Today, Twitter is rolling out a new notice for tweets belonging to public f=
+igures that break its community guidelines. Now, if a figure like Donald Tr=
+ump were to tweet something that broke Twitter=E2=80=99s rules, the platfor=
+m could notify users of the violation and lessen the reach of the tweet. In=
+ recent interviews, Twitter executives have hinted that a change like this=
+=C2=A0would be coming soon (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2s=
+u/Vn7oL8A1QUSNF5qn6SUmbQ/t109/pZe6Dhjg8xmMgvq8iuEG4vOuhTVNdOcFdMgmC4Bg5TQol=
+dIdi0Eoz2AEaaLH-2BFe5mR26FMMR4fi-2B1Lhi-2FHi0LP-2BBeYYbsBIO7KOHGJ1jb7Yzz4pa=
+EL7-2BzNA5cV2T3dI3rE9eOQHANl2MEAazunxByq0ZXrCfjmckqEs6I9w24Y8-2F6Ru5fBrM-2F=
+nuME0-2FJIWvNJTJ-2F-2By33DtUJTij-2FH8M2Mg-3D-3D/wHx2 target=3D&quot;_blank)=
+.This notice will only apply to tweets from accounts belonging to political=
+ figures, verified users, or accounts with more than 100,000 followers. If =
+a tweet is flagged as violating platform rules, a team of people from acros=
+s the company will decide whether it is a =E2=80=9Cmatter of public interes=
+t.=E2=80=9D If so, a light gray box will appear before the tweet notifying =
+users that it=E2=80=99s in violation, but it will remain available to users=
+ who click through the box. In theory, this could preserve the tweet as par=
+t of the public record without allowing it to be promoted to new audiences =
+through the Twitter platform.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t11=
+0/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOq-2BPe0UrYopHxFgtbxBtOwrpda-2BC=
+VCoDmXv0CGYlzYyqP1POxlwqMyCUruD-2FyXAbEkEWk44Kj86o5b5VHX1IHTfLnnwJfeEYF23RK=
+kuNqht1TXIm4NZCFNy4iXtuf9aetI-3D/lN-E
+
+* WHAT FACEBOOK PRIVACY? CANDIDATES=E2=80=99 TOUGH TALK IS JUST THAT
+With Missouri Sen. Josh Hawley making a racket about Facebook's data practi=
+ces, Hamdan Azhar explores how his campaign uses information gleaned from t=
+he service:
+
+Senator Josh Hawley (R-Missouri)=C2=A0told Yahoo Finance (http://click.revu=
+e.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t111/-2BVbdBhYLRHyFe=
+UtKjhYCooP69PWBeYyP9qnz9k1k6hoPvrD-2FGW1ZBto4FSozmNkWoqSwKdVxeI0IDgeHqdr4do=
+LMxn2dcMkMglJBnfWuFSvBDalwZLC-2FGQNuMHvXYIS6O41g9OeL2bUFfsIkqQzPAZsOqRFicn0=
+34MSuUZbQCF0-3D/GIGU target=3D&quot;_blank)=C2=A0that he wouldn=E2=80=99t t=
+rust Facebook with his money. =E2=80=9CI don=E2=80=99t trust Facebook with =
+anything,=E2=80=9D he said.Just one problem: Despite their professed concer=
+ns with Facebook, both senators' campaign websites=E2=80=94sherrodbrown.com=
+ and joshhawley.com=E2=80=94have an invisible piece of Facebook technology,=
+ called a pixel, that tracks when anyone visits their homepages and shares =
+this information with Facebook. Hawley=E2=80=99s website even shares when v=
+isitors donate and the exact donation amount. Facebook can then associate t=
+hat information with an individual=E2=80=99s Facebook account.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t11=
+2/cqzN2iltj9YHV-2BwZYptu4aO3ZYkou512r0qgMnJC6PtKRLc7EnHhvR1z2nLCOaPywTf2hYn=
+LGETweBhlM0SjvC5keZIqK6ZPX98SQb9qeDc-3D/kjKX
+
+* FACEBOOK IS CHALLENGED TO BAN MILITARY LEADER ACCUSED OF KILLINGS
+Aarti Shahani looks at the Facebook presence of warlord Lt. Gen. Mohamed Ha=
+mdan Dagalo, who reportedly oversaw the killing of more than 100 people in =
+Sudan:
+
+Lt. Gen. Mohamed Hamdan Dagalo, better known as Hemeti, is a social media p=
+ersonality. He is also the leader of the Rapid Support Forces =E2=80=94 the=
+ paramilitary group that attacked thousands of pro-democracy protesters thi=
+s month, leaving more than 100 dead. This is a bit of a second act for Heme=
+ti, who also served time with the Janjaweed, the militia group considered r=
+esponsible for the genocide in Darfur about 15 years ago,=C2=A0according to=
+ Foreign Policy magazine (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/=
+Vn7oL8A1QUSNF5qn6SUmbQ/t113/nPAruEe6smwmJ3yfPfGVjTovFc3bTWXGQLXj62Hd1OObOPU=
+WQ2eFSYXcS6un24C2cp9Gb7seCPC0wyl3-2Fxi8mkD1Qy0SCTf0RsyzJKALkLZZ0BsSXcKgq6l8=
+-2FFH1F17ShCiBhWo9c-2FusL-2FULGBjwViF7FghNVQE-2FMPRk7oHuft-2FibZ6h-2F7wDVfU=
+EkW7lI-2BK2/pokA target=3D&quot;_blank).On Facebook, multiple pages promote=
+ Hemeti as a formidable yet kind authority figure.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t11=
+4/XUVFdx-2BTHX5-2FS14o0RsSNkYhiVzpUxoyDGsHZCSuz9tRWuuJU02-2BLi4gEz7-2B1FMul=
+QvBswxyFnwMWxewmkTlooRc8Z0Au3VhJASH1vQprGiOCJ5i27aBGDvAY-2FMIW4DrM2JscOC3MC=
+mFTuKH8zMZxEjExDyvdg7IzJ0QuZzU9HA-3D/qQ55
+
+* ARTIFICIAL INTELLIGENCE CAN'T SOLVE ONLINE EXTREMISM ISSUE, EXPERTS TELL =
+HOUSE PANEL
+Emily Birnbaum recaps a hearing this week on online extremism:
+
+Top tech companies, including Facebook, have claimed that their AI systems =
+are already successfully detecting a huge swath of terrorist and extremist =
+content. But experts at the hearing said those claims are often overblown.&=
+quot;Context is vitally important and context can often be hard for algorit=
+hms to detect,&quot; Ben Buchanan, an assistant teaching professor at Georg=
+etown University, said.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t11=
+5/Bz6FT7h5V0fqvSP43em4a7mTDwi2ocEX0lb5XcfgjcoT0TQR568foqSdryPa1OCOYf-2FkpmJ=
+rYuh9-2BYXJL2IZjBSuzeThIRhm-2BjQ3GF8qDbF6uwXQiyfVZcaeAukl7as8bCIYT-2F-2FQMt=
+-2FlPx47grmYf6YFjJvEIbT946-2B-2FtChL4cQ-3D/lJRN
+
+* AMAZON IS WATCHING
+Will Oremus explores the Amazon panopticon, now under construction:
+
+The Amazon of today runs enormous swaths of the public internet; uses artif=
+icial intelligence to crunch data for many of the world=E2=80=99s largest c=
+ompanies and institutions, including the CIA; tracks user shopping habits t=
+o build detailed profiles for targeted advertising; and sells cloud-connect=
+ed, A.I.-powered speakers and screens for our homes. It acquired a company =
+that makes mesh Wi-Fi routers that have access to our private Internet traf=
+fic. Through Amazon=E2=80=99s subsidiary Ring, it is putting surveillance c=
+ameras on millions of people=E2=80=99s doorbells and inviting them to share=
+ the footage with their neighbors and the police on a crime-focused social =
+network. It is selling face recognition systems to police and private compa=
+nies.The Amazon of tomorrow, as sketched out in patents, contract bids, and=
+ marketing materials, could be more omnipresent still. Imagine Ring doorbel=
+l cameras so ubiquitous that you can=E2=80=99t walk down a street without t=
+riggering alerts to your neighbors and police. Imagine that these cameras h=
+ave face recognition systems built in, and can work together as a network t=
+o identify people deemed suspicious. Imagine Ring surveillance cameras on c=
+ars and delivery drones, Ring baby monitors in nurseries, and Amazon Echo d=
+evices everywhere from schools to hotels to hospitals. Now imagine that all=
+ these Alexa-powered speakers and displays can recognize your voice and ana=
+lyze your speech patterns to tell when you=E2=80=99re angry, sick, or consi=
+dering a purchase. A 2015 patent filing reported last week by the=C2=A0Tele=
+graph=C2=A0described a system that Amazon called =E2=80=9Csurveillance as a=
+ service (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn=
+6SUmbQ/t116/Bilo1N3ZBi0x2OACOElg0ARIuuD3HK-2Br-2BrK7ybgrcmag0A25DJYCr-2F76B=
+i5-2FDdupZJAzY-2BbH8yuUL2UzHKc8UlrVv1TEWSThfK04b4vkIdMIuWe-2FJF7CoMwppoScKf=
+o2KPh5dYNswCYhYWtrH-2FQGua9cVF-2F8c-2BaesiqQoy-2Fgy64-3D/Fyw0 target=3D&quo=
+t;_blank),=E2=80=9D which seems like an apt term for many of the products i=
+t=E2=80=99s already selling.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t11=
+7/cXgTWzzfwq1DFX-2BQYZ2opMBcfO-2F6GQl8DOHLwv9SD4f9s3-2B2b-2FtReHQvhhG7J8m3H=
+B9yfm8iipPePYX8ZrohurLF2zt1hwiKLTLGM8c7dm0-3D/P28p
+
+* EU SHOULD BAN AI-POWERED CITIZEN SCORING AND MASS SURVEILLANCE, SAY EXPER=
+TS
+Europe is moving to block any future implementation of a social credit syst=
+em, James Vincent reports:
+
+A group of policy experts assembled by the EU has recommended that it ban t=
+he use of AI for mass surveillance and mass =E2=80=9Cscoring of individuals=
+=E2=80=9D; a practice that potentially involves collecting varied data abou=
+t citizens =E2=80=94 everything from criminal records to their behavior on =
+social media =E2=80=94 and then using it to assess their moral or ethical i=
+ntegrity.The recommendations are part of the EU=E2=80=99s ongoing efforts t=
+o establish itself as a leader in so-called =E2=80=9Cethical AI.=E2=80=9D E=
+arlier this year, it released its=C2=A0first guidelines (http://click.revue=
+.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t118/pf1JvXXz0HA6Uk3h=
+4thQpyrLfvAPD6G3y3JMY4gml2od2Mzf1XpiMoKpGho8akWXWog9vYlvGc3X2dbPtrMc8-2Fs1s=
+-2BtfqHZ8Fyjx8rpvcrn18h-2FGF738CrtzF17Asxb2NeBbsgPmmNr4z29Y6eOkuiEhfFRl0vEF=
+UYoVBRIMlsg-3D/-kgW target=3D&quot;_blank)=C2=A0on the topic, stating that =
+AI in the EU should be deployed in a trustworthy and =E2=80=9Chuman-centric=
+=E2=80=9D manner.The=C2=A0new report (http://click.revue.email/mps2/c/GQE/c=
+M9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t119/69UbB3eX-2Bc7kLWySl1ACGSNIbuLKMBZwE=
+BzzdtNFrKxCH1vBZzo366cjxuMlo7oP597VEj1g946EmpIYIihJTNA2Z5-2FnDfbOX9DgfcJuGE=
+CeDFEXgdUsvdGFJXGXo3XvoLCOIRhNuVT64JGjeKYbXHYXzEB4VKOFIvpiPveSyAZDyaynNHb1w=
+W8viI1-2F47ZA/366p target=3D&quot;_blank)=C2=A0offers more specific recomme=
+ndations. These include identifying areas of AI research that require fundi=
+ng; encouraging the EU to incorporate AI training into schools and universi=
+ties; and suggesting new methods to monitor the impact of AI. However, the =
+paper is only a set of recommendations at this point, and not a blueprint f=
+or legislation.=20
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+0/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOq1wo3k0-2FXKqoCwiv8x7W85bRwG-2F=
+yd2lvf1B12F38QzZDYeZMsK2FxByyUo0R4UxbjiFeftDxa8tkzA1Cnh8U0Q-2BUx-2BWdgiv9Eb=
+rSt7TIYu-2Fw-3D-3D/3UMb
+
+* LEAKED AUDIO: WAYFAIR'S CO-FOUNDER ON MIGRANT-CAMP BEDS
+Ellen Cushing obtains audio from a meeting in which the home-goods retailer=
+=E2=80=99s co-founder appears to be unaware that the line between business =
+and politics is rapidly eroding:
+
+His argument is a cousin of the one many of his peers in the technology ind=
+ustry have long clung to: that they aren=E2=80=99t really political entitie=
+s, but simply value-neutral conveyor belts for whatever service it is that =
+they offer=E2=80=94short-term rentals, rides, community, connection, inform=
+ation, entertainment. That their sheer scale, multiplied by the wide spectr=
+um of beliefs held by their users, makes moderation of any kind so Sisyphea=
+n and so subjective a task that the only possible solution is to allow for =
+just about any idea, or any customer.But as my colleague Alexis Madrigal no=
+tes, the notion of the unbiased platform is=C2=A0dying before our eyes (htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t121/Y=
+-2BPSLfHKcNVaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5PleG9iscpXJDrE=
+k-2BcDNfY5-2FVixsM0ZOBr1VykgVM63KjfpJnf7PzhXt4tyOAXklbG7vS4IhyRboIL7-2BFFHG=
+2a6m4JH2WYg-3D-3D/ptUF target=3D&quot;_blank), if it ever really existed: =
+=E2=80=9CSome things could not be said. Some types of content were favored =
+by advertisers and companies. The algorithms they use to sort and promote c=
+ontent have biases.=E2=80=9D In other words, you simply cannot order this m=
+uch information without making some judgments.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+2/Y-2BPSLfHKcNVaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5PleG9iscfoO=
+Xozs5FCkb5WN2juUdHkSO-2FDI25QcdOqrhRL1ghhbAUkVelNDKqgYsVh-2Bg-2FH79g-2FnSSk=
+6FAp-2FyYB0pZhS-2FPg-3D-3D/9pBN
+
+* FEAR AND LOATHING IN TORONTO
+Anthony Townsend explores why Google's plans to build a new kind of urban r=
+enewal project in Toronto has drawn outrage among locals. It boils down to =
+trust:=20
+
+Data governance has been a lightning rod because its new and scary. Early o=
+n, Sidewalk put more energy into figuring out how the robot trash chutes wo=
+uld work than how to control data it and others would collect in the propos=
+ed district. As part of Alphabet, you=E2=80=99d think this would have been =
+a source of unique added value versus say, a conventional development. Not =
+so=E2=80=8A=E2=80=94=E2=80=8Athe company=E2=80=99s initial proposal in 2017=
+, also hundreds of pages, tacked on a 2-page memo to CYA on the topic. It d=
+idn=E2=80=99t work, and belated efforts to fill the gap only led to more mi=
+ssteps along the way, doing little to calm critics.More important questions=
+ and criticisms have been raised about Waterfront Toronto=E2=80=99s handlin=
+g of the Quayside bidding process and its transparency. Existential questio=
+ns for Canadian cities about the shifting line between public and private d=
+elivery of government services are also on the table. None of these have be=
+en satisfactorily addressed by Sidewalk, and the number of elected official=
+s speaking out against the project has grown as a result.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+3/AqNTjWQanHzpTcS3vF-2BiheY9a39I-2F0uCKSmfrhbTZHT7ntCN-2FFZWnt-2FhnVP-2BnLz=
+EnBY05fMK-2BYECdRsMFlh36ngmYlF8lyJqNh1WN1UzJ4s-3D/1srr
+
+
+** ELSEWHERE
+--------------------------------------
+
+* A FACEBOOK CONTRACTOR POSTED A VIDEO OF BRUCE SPRINGSTEEN LYRICS TO HIS P=
+ROFILE TO PROTEST WORKING CONDITIONS. HE WAS FIRED TWO WEEKS LATER.=20
+Elizabeth Dwoskin reports that a content moderator got fired after posting =
+lyrics from &quot;Factory&quot; and &quot;The Promised Land&quot; on an int=
+ernal forum. Also:
+
+On Thursday, a group of a dozen moderators published a new letter reviewed =
+by The Washington Post on Facebook=E2=80=99s internal Workplace forum, dema=
+nding better pay and a revision of confidentiality agreements that they say=
+ prevent them from seeking clinical help to address the traumatic effects o=
+f the job, among other asks. The moderators work for an Accenture subsidiar=
+y in Austin.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+4/cCgmMiFATr20XfiZfvCwAeC3lIhtKfzcOFshzR-2FtMe7IIJs5xdk1a2kB8qNePOG3axJzdbr=
+3TY9a7ZW6b16r1pc7plXizlGYDqHQidqMIP98vnm3YpksfqF-2B5YK3B13sn9GL7y8XB69PL-2F=
+6CEeM1-2BbESjh0WQHZVZN-2FhG9-2BuiwBo2L1fXQupuc4WBZ35TSoicQAxADtUPJGK8NRlU5a=
+zcPK-2FeBA0x8tQ-2BgTI2ihlOiqs0FnZbdqaErjpryv5ySUK1oQx-2BS6v9ymaQxUTmkAFzA-3=
+D-3D/Qdlm
+
+* INSIDE CHINA=E2=80=99S BATTLE TO KEEP INTERNET ADDICTION IN CHECK
+Celia Chen=C2=A0visits China's internet addiction treatment centers:
+
+Run by Tao Ran, a former People=E2=80=99s Liberation Army colonel who heade=
+d army psychology units, the centre is one of the earliest places in China =
+to diagnose and treat internet addiction and is said to have developed trea=
+tment protocols that are used in other parts of the country.The facility co=
+nsists of several buildings that serve as canteens, dormitories and treatme=
+nt rooms, arranged around an internal open-air courtyard that doubles up as=
+ a basketball court and where patients assemble for exercise. No electronic=
+ devices are allowed.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+5/BywsvoV6MezpThvNtMOVdG80hJA6BTxsHKmzIpIr4AYZ-2BzkHHWwoAa8mfTamDD9yv1-2BXF=
+cOFRxslZsrXU4eOoqrG9TDlNzb-2BjQ7ha0GuDljOm3x1A7mdS4oO7MqYVrrqv24CYt3VrkQZgD=
+5Buah3fw-3D-3D/ojbi
+
+* THIS HORRIFYING APP UNDRESSES A PHOTO OF ANY WOMAN WITH A SINGLE CLICK
+Samantha Cole writes about a $50 app called DeepNude, which &quot;dispenses=
+ with the idea that deepfakes were about anything besides claiming ownershi=
+p over women=E2=80=99s bodies.&quot;
+
+The software, called DeepNude, uses a photo of a clothed person and creates=
+ a new, naked image of that same person. It swaps clothes for naked breasts=
+ and a vulva, and only works on images of women. When Motherboard tried usi=
+ng an image of a man, it replaced his pants with a vulva. While DeepNude wo=
+rks with varying levels of success on images of fully clothed women, it app=
+ears to work best on images where the person is already showing a lot of sk=
+in. We tested the app on dozens of photos and got the most convincing resul=
+ts on high resolution images from=C2=A0Sports Illustrated Swimsuit=C2=A0iss=
+ues.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+6/Iz4htkgyrPAa-2Fvs6p6GZQ9QFRqeOPOHYbeu9FPoAu-2B-2FgcP3QRLJ8WE81aIinooIgNka=
+zgmAFR-2BHH3eoRzeI-2BEMv565eZ8EFduxD6TMNO-2BoWlwGlW6y1b-2FNvau5tbYHbJ/dw2K
+
+* ADAM MOSSERI INTERVIEW: INSTAGRAM SERIOUSLY CONSIDERING POTENTIALLY MASSI=
+VE CHANGE FOR PLATFORM
+Adam Mosseri talks to Gayle King about, among other things: a Facebook brea=
+kup:=20
+
+&quot;I think it's important to be really clear if you believe that we shou=
+ld be separated, why and what problem it's gonna solve,&quot; he said. &quo=
+t;If you look at the issues that I'm most focused on, things like bullying =
+or self-harm or elections integrity, all of those problems become exponenti=
+ally more difficult for us at Instagram to address if you split us up.&quot;
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+7/ZqmN4WWWj-2F84W376Z1YcVwCUp-2Fmm1GCixtlk2y9xntFbzuBMlnJEKzI4n-2Fh3uf0Brfm=
+M0b4ymslWAchAktPiRpoJ-2FRXjAQZh-2FFuZhw-2FRp0N-2FYzeQDGKPSsdaZ66lmDDgJPV313=
+w11HKA0aFYw-2FF1VY3Pl5ivxHe9qJUuPmZPMxk-3D/fPtC
+
+* THE GLOBAL ECONOMY RUNS ON PARTIES YOU=E2=80=99RE NOT INVITED TO
+Farhad Manjoo goes to a Facebook party at Cannes Lyon:
+
+There is obviously something conspicuously icky about the excess on display=
+. One morning last week, everyone in Cannes woke up to=C2=A0The Verge=E2=80=
+=99s investigation (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/t128/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOq7ZsIaxGDUJ=
+iO4Zt0GbEunVj-2FwPd2PzeOSSHdo7VvpLQLh7e0CMVlCcPVPqoxPlAAvP-2B17fpo5Goc3EdzF=
+zHsy97CSyk9-2FYQP9pIlDjV7HhR4KUobvy-2Bkm6U2qYMD18T0-3D/3ueW target=3D&quot;=
+_blank)=C2=A0into horrendous working conditions at a contract facility that=
+ hires moderators to monitor Facebook. It was a study in contrasts: The mod=
+erators complained of bathrooms covered in feces and menstrual blood. At Ca=
+nnes, Facebook bought a piece of the beach and built a coffee bar, meeting =
+space and private boat launch to entertain its clients.It=E2=80=99s not tru=
+e that the internet is eliminating every job for humans. There are humans e=
+verywhere in the social media supply chain. Some of them suffer. Others get=
+ to schmooze. The internet changed everything. It also changed nothing.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t12=
+9/wnKVMwY0-2BahHDznx2XoybVVCe66HZoSfCgKN-2FaJGuyrcDwvhe1BzujSUpDgu3c8k-2B7q=
+JVfzHk6nAT8w48Jj-2ByuzCaEteipaqpOMIUL0kvBE-3D/XZ7E
+
+
+** LAUNCHES
+--------------------------------------
+
+* TWITCH LAUNCHES SUBSCRIBER-ONLY STREAMS, BUT ONLY FOR CREATORS WHO DON=E2=
+=80=99T VIOLATE ITS RULES
+Twitch is giving its creators another carrot with which to lure paying subs=
+cribers, Julia Alexander reports:
+
+Twitch is giving its well-behaved streamers a chance to offer a new, VIP-li=
+ke feature to their most loyal viewers with subscriber-only streams.The new=
+ feature does exactly what the name suggests: any Twitch Affiliated or Part=
+nered creator can choose to broadcast exclusively for moderators, VIPs, and=
+ subscribers. This comes at no additional cost to the subscriber beyond the=
+ minimum $5-a-month fee they=E2=80=99re paying to support the streamer. Fan=
+s who aren=E2=80=99t subscribed will be greeted with a preview of a broadca=
+st before being asked to subscribe to a channel.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t13=
+0/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOrr7drelgTYYBGnDYuJt2Ztus9dUVgXT=
+96IqHQRE7QZrMMg4aJrIq-2BUaU-2F0X8nuK-2Fc0MnZcA-2BJqHV0x4wMNeXsi-2BILZHrKGF0=
+YSyev4X-2F95Vg-3D-3D/EFxH
+
+
+** TAKES
+--------------------------------------
+
+* LIBRA=E2=80=99S QUESTIONABLE BENEFITS ($)
+After interviewing (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/t131/shiJTVQLSvOWcTSNrlDEafxUkvImJbT0cO-2Fq5oR9PGDBRLd-2BE=
+1QBeXntYa1n-2Bn60fOrBy7L34r3SpfCbGpSwzB0D-2F-2FHPIlybDWE-2FApx9MaSS8up9L8G3=
+uQj1dk4VWw5apquDleazAgrjJxfjSBBH1A-3D-3D/_sTo target=3D&quot;_blank) two of=
+ its top executives, Ben Thompson calls Libra &quot;a bad idea.&quot;
+
+To my mind money =E2=80=94 which, at the end of the day, is the medium that=
+ makes society work, particularly a capitalistic one =E2=80=94 has those sa=
+me high stakes. That means the downsides should be weighed more heavily tha=
+n the upsides, which means less efficiency and more accountability should b=
+e preferable to the opposite. And that, by extension, means that a currency=
+ managed, if not by a single corporation then at best a collection of them,=
+ is a bad idea.To be sure, all of these objections apply to a reality that =
+is very far in the future, if it arrives at all. By the time that future ar=
+rives, though, it will be too late to raise them.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t13=
+2/shiJTVQLSvOWcTSNrlDEaTdZvKWViiXGYVpextYkN0kvMmJsGuw90W9wvnTzdn7VSQNe-2FbL=
+xkoSqXGZTqPX1qDESzDUCrdrXy8m7FG0nDQfc5GTlsVHA5qsXqoYcH-2BNLGJBEElTqG6rWSDYU=
+JiQ7GA-3D-3D/VTVo
+
+* FACEBOOK=E2=80=99S LIBRA PROBABLY WON=E2=80=99T HELP PEOPLE WITHOUT BANK =
+ACCOUNTS
+Half of all adults who don't have bank accounts live in seven countries, ac=
+cording to a report cited by Facebook. Elizabeth Lopatto says this could li=
+mit Libra's power to lift people out of poverty:=20
+
+Facebook is banned in=C2=A0China (http://click.revue.email/mps2/c/GQE/cM9xA=
+A/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t133/VkbCQigPwNG-2FbMX7YLnAFzTstxP6BYNog0CZy=
+QOJdNW7LcwO-2Fnd84V-2BujuZZfhZ19NDVwTBh6pu-2B2Jb4t8QVwRws7OkWVFzCP0H-2B3kS9=
+C7B-2BBTsj9OZoGAwsaema-2B9fl/WTiD target=3D&quot;_blank). Some countries, s=
+uch as Pakistan,=C2=A0Indonesia (http://click.revue.email/mps2/c/GQE/cM9xAA=
+/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t134/2QB-2Bhef-2B8RXt-2FXLHDh0zQM3BufW14VLxfZ=
+ZDMEC-2BuPbwN-2BUNIF7Aa82ruNkBm-2BJRbPezNBH0Ou2dUvk3tpfiBT0RFxJHue9hzzpVxIJ=
+YoqPZ3UH5P3g1LC0-2BpIU8fQmyxUscR6Umv-2FE-2BUAWk9UuMHyqJP1mmJAoeEc8HjbZRDf3j=
+qD4posYezbVT9DdqpiNb/PnNH target=3D&quot;_blank), and=C2=A0Bangladesh (http=
+://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t135/9H=
+qbXzCzK6nR4SPruylVDwtKFlh57TZXysracU1vAlr8QUqUqHbawLcsbsYHllCH1FjWORvJbSGd7=
+esSLjfk7Q-3D-3D/yMif target=3D&quot;_blank), have temporarily banned Facebo=
+ok for periods of time, possibly limiting the effectiveness of any money ti=
+ed to the app. Facebook mentions this as a risk factor to its business in i=
+ts=C2=A0quarterly filing (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/=
+Vn7oL8A1QUSNF5qn6SUmbQ/t136/NA7SNBTNu-2BtuTOt9isnswW2RAD1KBCFwtGzCiN6-2BMcg=
+5vCQYbsVsPt1kWRVDdyQurP7kp0LEFufJKZi3anSRN0-2BZo6YU4Jbgulc94uQ7-2BApuyDp4ta=
+EIwu43ZvxEtSt7JroMEPHkxHTQY3EmNQqP8Q-3D-3D/fcS9 target=3D&quot;_blank): =E2=
+=80=9CGovernment authorities in other countries may seek to restrict user a=
+ccess to our products if they consider us to be in violation of their laws =
+or a threat to public safety or for other reasons, and certain of our produ=
+cts have been restricted by governments in other countries from time to tim=
+e.=E2=80=9DThat=E2=80=99s not all: many of these countries have laws around=
+ cryptocurrency. (Yes,=C2=A0I know it is debatable (http://click.revue.emai=
+l/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t137/pf1JvXXz0HA6Uk3h4thQp=
+9ZUbP6rCEDUZLMWy9uoUOp-2F8kHolTQc8eQpHurrHKL9bzgAw2mhmdmsnSUYOooFP5Be2RDeC1=
+FMX-2Fj8XCRww8ZCAPZFQZ7AUbOQgs5SjZkKeN9YWUsb0Gdujtatl0QPAQ-3D-3D/dv7r targe=
+t=3D&quot;_blank)=C2=A0whether Libra qualifies as a cryptocurrency or not. =
+But Facebook is calling Libra a cryptocurrency, so I am going to assume cry=
+ptocurrency laws will apply.)=C2=A0India=E2=80=99s current regulations (htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t138/n=
+KTMpKgkSw5zbsekyMdgZDLc3QFYzDdaHS0MUSSqF5qSgj-2F7a6znbwqjQj-2FwZliybI9klgBd=
+X2jD16PDsYmNKxGcH-2BkQfRxj4QcRY0FwV4EVGCrIB-2BW1u9KQ3al9kvzmz08dw0Xxak7Fh1y=
+ZphBaHdRSPqgbbo-2BEfUiJjeHlXeU-3D/nqf2 target=3D&quot;_blank)=C2=A0mean Lib=
+ra can=E2=80=99t operate in the country. Pakistan is=C2=A0considering regul=
+ation (http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SU=
+mbQ/t139/t3gYT6RMu1g0a-2FKTEB3-2B3fOLTXxr8e9vCx0RPvGvVAp28hIKggXeFXyS8aYp4M=
+tf8oDirQbaj76BhAVxEWqMLtfs9cZKtKaDjkIe1-2FNRc8s-3D/1DQy target=3D&quot;_bla=
+nk)=C2=A0for cryptocurrencies, but=C2=A0currently they are banned (http://c=
+lick.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t140/CmzAM7=
+pvigHEkjZLatMoTEibEpXVJX5SjB-2BHmenoEuel8jyqT3D8MAkjoFdnGaIF6T9wbKXGZLcFB5N=
+DVHmg-2FCAAWgI4vOxZm8TPA-2BvpHfUvewbP8pAZ8teZ2X3gj1LU/KKM_ target=3D&quot;_=
+blank).=C2=A0Cryptocurrency is also implicitly banned (http://click.revue.e=
+mail/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t141/MX-2FwqrlWa1MOOI-2=
+BDk4Pu5u6xn6JpMHil8LISmWlGTekalywH37c0th6FdhWceELcfbolH7mCj3AHv-2BaZcA8drw-=
+3D-3D/AatP target=3D&quot;_blank)in Bangladesh and China.
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t14=
+2/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOrMWA9eAr3Id63QRH9dV-2FBytD7WeUX=
+xW3TG7gY3Mf7de9T7R5GdcYDPszoC-2FFK5UIwlc0rr-2FCSXYc22UhZVdy0CsIIwvEDcmovzOq=
+d9Hcd5UH13cDA-2BYqRXpeCoCutocyFt2TCqrgNdjQGJGcpIatgSY-2BQ0netzACzYJzdJlDpBV=
+PvN1zAgiX4DV-2B3Bbj1JvZRsz8kSuRKh0rGfiychb9T44-2FnX6N-2Bu0hGtfSc-2FgwSQKXZo=
+4W02wRwNhUh24AkVQGU-3D/TDvy
+
+
+** AND FINALLY ...
+--------------------------------------
+
+* WHY PEOPLE PRETEND TO BE BOOMERS IN FACEBOOK GROUPS
+Brad Esposito talks to people participating in my favorite current trend in=
+ Facebook Groups: pretending that you are extremely old:
+
+In the group Snider helps manage people post Facebook-prompted text images =
+lamenting the death of their =E2=80=9Cson=E2=80=9D in brutal honestly (=E2=
+=80=9CMy son is dead=E2=80=9C), they share gifs of the American flag in fau=
+x patriotism, the words =E2=80=9CFlood Facebook with our flag!=E2=80=9D emb=
+oldened along the top. Often, it=E2=80=99s just someone replicating the ham=
+-fisted way the older generation can often find itself using Facebook=E2=80=
+=99s basic features, asking amongst an army of commas what the acronym =E2=
+=80=9Cwyd=E2=80=9D means (=E2=80=9CIs this some gang language?=E2=80=9C).(Y=
+es it is a gang language.)
+
+
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t14=
+3/rBZpkgofuxZGOvNDh7QBpkoU9-2FSR2ZS5iKvY4BAcQ0eriDqn11SOOmmtwq6Fh8Lu-2BpyB2=
+lc0tuEzIkAX1JR-2FwckErLPuFIX0NRFJlYb20prgRNJSR9T0Hoyx-2FJLdjOEp/CctL
+
+
+** TALK TO ME
+--------------------------------------
+
+(Yesterday I forgot to finish the sentence with my customary joke at the en=
+d of the newsletter, and so accidentally encouraged people to &quot;send me=
+ Cass Sunstein,&quot; Zuckerberg's interviewer at the Aspen Ideas Festival.=
+ Thank you to the readers who sent me images of the Harvard law professor; =
+you may now stop, as I have enough.)=20
+
+Today I invite you to send me tips, comments, questions, and your nominatio=
+ns to Facebook's oversight board: casey@theverge.com.=20
+
+
+
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Do you enjoy receiving this? Please share it:
+
+Twitter: http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6=
+SUmbQ/t144/-2FLlLjURmKQT72XcrieJUBSZCQJ-2F-2B3qPfmS5oqfce3LgpoZ6SmQfyKyL4P-=
+2FjETCH0I-2BwZHSx8-2BFhnksYTeowBkSLnzEeD7DMBhNjVFUQOiu-2FR-2BlrNEBiI6sjdgSs=
+7vbRKoy4rW-2FzjNtHWz-2FIYg30Q9UbU9mD6VoWVEu0GgMxeW5BjpojF05Mn6rKXP33adahO7e=
+fnhBsil6Npp8lR32SNFnIzqu-2BzJ-2FchY5hiKzCYY0Q3avkpROTBzrEFtOFU3f9QDRWt8lpDI=
+hosDkhSKMBjaxJSrhXmX7q-2FyLVZ2rBG688-3D/KyJN
+
+Facebook: http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn=
+6SUmbQ/t145/DDdEWe5maUJafQE7xr6e3NSkBsCseOnKc3-2Fim-2FaNLdDMkIWBTax8Vx2xcpA=
+g6bnI4VMn6llynQq5ZLymMkfOi0zT8kLCxUqxd8jVv3RMQUAm1EAmuNi0xsP7gcobaaYQkoMD9n=
+j38krbkDK8Qu6M7w-3D-3D/mx0F
+--------------------------------------
+
+Carefully curated by The Interface with Revue (http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t146/TrXaJm8OFnbbxb2WYsid2M0HHT=
+UFoz5vIexP6ebHuy8-3D/ic1t
+
+If you don't want these updates anymore, please unsubscribe
+http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/t14=
+7/jfrXSEe9JOerdoPhijW6S2OB1qQX6q6g3ftoYqZCApImYnf8wKlnAmvLoSYoeF2rEsq5iIZ71=
+8vW3o8TPh0G8wTCrweGrjqpkhjT-2B5xWpW4-3D/JDzL
+
+----==_mimepart_5d1558842f184_42afcf142f98c103991
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">=20
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+  <title>Revue</title>
+  <style type=3D"text/css">
+    #outlook a {padding:0;}
+    body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%; margin:0; padding:0;-webkit-font-smoothing: antialiased;-moz=
+-osx-font-smoothing: grayscale;}=20
+    .ExternalClass {width:100%;}
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass f=
+ont, .ExternalClass td, .ExternalClass div, .ExternalClass blockquote {line=
+-height: 100%;}
+    .ExternalClass p, .ExternalClass blockquote {margin-bottom: 0; margin: =
+0;}
+    #backgroundTable {margin:0; padding:0; width:100% !important; line-heig=
+ht: 100% !important;}
+=20=20=20=20
+    img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubi=
+c;}=20
+    a img {border:none;}=20
+    .image_fix {display:block;}
+
+    p {margin: 1em 0;}
+    .revue-p + .revue-p, .revue-p + .revue-blockquote {margin-top: 14px !im=
+portant;}
+    .revue-p + .revue-h2 {margin-top: 28px !important;}
+    .revue-h2 {font-size: 20px; line-height: 28px; font-weight: 700;padding=
+-bottom: 8px;}
+=20=20=20=20
+
+    h1, h2, h3, h4, h5, h6 {color: black !important;}
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: black;}
+    h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:=
+active {color: black;}
+    h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, =
+h6 a:visited {color: black;}
+
+    table td {border-collapse: collapse;}
+    table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt; }
+
+    a {color: #3498db;}
+    p.domain a{color: black;}
+
+    hr {border: 0; background-color: #d8d8d8; margin: 0; margin-bottom: 0; =
+height: 1px;}
+
+    .description b, .description strong {
+      font-family: 'protipo-wide', Helvetica, Arial, sans-serif !important;
+      font-weight: 700 !important;
+      color: #383092 !important;
+      font-size: 18px !important;
+    }
+
+    .revue-blockquote {
+      font-family: 'protipo-wide', Helvetica, Arial, sans-serif !important;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 16px !important;
+      color: #383092 !important;
+      border-color: #383092 !important;
+      border-left: 2px solid #383092 !important;
+    }
+
+    @media screen and (max-width:600px) {
+      a[href^=3D"tel"], a[href^=3D"sms"] {
+        text-decoration: none;
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+
+      td[class=3D"description-before"] {
+        padding-bottom: 28px !important;
+      }
+      td[class=3D"description"] {
+        padding-bottom: 14px !important;
+      }
+      td[class=3D"description"] span, [class=3D"item-text"], [class=3D"item=
+-text"] span {
+        font-size: 16px !important;
+        line-height: 24px !important;
+      }
+
+      span[class=3D"item-link-title"] {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+
+      [class=3D"item-header"] {
+        font-size: 22px !important;
+      }
+
+      [class=3D"item-link-description"], [class=3D"item-link-description"] =
+span {
+        font-size: 14px !important;
+        line-height: 22px !important;
+      }
+
+      img.item-image-large {
+        margin-bottom: 14px !important;
+      }
+
+      .link-image {
+        width: 84px !important;
+        height: 84px !important;
+      }
+
+      .link-image img {
+        max-width: 100% !important;
+        max-height: 100% !important;
+      }
+
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width:=
+ 1024px) {
+      a[href^=3D"tel"], a[href^=3D"sms"] {
+        text-decoration: none;
+        color: blue;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .mobile_link a[href^=3D"tel"], .mobile_link a[href^=3D"sms"] {
+        text-decoration: default;
+        color: orange !important;
+        pointer-events: auto;
+        cursor: default;
+      }
+    }
+
+  </style>
+  <!--[if !mso]><!-->
+  <link href=3D"https://use.typekit.net/qtq0fip.css" rel=3D"stylesheet" typ=
+e=3D"text/css">
+  <style type=3D"text/css">
+    @import url(https://use.typekit.net/qtq0fip.css);
+  </style>
+  <!--<![endif]-->
+  <!--[if mso]>
+  <style type=3D=E2=80=9Dtext/css=E2=80=9D>
+  .fallback-font {
+    font-family: Helvetica, sans-serif;
+  }
+  </style>
+  <!--[if gte mso 9]>
+    <style type=3D"text/css">
+      #contentTable {
+        width: 600px;
+      }
+    </style>
+  <![endif]-->
+</head>
+<body style=3D"width:100% !important;-webkit-text-size-adjust:100%;-ms-text=
+-size-adjust:100%;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0=
+;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" id=3D"backgroundTab=
+le" style=3D"margin:0; padding:0; width:100% !important; line-height: 100% =
+!important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspac=
+e:0pt;" width=3D"100%">
+  <tr>
+    <td width=3D"10" valign=3D"top">&nbsp;</td>
+    <td valign=3D"top" align=3D"center">
+      <!--[if (gte mso 9)|(IE)]>
+      <table width=3D"600" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color: #FFF; border-collapse:collap=
+se;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+        <tr>
+          <td>
+      <![endif]-->
+      <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"cent=
+er" style=3D"width: 100%; max-width: 600px; background-color: #FFF; border-=
+collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" id=3D"content=
+Table">
+        <tr>
+          <td width=3D"600" valign=3D"top" align=3D"center" style=3D"border=
+-collapse:collapse;">
+            <div style=3D'display:none;font-size:1px;color:#FFF;line-height=
+:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;'>Yesterday, Ma=
+rk Zuckerberg made an appearance at the Aspen Ideas Festival. In keeping wi=
+th the spirit</div>
+<table align=3D'center' border=3D'0' cellpadding=3D'0' cellspacing=3D'0'>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 28px; padding-top: 28px;' val=
+ign=3D'top'>&nbsp;</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'font-family: Helvetica, -apple-system, Arial,=
+ sans-serif; font-size: 16px; line-height: 20px; color: #777; text-decorati=
+on: none; padding-bottom: 8px;'>June 27 &middot; Issue #349 &middot; <a tar=
+get=3D"_blank" style=3D"color: #383092" href=3D"http://click.revue.email/mp=
+s2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h0/jfrXSEe9JOerdoPhijW6S2OB1qQ=
+X6q6g3ftoYqZCApLH1aHD-2FpvXpjZMroRwn3Z0B8X7m1h0QaRaqrl5bhPQWkSfcTCaPD44Z7Ng=
+EtyuGHpd9mATms3xsc2FSKIPVZZImmFLM55ZmNRvvB4GQvUz7Fe6NXRR8X4un7SHXGkiQNbLhc4=
+Ve1Yd5OZMWNsm4BXmHpelk-2BeqCyEc-2BmUdQMmAsafpE-2BJrdOExQHC7bCZiWE3xL5C08qf9=
+-2BaWn08lGwNpQ/V-SX">View online</a></td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 56px;' valign=3D'top'>
+<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5q=
+n6SUmbQ/h1/TrXaJm8OFnbbxb2WYsid2Ar422K2Gh3B-2F-2B-2FTP0Mh7wsonKom9C9KyeUEMz=
+hvdqAUTo1vy54ulihIo7r-2Fbr43pVNwVTT9v0KLBKQHk-2BGjuB-2Bnz54ToZczm4Ev2cnsUia=
+sgfVAjFTxQ5rZn89bJ3p5z6kao3CB4kfbS00Exnefgwp9tcLnA5WUZFCA-2FCqYXiQT/mz5I"><=
+img alt=3D"The Interface" style=3D"display: block; width: 100%; border: 0; =
+outline: none;" width=3D"600" src=3D"https://s3.amazonaws.com/revue/profile=
+_covers/images/000/001/549/cover/The_Interface_Newsletter_Banner_01_%282%29=
+.jpg?1560341875" />
+</a></td>
+</tr>
+<tr>
+<td align=3D'left' class=3D'description' style=3D'padding-bottom: 28px;' va=
+lign=3D'top'>
+<span style=3D'font-family: Helvetica, -apple-system, Arial, sans-serif; fo=
+nt-size: 18px; line-height: 28px;display: block; margin: 0; margin-bottom: =
+0;'><div style=3D"margin: 0;" class=3D"revue-p">Yesterday, Mark Zuckerberg =
+made an appearance at the Aspen Ideas Festival. In keeping with the spirit =
+of the event, Zuckerberg brought some ideas. The big ones:</div><div style=
+=3D"margin: 0;" class=3D"revue-p">
+<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5q=
+n6SUmbQ/h2/vdNZmFRbxrM223Jp6VZ3HX-2FPnXqdXEgpP8NNyuH77yiqFVR315Yo9khwTAwZUM=
+jcheub1ORHYCGAzmSmzMB-2FBpIWc8qPXZyab3qAWJ-2FLUbLciPJ8yiXKjGQmSernOZDPGK6Nd=
+JFOsbrW5uklGrMicSedMxrWyTZPSPY4juGy-2FAM09Gjp13tEVnsuFguuDjZ3ZxDKEWfWkEXKfC=
+TSwSAQZvKiGBrM1fetbaLuoWJhWCNDzdfj2gpGA6r3UPTxiovJ/xPdr" target=3D"_blank" =
+style=3D"color: #383092;text-decoration:underline;"><strong>Facebook was ri=
+ght not to remove the doctored video of House Speaker Nancy Pelosi</strong>=
+</a>. Zuckerberg said it should have been flagged as misleading more quickl=
+y, but defended leaving it up. (I basically agree with him on this one.)</d=
+iv><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px;=
+ padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; co=
+lor: #7A889A; line-height: inherit;" class=3D"revue-blockquote"><em>=E2=80=
+=9CThis is a topic that can be very easily politicized,=E2=80=9D Zuckerberg=
+ said. =E2=80=9CPeople who don=E2=80=99t like the way that something was cu=
+t=E2=80=A6will kind of argue that=E2=80=A6it did not reflect the true inten=
+t or was misinformation. But we exist in a society=E2=80=A6where we value a=
+nd cherish free expression.=E2=80=9D</em></div><div style=3D"margin: 0;" cl=
+ass=3D"revue-p">
+<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5q=
+n6SUmbQ/h3/Y-2BPSLfHKcNVaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5Pl=
+eG9isca1-2FmGxCF7ggc3hNFaAtqBJ7R40-2B2KG7t3U0pAmeEteSmsm5CRXR166ytJV2TO5Sd5=
+xqtYB4aanKcY4Oc5DcaOYNgW33sOM8Wocj2Ar-2BGQpBR1qO2E2MQxR8whS5a7ScGfS9R-2BvDT=
+TS48seWeCc4akkoBQQ0qdxqfDec9Fd1-2Baa1oePwrU-2BH7XA4A7IWuMZnpiHRFr3FAGmBiltR=
+ZNDLaJeWSbeoo8xXejL7nu9bM1NA-3D/cc9x" target=3D"_blank" style=3D"color: #38=
+3092;text-decoration:underline;"><strong>But Facebook will treat deepfakes =
+differently than other forms of misinformation</strong></a><strong>. </stro=
+ng>Zuckerberg said that the company=E2=80=99s policy team is currently cons=
+idering it: =E2=80=9CThere is a question of whether deepfakes are actually =
+just a completely different category of thing from normal false statements =
+overall, and I think there is a very good case that they are.=E2=80=9D</div=
+><div style=3D"margin: 0;" class=3D"revue-p">
+<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5q=
+n6SUmbQ/h4/L1yYvrz6w4NUEN7AAKQk96aE5SMsJhPts0msJ7dUljDVpChjWNRBhOThcdSksRIy=
+ZNKY3x2RROqMfkQoHaRrS2E4x-2F3FuFLvME9Tp2C-2F-2FgAwqRiI3-2BrjtmJQyh9lg2lhlcS=
+-2B0xzo7xicOQVG0JgK6BGlMzmf-2BFH0fgBIfkqcTqd88D5mhP-2F-2B809GCKWS07-2BX6I55=
+ttx5zCTrs-2FBCjG2-2BXgfG4bsGFvoINbuIkEhEy3ykvnShF0yeoEE3BQPv-2Fdvz/lr0L" ta=
+rget=3D"_blank" style=3D"color: #383092;text-decoration:underline;"><strong=
+>Facebook can=E2=80=99t protect against election interference alone</strong=
+></a>. Zuckerberg was rightly critical of the US government=E2=80=99s extre=
+mely weak response to Russian attacks leading up to the 2016 election, sayi=
+ng: </div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom=
+: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E=
+4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=E2=
+=80=9COne of the mistakes that I worry about is that after 2016 when the go=
+vernment didn=E2=80=99t take any kind of counteraction. The signal that was=
+ sent to the world was that =E2=80=9CO.K. We=E2=80=99re open for business.=
+=E2=80=9D Countries can try to do this stuff and our companies will try the=
+ir best to try to limit it, but fundamentally, there isn=E2=80=99t going to=
+ be a major recourse from the American government. "Since then, we=E2=80=99=
+ve seen increased activity from Iran and other countries, and we are very e=
+ngaged in ramping up the defenses.=E2=80=9D</div><div style=3D"margin: 0;" =
+class=3D"revue-p">On Tuesday, some reports had suggested that Zuckerberg wa=
+s going to unveil a surprise new =E2=80=9Cconstitution=E2=80=9D for Faceboo=
+k. Instead, on Thursday the company <a href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h5/zianfujKjgoKaTqDtPLU7j4Zpcoh=
+-2FECRcLYWh7RmU8pbUubWSXs6am-2FMCqaod5JpBVi5AD8iWsFk3sgdlf3J7ZDxiEyywZjS1S4=
+eprqiIeBs-2BQcrMA08zuCxKu1r9mHIZxAYay8joUCN8rvjAF0bB1lqq6fOFq9jOC0OiPkSlkbk=
+gs6P9CFB1vNjulmlDGTORomWW-2FE5bjslBRDhi4hEyQ-3D-3D/BT7Z" target=3D"_blank" =
+style=3D"color: #383092;text-decoration:underline;">released a report</a> d=
+etailing the progress it is making in building an independent oversight boa=
+rd for review. The board is connected to Zuckerberg=E2=80=99s big ideas =E2=
+=80=94=C2=A0this is the body that could someday make a binding, independent=
+ evaluation of whether a video like the Pelosi fake could stay up on the si=
+te.</div><div style=3D"margin: 0;" class=3D"revue-p">Since proposing the id=
+ea last year, Facebook has held six workshops around the world, which inclu=
+ded more than 650 people from 88 countries. Among other things, the company=
+ has been conducting a kind of mock trial =E2=80=94=C2=A0having participant=
+s debate what to do with particular pieces of controversial content, as par=
+t of the work of developing a fair process for the board to implement in th=
+e future.</div><div style=3D"margin: 0;" class=3D"revue-p">The idea remains=
+ to build a board of 40 people who will make content review decisions in sm=
+all panels. But all of the details are up for discussion, and you can read =
+about the infinitely branching debates the company is now having in the <a =
+href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6S=
+UmbQ/h6/WkNtz-2FSzkH-2FMfHT-2FKDaZhlI9D0VUSRoXxAMK6pjs60vlMFWuSXq06rv1CwyEj=
+n9emP8LndWZrtW6g33Fc7aQKqgn-2BLLgDPz6NgTi6EQ0aNWnWnx8ZQhNWOnbTNMhb6hykIj6pc=
+2bsQhMzVsJeKEcSPtm-2FCFpVm1-2BgA9E1n7rTeI1wZq70sUW21xVmxw3WCwZn-2F3cLKGAgRV=
+xBzsT-2BWGajfeM49pYnBitpWJt5D9KxOQ-3D/QRXP" target=3D"_blank" style=3D"colo=
+r: #383092;text-decoration:underline;">report itself</a>. It makes for a su=
+rprisingly brisk read =E2=80=94=C2=A0for one thing, it goes out of its way =
+to find and cite examples of people calling the board a stupid idea. And it=
+=E2=80=99s much more entertaining than <a href=3D"http://click.revue.email/=
+mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h7/zianfujKjgoKaTqDtPLU7j4Zp=
+coh-2FECRcLYWh7RmU8pXy-2FDWm6AbGkyAMh-2F93AAOsv0TTZId-2BT8TRd614opRLC-2BNvh=
+8dNstMS7sBLa2H9R-2BFbSSWmZ-2B8KJu19dqFgXuOySZ6UJBnfMIFs62U1Xmp88cAnM1IXfo5W=
+xvDnHBwl-2BesoP0mPUcBkGKlhxG4SsiIxFw-2F-2BGVa5xNt-2FuNMmw6eWw-3D-3D/jizh" t=
+arget=3D"_blank" style=3D"color: #383092;text-decoration:underline;">this h=
+alting, uncertain conversation between Zuckerberg and two prominent law pro=
+fessors</a>, which attempts to bring a sense of history to the conversation=
+ but mostly just magnifies the historical weirdness of absolutely everythin=
+g under discussion.</div><div style=3D"margin: 0;" class=3D"revue-p">Mostly=
+, though, it=E2=80=99s just wild to watch a public company staging a miniat=
+ure constitutional convention in 2019. The main problem is that almost anyt=
+hing is possible. To wit, from Facebook=E2=80=99s report today:  </div><div=
+ style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; paddin=
+g: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7=
+A889A; line-height: inherit;" class=3D"revue-blockquote">Facebook has sugge=
+sted that Board members serve a fixed term of three years, renewable once. =
+Other suggestions included varied term lengths;  staggered appointments; an=
+d shorter term lengths, given the =E2=80=9Crapid pace of change=E2=80=9D in=
+ content and technology. However, while some felt that three years was too =
+long, others felt it was not long enough. The latter believed that more tim=
+e is necessary for members to become acquainted with their responsibilities=
+, as well as the complexities of content governance. </div><div style=3D"ma=
+rgin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; b=
+order-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-=
+height: inherit;" class=3D"revue-blockquote">Feedback was similarly split o=
+n the size of the Board. Facebook has suggested up to 40 members on the ini=
+tial Board, which would be global in nature and organized to operate and de=
+cide on cases in panels. Some felt this number was too small and expressed =
+concern over =E2=80=9Cdocket management=E2=80=9D and =E2=80=9Ccaseloads.=E2=
+=80=9D Others, conversely, found the number to be unwieldy and unmanageable=
+. Still others, on a more practical level, suggested that the Board include=
+ 41 members, in case a tiebreak would be required.</div><div style=3D"margi=
+n: 0;" class=3D"revue-p">It goes on like this for 38 pages. (<a href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h8/WkN=
+tz-2FSzkH-2FMfHT-2FKDaZhlI9D0VUSRoXxAMK6pjs60vlMFWuSXq06rv1CwyEjn9emP8LndWZ=
+rtW6g33Fc7aQKqgn-2BLLgDPz6NgTi6EQ0aNU4zsZKdqLXah2DrtmWm-2FrEcDgmrX3xFmT5ggv=
+Sm4Si9ihvmAFfzbwAFBdCaq9u16mGOCe9Lypafv-2BtZl0G28qQikcebHHodq-2BMWbjD3rAFNr=
+-2BgfwCoUDTFz1RLA2NrYuw-3D/KJRN" target=3D"_blank" style=3D"color: #383092;=
+text-decoration:underline;">The appendices</a> go on for another 177.) </di=
+v><div style=3D"margin: 0;" class=3D"revue-p">Many important decisions appe=
+ar to remain totally up in the air. For example, I assumed that one benefit=
+ of developing an independent oversight board would be to allow the board t=
+o create precedents =E2=80=94=C2=A0a kind of case law for future board case=
+s to refer to. But according to the progress report, many participants have=
+ frowned on the idea of precedents at all:</div><div style=3D"margin: 0; di=
+splay: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color=
+: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inh=
+erit;" class=3D"revue-blockquote">Overall, feedback generally supported som=
+e sort of precedent-setting arrangement. Most expressed hope that the Overs=
+ight Board could support =E2=80=9Csome idea of =E2=80=A6 continuity, some i=
+dea of stare decisis=E2=80=9D that could evaluate =E2=80=9Cmultiple fact pa=
+tterns and have some precedential weight.=E2=80=9D  Response from the publi=
+c questionnaire suggested the same. The majority of respondents (66%) state=
+d that =E2=80=9Cconsidering past decisions is extremely to quite important,=
+=E2=80=9D while almost a third (28%) consider past decisions as =E2=80=9Cso=
+mewhat important=E2=80=9D. </div><div style=3D"margin: 0; display: block; M=
+argin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; bord=
+er-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D=
+"revue-blockquote">Others felt that precedent would need =E2=80=9Cto be con=
+sidered carefully, as =E2=80=A6 there will need to be overruling rules arti=
+culated in order to reverse panel decisions that are later seen to be out o=
+f step with changing circumstances.=E2=80=9D Furthermore, it was argued, =
+=E2=80=9Ca strict coherence rule may cause a situation where the first pane=
+l to discuss a certain issue might set a standard that may not be reconside=
+red later. This will create a sense of arbitrariness and stagnation.=E2=80=
+=9D Others argued that since social media is a rapidly changing industry, p=
+recedent should not prevent review of future, similar content. In the end, =
+many argued for balance: an understanding of precedent that would help ensu=
+re consistency but not necessarily be determinative.</div><div style=3D"mar=
+gin: 0;" class=3D"revue-p">The report doesn=E2=80=99t make clear how these =
+questions have been resolved, though it seems likely that many have been. F=
+acebook says a final charter for the board will be released in August, and =
+that it will work to stand up the first group of panelists shortly thereaft=
+er.</div><div style=3D"margin: 0;" class=3D"revue-p">There are at least two=
+ good reasons to support Facebook=E2=80=99s board initiative. One is that i=
+t shows that the company understands its power over public speech is untena=
+ble, and is seeking to devolve some of that power back to the public. Two i=
+s that by returning some of that power to the people, Facebook can become m=
+ore accountable to its user base over time. The details are all messy, and =
+of course they are =E2=80=94=C2=A0it=E2=80=99s a pseudo-constitutional conv=
+ention! But the goal still strikes me as a worthy one, and Facebook is movi=
+ng ahead with a caution that is as welcome as it is rare.</div>
+</span>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-bottom: 42px;' valign=3D'top'>
+<hr style=3D'border: 0; background-color: #383092; margin: 0; margin-bottom=
+: 0; height: 2px;'>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px; ' valign=3D'top'>
+<div class=3D'item-header' style=3D"font-family: 'protipo-wide', Helvetica,=
+ Arial, sans-serif; display: block; font-weight: 600; font-size: 36px; line=
+-height: 40px; margin: 0; margin-bottom: 0; color: #000;">Democracy</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h9/pf1JvXXz0HA6U=
+k3h4thQp9ZUbP6rCEDUZLMWy9uoUOq-2BPe0UrYopHxFgtbxBtOwrpda-2BCVCoDmXv0CGYlzYy=
+qP1POxlwqMyCUruD-2FyXAbEkEWk44Kj86o5b5VHX1IHTfLnnwJfeEYF23RKkuNqht1THjTwK2m=
+WS9J5AfebuKQdtn15rrOwHsoYyqBDZmM8G8Hqndd5BiF-2FfHsO0llogHWn9rRvhDVefvd5g4uF=
+l4r8b0f-2BvstU4Fwa0bYXbuWweh/3ijD"><img width=3D"112" height=3D"112" style=
+=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=
+=3D"https://s3.amazonaws.com/revue/items/images/004/739/549/thumb/acastro_1=
+80827_1777_0001.jpg?1561652884" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h10/pf=
+1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOq-2BPe0UrYopHxFgtbxBtOwrpda-2BCVCoD=
+mXv0CGYlzYyqP1POxlwqMyCUruD-2FyXAbEkEWk44Kj86o5b5VHX1IHTfLnnwJfeEYF23RKkuNq=
+ht1THjTwK2mWS9J5AfebuKQdtn15rrOwHsoYyqBDZmM8G8Hqndd5BiF-2FfHsO0llogHWn9rRvh=
+DVefvd5g4uFl4r8b0f-2BvstU4Fwa0bYXbuWweh/PfG1">Twitter will now hide =E2=80=
+=94 but not remove =E2=80=94 harmful tweets from public figures</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h11/Pa9TqPVq-2Facbv4-2BAudG9KPX=
+zg-2B9aw6IS-2Fs9UAfhB9sJe9-2B2fSHpsO-2F1XZVxlm9BqZh-2F-2FD1TkTm-2FqydBcECUt=
+Js2GHRM3yRFzIb3Kg9IX2wO3eHZaTP-2B4qxQ1MIFGiPvsgdOSZevs24cjDr1Fb3fOWw-3D-3D/=
+YTFL">www.theverge.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h12/Pa9TqPVq-2Facbv4-2BAudG9KPXzg-2B9aw6IS-2Fs9UAfhB9sJe9-=
+2B2fSHpsO-2F1XZVxlm9BqNLQrFnEzWeB9lO-2BeKqyTHuAddlOhdbhmZLq9vosNyDJnwXerNy1=
+yXe3FQtEXh37e0SFaR4oC0LmtZS6voBe4Fw-3D-3D/M9wP">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">In =
+a significant step, Twitter says it will now put a content warning over cer=
+tain inflammatory tweets posted by big accounts, Makena Kelly reports:</div=
+><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; p=
+adding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; colo=
+r: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Today, Twitte=
+r is rolling out a new notice for tweets belonging to public figures that b=
+reak its community guidelines. Now, if a figure like Donald Trump were to t=
+weet something that broke Twitter=E2=80=99s rules, the platform could notif=
+y users of the violation and lessen the reach of the tweet. In recent inter=
+views, Twitter executives have hinted that a change like this=C2=A0<a href=
+=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ=
+/h13/pZe6Dhjg8xmMgvq8iuEG4vOuhTVNdOcFdMgmC4Bg5TQoldIdi0Eoz2AEaaLH-2BFe5mR26=
+FMMR4fi-2B1Lhi-2FHi0LP-2BBeYYbsBIO7KOHGJ1jb7Yzz4paEL7-2BzNA5cV2T3dI3rE9eOQH=
+ANl2MEAazunxByq0ZXrCfjmckqEs6I9w24Y8-2F6Ru5fBrM-2FnuME0-2FJIWvNCT3IqwPHfN9j=
+nIFeQx3CC175JPyklJ0TAuDh4CTnd9jjEfADFQNfEYIBZnA4WurYtJDwtJs9vDNHR2r4NvvsgK-=
+2B8hM0AuMGXOJ2-2BaFVIkTE-3D/YCH5" target=3D"_blank" style=3D"color: #383092=
+;text-decoration:underline;">would be coming soon</a>.</div><div style=3D"m=
+argin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; =
+border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line=
+-height: inherit;" class=3D"revue-blockquote">This notice will only apply t=
+o tweets from accounts belonging to political figures, verified users, or a=
+ccounts with more than 100,000 followers. If a tweet is flagged as violatin=
+g platform rules, a team of people from across the company will decide whet=
+her it is a =E2=80=9Cmatter of public interest.=E2=80=9D If so, a light gra=
+y box will appear before the tweet notifying users that it=E2=80=99s in vio=
+lation, but it will remain available to users who click through the box. In=
+ theory, this could preserve the tweet as part of the public record without=
+ allowing it to be promoted to new audiences through the Twitter platform.<=
+/div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h14/cqzN2iltj9YH=
+V-2BwZYptu4aO3ZYkou512r0qgMnJC6PtKRLc7EnHhvR1z2nLCOaPywTf2hYnLGETweBhlM0Sjv=
+DvPLYat28FWJE-2FtQ2-2BiYYk1kPpsQ94rBOvvwDl0Ovbzq8lhM-2F-2FOi4H7hFtB7wDcIR4z=
+u12k5l0oGS88IzQZYY4rnaDz30VBoONYaE8rEC4WWjQTmFi6QL9RajCF0oCduA-3D-3D/OEfh">=
+<img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-lef=
+t: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/it=
+ems/images/004/738/725/thumb/Political-Pixels-163641062.jpg?1561640785" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h15/cq=
+zN2iltj9YHV-2BwZYptu4aO3ZYkou512r0qgMnJC6PtKRLc7EnHhvR1z2nLCOaPywTf2hYnLGET=
+weBhlM0SjvDvPLYat28FWJE-2FtQ2-2BiYYk1kPpsQ94rBOvvwDl0Ovbzq8lhM-2F-2FOi4H7hF=
+tB7wDcIR4zu12k5l0oGS88IzQZYY4rnaDz30VBoONYaE8rEC4WWjQTmFi6QL9RajCF0oCduA-3D=
+-3D/Tb85">What Facebook Privacy? Candidates=E2=80=99 Tough Talk Is Just Tha=
+t</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h16/MHpHXcUFlzsq9hnWbfFM0jTZMwL=
+nEUMYz-2B6hl-2FsWwIrMq6ZmacPUthmpfCcH9nwRKTK79GiUXYWR9mhM14YU8FMZkMtJe5sbjo=
+CKpEfLKo103cWc0Unok7T06YwqMyVUPgpkovQLc0azXX8f1fK6uw-3D-3D/0Rd1">www.wired.=
+com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h17/MHpHXcUFlzsq9hnWbfFM0jTZMwLnEUMYz-2B6hl-2FsWwIrMq6Zmac=
+PUthmpfCcH9nwRzPZfQyNIOKKMQg3-2Fs2gPw3J-2BlJxwf-2BNQCf9NwDUgY0uOxSNAEmfc4rr=
+LbLPfldZHrebv3B6rLoaTUy601OYhGA-3D-3D/EY56">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Wit=
+h Missouri Sen. Josh Hawley making a racket about Facebook=E2=80=99s data p=
+ractices, Hamdan Azhar explores how his campaign uses information gleaned f=
+rom the service:</div><div style=3D"margin: 0; display: block; Margin: 0; M=
+argin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2p=
+x solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-bloc=
+kquote">Senator Josh Hawley (R-Missouri)=C2=A0<a href=3D"http://click.revue=
+.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h18/-2BVbdBhYLRHyFeUt=
+KjhYCooP69PWBeYyP9qnz9k1k6hoPvrD-2FGW1ZBto4FSozmNkWoqSwKdVxeI0IDgeHqdr4doLM=
+xn2dcMkMglJBnfWuFSvBDalwZLC-2FGQNuMHvXYIS6O41g9OeL2bUFfsIkqQzPATg1CzJZcEVNe=
+zd-2BJN2dAsnQxrIQ5fFnV6z-2F5FLKEQfgWUeQc9-2B8h6V6GGSJUh7ldrtMf-2F2tTmGBkTJl=
+-2F1WSABpcsAMrO5H-2BtGzGn-2BUuEXkp/7f5f" target=3D"_blank" style=3D"color: =
+#383092;text-decoration:underline;">told Yahoo Finance</a>=C2=A0that he wou=
+ldn=E2=80=99t trust Facebook with his money. =E2=80=9CI don=E2=80=99t trust=
+ Facebook with anything,=E2=80=9D he said.</div><div style=3D"margin: 0; di=
+splay: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color=
+: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inh=
+erit;" class=3D"revue-blockquote">Just one problem: Despite their professed=
+ concerns with Facebook, both senators=E2=80=99 campaign websites=E2=80=94s=
+herrodbrown.com and joshhawley.com=E2=80=94have an invisible piece of Faceb=
+ook technology, called a pixel, that tracks when anyone visits their homepa=
+ges and shares this information with Facebook. Hawley=E2=80=99s website eve=
+n shares when visitors donate and the exact donation amount. Facebook can t=
+hen associate that information with an individual=E2=80=99s Facebook accoun=
+t.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h19/XUVFdx-2BTHX=
+5-2FS14o0RsSNkYhiVzpUxoyDGsHZCSuz9tRWuuJU02-2BLi4gEz7-2B1FMulQvBswxyFnwMWxe=
+wmkTlooRc8Z0Au3VhJASH1vQprGiOCJ5i27aBGDvAY-2FMIW4Drr9iwiNxtcFWq7SyuC7-2B-2F=
+6xvqWreK7ZOpm2LwuztSucjMup6gFSROjzBFXh8-2BCgwjXyVddQBdQUE9zghRqV7iQQ-3D-3D/=
+_NTs"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;paddi=
+ng-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/re=
+vue/items/images/004/736/370/thumb/gettyimages-1146802634_wide-99ce39df8054=
+0f75361d27b8346672d9a88f0b96.jpg?1561588891" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h20/XU=
+VFdx-2BTHX5-2FS14o0RsSNkYhiVzpUxoyDGsHZCSuz9tRWuuJU02-2BLi4gEz7-2B1FMulQvBs=
+wxyFnwMWxewmkTlooRc8Z0Au3VhJASH1vQprGiOCJ5i27aBGDvAY-2FMIW4Drr9iwiNxtcFWq7S=
+yuC7-2B-2F6xvqWreK7ZOpm2LwuztSucjMup6gFSROjzBFXh8-2BCgwjXyVddQBdQUE9zghRqV7=
+iQQ-3D-3D/TOk2">Facebook Is Challenged To Ban Military Leader Accused Of Ki=
+llings</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h21/6i79aii9EbpBPI6s1ZybTIgqnRe=
+SPGqv3UJcezVKuDr1KDhNdPzjLtTQEMCLThn6itZGnPRZFReSbtF34oNcvT0-2B04oYtjMoURSF=
+Cp7VAuCoGWmf1U6vpLnB9jUHBTDPQ2JfClsyFLWt6Qr9Hn3ncg-3D-3D/OnFE">www.npr.org<=
+/a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h22/6i79aii9EbpBPI6s1ZybTIgqnReSPGqv3UJcezVKuDr1KDhNdPzjLt=
+TQEMCLThn6qLHziRgFxAQObccq5R0l4VqR5LVDKnVRJJQX2pszd0Tjp38Zqe8DBgzcmup0iVVuB=
+pjfMu7AazJSHuNqyDV1rg-3D-3D/D1-8">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Aar=
+ti Shahani looks at the Facebook presence of warlord Lt. Gen. Mohamed Hamda=
+n Dagalo, who reportedly oversaw the killing of more than 100 people in Sud=
+an:</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom:=
+ 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4=
+E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Lt. G=
+en. Mohamed Hamdan Dagalo, better known as Hemeti, is a social media person=
+ality. He is also the leader of the Rapid Support Forces =E2=80=94 the para=
+military group that attacked thousands of pro-democracy protesters this mon=
+th, leaving more than 100 dead. This is a bit of a second act for Hemeti, w=
+ho also served time with the Janjaweed, the militia group considered respon=
+sible for the genocide in Darfur about 15 years ago,=C2=A0<a href=3D"http:/=
+/click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h23/nPAru=
+Ee6smwmJ3yfPfGVjTovFc3bTWXGQLXj62Hd1OObOPUWQ2eFSYXcS6un24C2cp9Gb7seCPC0wyl3=
+-2Fxi8mkD1Qy0SCTf0RsyzJKALkLZZ0BsSXcKgq6l8-2FFH1F17ShCiBhWo9c-2FusL-2FULGBj=
+wViF7FghNVQE-2FMPRk7oHuft9PgjyB8PVBllfarTLqhWBQKt2oCTd76VasfIRIx-2FrUEnbbVz=
+G28luLvhDQoSDS3k24jb6v3ZHhvH5pVk0bOQc2-2Bc5-2BO2tai8RyW31eMfnpQkQ4hJWCqlQEM=
+SqC6Glnkms-3D/AOVm" target=3D"_blank" style=3D"color: #383092;text-decorati=
+on:underline;">according to Foreign Policy magazine</a>.</div><div style=3D=
+"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px=
+; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; li=
+ne-height: inherit;" class=3D"revue-blockquote">On Facebook, multiple pages=
+ promote Hemeti as a formidable yet kind authority figure.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h24/Bz6FT7h5V0fq=
+vSP43em4a7mTDwi2ocEX0lb5XcfgjcoT0TQR568foqSdryPa1OCOYf-2FkpmJrYuh9-2BYXJL2I=
+ZjBSuzeThIRhm-2BjQ3GF8qDbF6uwXQiyfVZcaeAukl7as8bCIYT-2F-2FQMt-2FlPx47grmYf-=
+2BKlhgyFYVlC3pWhAZG6XZ6kRve-2FnTeCuW5ikbFEtLsGvmyp0Dx2M0Kf5Mijl0ASUyoa0LQEY=
+73-2Fw9W0uwThmMKu35kayWeGWD7-2BtY365YKj/Pm0w"><img width=3D"112" height=3D"=
+112" style=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"r=
+ight" src=3D"https://s3.amazonaws.com/revue/items/images/004/736/372/thumb/=
+rosemax_013019sr_lead.jpg?1561588908" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h25/Bz=
+6FT7h5V0fqvSP43em4a7mTDwi2ocEX0lb5XcfgjcoT0TQR568foqSdryPa1OCOYf-2FkpmJrYuh=
+9-2BYXJL2IZjBSuzeThIRhm-2BjQ3GF8qDbF6uwXQiyfVZcaeAukl7as8bCIYT-2F-2FQMt-2Fl=
+Px47grmYf-2BKlhgyFYVlC3pWhAZG6XZ6kRve-2FnTeCuW5ikbFEtLsGvmyp0Dx2M0Kf5Mijl0A=
+SUyoa0LQEY73-2Fw9W0uwThmMKu35kayWeGWD7-2BtY365YKj/fBT8">Artificial intellig=
+ence can&#39;t solve online extremism issue, experts tell House panel</a></=
+span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h26/7mYNY-2BYbGTFYkLisjk-2FUytu=
+0cMdhkVr9KKMM0UPQbcK8gxMNIDd-2BasGi3xS7zQUSXlYJHVC6oRHO6Sd8rXgFbYWtz777Kj2L=
+cJFljJxuo7vHdMBQkDxaOavWSEDrWUVFbz2QMEoCoXdPBmYBCn-2BRvQ-3D-3D/CC5d">thehil=
+l.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h27/7mYNY-2BYbGTFYkLisjk-2FUytu0cMdhkVr9KKMM0UPQbcK8gxMNID=
+d-2BasGi3xS7zQUSWGqnzUWfzHXqpg92yJ8ADKfKfHxpc79ZWvqTUElND7YYS9xxKZnDgm6-2Fh=
+haEXUujncjr601BO6Fjo8mzJSwLvg-3D-3D/jnsB">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Emi=
+ly Birnbaum recaps a hearing this week on online extremism:</div><div style=
+=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 2=
+0px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A;=
+ line-height: inherit;" class=3D"revue-blockquote">Top tech companies, incl=
+uding Facebook, have claimed that their AI systems are already successfully=
+ detecting a huge swath of terrorist and extremist content. But experts at =
+the hearing said those claims are often overblown.</div><div style=3D"margi=
+n: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; bord=
+er-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-hei=
+ght: inherit;" class=3D"revue-blockquote">=E2=80=9CContext is vitally impor=
+tant and context can often be hard for algorithms to detect,=E2=80=9D Ben B=
+uchanan, an assistant teaching professor at Georgetown University, said.</d=
+iv>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h28/cXgTWzzfwq1D=
+FX-2BQYZ2opMBcfO-2F6GQl8DOHLwv9SD4f9s3-2B2b-2FtReHQvhhG7J8m3HB9yfm8iipPePYX=
+8Zrohuq4ucqaP7Oj8IuD45TgWKr3JKkCCm1Nu69Z-2BEjjV9ayJJOAIeYa7GxbKBRdNioLy9CoX=
+lQnu7c7O9-2FPdm17QfdaJpPOwtZdnZJQF1qv6gEDHo7p-2FpQ-2B5jKjLhg-2FSAuMEUw-3D-3=
+D/M0VW"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;pad=
+ding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/=
+revue/items/images/004/738/733/thumb/1*Qy0yPQFFZwzA0u0dzFTXeA.jpeg?15616408=
+83" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h29/cX=
+gTWzzfwq1DFX-2BQYZ2opMBcfO-2F6GQl8DOHLwv9SD4f9s3-2B2b-2FtReHQvhhG7J8m3HB9yf=
+m8iipPePYX8Zrohuq4ucqaP7Oj8IuD45TgWKr3JKkCCm1Nu69Z-2BEjjV9ayJJOAIeYa7GxbKBR=
+dNioLy9CoXlQnu7c7O9-2FPdm17QfdaJpPOwtZdnZJQF1qv6gEDHo7p-2FpQ-2B5jKjLhg-2FSA=
+uMEUw-3D-3D/RhAu">Amazon Is Watching</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h30/eD3qHkjp-2FsHYJZAvCWn9675lH=
+G4vMU7DOcV9Egv8pXRuC1MMDVWzrDACf8rsWtzByaFVlNJ9OW0lKcSJgZTtoWXdD42EJDxqDEET=
+3Uw7zkKL54syES8S9UH-2Fv-2Bw8AVg-2FysrmTzYPENJpvChUAw8orQ-3D-3D/xok_">onezer=
+o.medium.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h31/eD3qHkjp-2FsHYJZAvCWn9675lHG4vMU7DOcV9Egv8pXRuC1MMDVWz=
+rDACf8rsWtzBhR5ZUzR9KrHHiHAZCUG9hykY0gPNFGG-2BlI2UojQ9g7UuoeuzsTNZiJrZ-2Bp7=
+YmbJKHuu5yt4UTKBXyS01nVdcNw-3D-3D/nTW_">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Wil=
+l Oremus explores the Amazon panopticon, now under construction:</div><div =
+style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding=
+: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A=
+889A; line-height: inherit;" class=3D"revue-blockquote">The Amazon of today=
+ runs enormous swaths of the public internet; uses artificial intelligence =
+to crunch data for many of the world=E2=80=99s largest companies and instit=
+utions, including the CIA; tracks user shopping habits to build detailed pr=
+ofiles for targeted advertising; and sells cloud-connected, A.I.-powered sp=
+eakers and screens for our homes. It acquired a company that makes mesh Wi-=
+Fi routers that have access to our private Internet traffic. Through Amazon=
+=E2=80=99s subsidiary Ring, it is putting surveillance cameras on millions =
+of people=E2=80=99s doorbells and inviting them to share the footage with t=
+heir neighbors and the police on a crime-focused social network. It is sell=
+ing face recognition systems to police and private companies.</div><div sty=
+le=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0=
+ 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889=
+A; line-height: inherit;" class=3D"revue-blockquote">The Amazon of tomorrow=
+, as sketched out in patents, contract bids, and marketing materials, could=
+ be more omnipresent still. Imagine Ring doorbell cameras so ubiquitous tha=
+t you can=E2=80=99t walk down a street without triggering alerts to your ne=
+ighbors and police. Imagine that these cameras have face recognition system=
+s built in, and can work together as a network to identify people deemed su=
+spicious. Imagine Ring surveillance cameras on cars and delivery drones, Ri=
+ng baby monitors in nurseries, and Amazon Echo devices everywhere from scho=
+ols to hotels to hospitals. Now imagine that all these Alexa-powered speake=
+rs and displays can recognize your voice and analyze your speech patterns t=
+o tell when you=E2=80=99re angry, sick, or considering a purchase. A 2015 p=
+atent filing reported last week by the=C2=A0<em>Telegraph</em>=C2=A0describ=
+ed a system that Amazon called =E2=80=9C<a href=3D"http://click.revue.email=
+/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h32/Bilo1N3ZBi0x2OACOElg0AR=
+IuuD3HK-2Br-2BrK7ybgrcmag0A25DJYCr-2F76Bi5-2FDdupZJAzY-2BbH8yuUL2UzHKc8UlrV=
+v1TEWSThfK04b4vkIdMIuWe-2FJF7CoMwppoScKfo2KPh5dYNswCYhYWtrH-2FQGuTlJzDoI2mP=
+hfV6Yc4EO7HH0gAFvkdCCsa4JsQH2T0fqWkEpMb4fUSqgmoGkoqsWwuFloZNZZhRfuvZj3if06A=
+khiFR-2BzCn-2BIBMyG1KbAgS1/Llgk" target=3D"_blank" style=3D"color: #383092;=
+text-decoration:underline;">surveillance as a service</a>,=E2=80=9D which s=
+eems like an apt term for many of the products it=E2=80=99s already selling=
+.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h33/pf1JvXXz0HA6=
+Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOq1wo3k0-2FXKqoCwiv8x7W85bRwG-2Fyd2lvf1B12F38Q=
+zZDYeZMsK2FxByyUo0R4UxbjiFeftDxa8tkzA1Cnh8U0QhMqtZMpIiaH7Uag5O7vJv2V9ys9rG1=
+MRf7cZV-2FrR7WcPXlEdNjI6lENYVXXdFAL0RsyD36r8U-2BcNe0kY5H0wm4toZWpio5oDbvP3b=
+cK-2BpFpGVgOdLizKRhdHkotVy-2FIN/rY9C"><img width=3D"112" height=3D"112" sty=
+le=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" sr=
+c=3D"https://s3.amazonaws.com/revue/items/images/004/738/729/thumb/37449534=
+33_d64a448c96_o.jpg?1561640823" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h34/pf=
+1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOq1wo3k0-2FXKqoCwiv8x7W85bRwG-2Fyd2l=
+vf1B12F38QzZDYeZMsK2FxByyUo0R4UxbjiFeftDxa8tkzA1Cnh8U0QhMqtZMpIiaH7Uag5O7vJ=
+v2V9ys9rG1MRf7cZV-2FrR7WcPXlEdNjI6lENYVXXdFAL0RsyD36r8U-2BcNe0kY5H0wm4toZWp=
+io5oDbvP3bcK-2BpFpGVgOdLizKRhdHkotVy-2FIN/K8ZA">EU should ban AI-powered ci=
+tizen scoring and mass surveillance, say experts</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h35/FjGfBsvp54BigIbmnvbuwf5Z1MN=
+CH50Ee00V8lTP3MX-2FYKGIPhMZ71IMtzUjLaoDZWniRlkQF4Gk2YcwxgQJkiHDfzRj9UqvNJxH=
+fxDo75m58mxpJMvm1VpQc-2Fc1zJxDje6HLSihAKuxB7Ty7f8bZg-3D-3D/3jS8">www.thever=
+ge.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h36/FjGfBsvp54BigIbmnvbuwf5Z1MNCH50Ee00V8lTP3MX-2FYKGIPhMZ=
+71IMtzUjLaoDSIzdInXZ-2Fi-2F-2FsT2JYtSjmpqGutgdeL-2Bz-2FCK2k5uHdfy-2F-2Bv5bV=
+8omZ0IKoGY2e5rM0Wqm8fYL0g4zv-2Bso79S2xw-3D-3D/uaxs">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Eur=
+ope is moving to block any future implementation of a social credit system,=
+ James Vincent reports:</div><div style=3D"margin: 0; display: block; Margi=
+n: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-l=
+eft: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"rev=
+ue-blockquote">A group of policy experts assembled by the EU has recommende=
+d that it ban the use of AI for mass surveillance and mass =E2=80=9Cscoring=
+ of individuals=E2=80=9D; a practice that potentially involves collecting v=
+aried data about citizens =E2=80=94 everything from criminal records to the=
+ir behavior on social media =E2=80=94 and then using it to assess their mor=
+al or ethical integrity.</div><div style=3D"margin: 0; display: block; Marg=
+in: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-=
+left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"re=
+vue-blockquote">The recommendations are part of the EU=E2=80=99s ongoing ef=
+forts to establish itself as a leader in so-called =E2=80=9Cethical AI.=E2=
+=80=9D Earlier this year, it released its=C2=A0<a href=3D"http://click.revu=
+e.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h37/pf1JvXXz0HA6Uk3h=
+4thQpyrLfvAPD6G3y3JMY4gml2od2Mzf1XpiMoKpGho8akWXWog9vYlvGc3X2dbPtrMc8-2Fs1s=
+-2BtfqHZ8Fyjx8rpvcrn18h-2FGF738CrtzF17Asxb2bxhTBm3HVgRMyI836acC8fOm2VyaJAoO=
+8jtJgdTwXafcc0f8Gzd4hs6eGjF-2BkNTF-2FZWYKIrClLiJYg9atqv5e-2BLk1o7o0PHbZTqM-=
+2FEQA2EwLZPAAEaHQvnNMxAgiwGrl/6r7z" target=3D"_blank" style=3D"color: #3830=
+92;text-decoration:underline;">first guidelines</a>=C2=A0on the topic, stat=
+ing that AI in the EU should be deployed in a trustworthy and =E2=80=9Chuma=
+n-centric=E2=80=9D manner.</div><div style=3D"margin: 0; display: block; Ma=
+rgin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; borde=
+r-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"=
+revue-blockquote">The=C2=A0<a href=3D"http://click.revue.email/mps2/c/GQE/c=
+M9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h38/69UbB3eX-2Bc7kLWySl1ACGSNIbuLKMBZwEB=
+zzdtNFrKxCH1vBZzo366cjxuMlo7oP597VEj1g946EmpIYIihJTNA2Z5-2FnDfbOX9DgfcJuGEC=
+eDFEXgdUsvdGFJXGXo3XvoLCOIRhNuVT64JGjeKYbXBSWsAVq1k3OWRGHPx8Ixb96WKBOik7Lax=
+WySb-2FzCowQX-2Ba0qf7-2F1JncCz16fOKW391zAZszg1y3MthKv1-2BUQimhyJcFSWlAiS3bl=
+V2yNIAaXXDKgHGbotB0ut5z-2FwCBGw-3D-3D/6UXS" target=3D"_blank" style=3D"colo=
+r: #383092;text-decoration:underline;">new report</a>=C2=A0offers more spec=
+ific recommendations. These include identifying areas of AI research that r=
+equire funding; encouraging the EU to incorporate AI training into schools =
+and universities; and suggesting new methods to monitor the impact of AI. H=
+owever, the paper is only a set of recommendations at this point, and not a=
+ blueprint for legislation. </div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h39/Y-2BPSLfHKcN=
+VaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5PleG9iscfoOXozs5FCkb5WN2j=
+uUdHkSO-2FDI25QcdOqrhRL1ghhbAUkVelNDKqgYsVh-2Bg-2FH79PZLLIMjlvQVgXTIfgZu-2B=
+An2WqpnxL5RKoavu8Q8t5Xg0C57zP7n-2Fb-2FcL8GPc3KCw7j5bF6NxcLvPLHLFDKirjVNeD-2=
+FZBqxkGYX7vJeRLy5ESYvzW117Z5NuELLKZXv0B/jjYo"><img width=3D"112" height=3D"=
+112" style=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"r=
+ight" src=3D"https://s3.amazonaws.com/revue/items/images/004/736/367/thumb/=
+facebook.jpg?1561588795" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h40/Y-=
+2BPSLfHKcNVaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5PleG9iscfoOXozs=
+5FCkb5WN2juUdHkSO-2FDI25QcdOqrhRL1ghhbAUkVelNDKqgYsVh-2Bg-2FH79PZLLIMjlvQVg=
+XTIfgZu-2BAn2WqpnxL5RKoavu8Q8t5Xg0C57zP7n-2Fb-2FcL8GPc3KCw7j5bF6NxcLvPLHLFD=
+KirjVNeD-2FZBqxkGYX7vJeRLy5ESYvzW117Z5NuELLKZXv0B/v6lF">Leaked Audio: Wayfa=
+ir&#39;s Co-founder on Migrant-Camp Beds</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h41/NsW5K3snExsC3Jf-2FnBoW1zf7H=
+TzE8DGEd4cm4dL9GTMvm2RZHNECvc9tv6ZugN7tsxR5TVxsPPRSXWbP9DfAhDvZENKHlRhze9Gh=
+R9mPNT4WCJLni-2BcEEtycsOv0aCtg1c0jhTrOVEjOajash8TFMg-3D-3D/SzYE">www.theatl=
+antic.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h42/NsW5K3snExsC3Jf-2FnBoW1zf7HTzE8DGEd4cm4dL9GTMvm2RZHNEC=
+vc9tv6ZugN7tvT1rYQ1qG5ADP1oRh01t0y-2BgSOUQgakRo6Ga7hgGEuLFTO3fq2aACQc1ER0ft=
+xuHm4x4rZwDVeVU0j8Zf6aQLg-3D-3D/S_tc">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Ell=
+en Cushing obtains audio from a meeting in which the home-goods retailer=E2=
+=80=99s co-founder appears to be unaware that the line between business and=
+ politics is rapidly eroding:</div><div style=3D"margin: 0; display: block;=
+ Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; bo=
+rder-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=
+=3D"revue-blockquote">His argument is a cousin of the one many of his peers=
+ in the technology industry have long clung to: that they aren=E2=80=99t re=
+ally political entities, but simply value-neutral conveyor belts for whatev=
+er service it is that they offer=E2=80=94short-term rentals, rides, communi=
+ty, connection, information, entertainment. That their sheer scale, multipl=
+ied by the wide spectrum of beliefs held by their users, makes moderation o=
+f any kind so Sisyphean and so subjective a task that the only possible sol=
+ution is to allow for just about any idea, or any customer.</div><div style=
+=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 2=
+0px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A;=
+ line-height: inherit;" class=3D"revue-blockquote">But as my colleague Alex=
+is Madrigal notes, the notion of the unbiased platform is=C2=A0<a href=3D"h=
+ttp://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h43/=
+Y-2BPSLfHKcNVaBe1n91IW-2Ba1BPEyDhkKBDZ9r6karU7dqXzssdl3H6-2FJ5PleG9iscpXJDr=
+Ek-2BcDNfY5-2FVixsM0ZOBr1VykgVM63KjfpJnf7PzhXt4tyOAXklbG7vS4IhyRgV1f-2FPtuF=
+jKk3O1UP8y1PdwSocDAh-2B8crzSkZdjXX2hgeKB9DRiYdEEau6U4Xe3evtSnJf5omKJurpXK1m=
+0o7pYEMQ5ufedpc08zVEVA-2Ftl-2FvnYVBoRbLVZ-2Fh5kP4gm/u3xd" target=3D"_blank"=
+ style=3D"color: #383092;text-decoration:underline;">dying before our eyes<=
+/a>, if it ever really existed: =E2=80=9CSome things could not be said. Som=
+e types of content were favored by advertisers and companies. The algorithm=
+s they use to sort and promote content have biases.=E2=80=9D In other words=
+, you simply cannot order this much information without making some judgmen=
+ts.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h44/AqNTjWQanHzp=
+TcS3vF-2BiheY9a39I-2F0uCKSmfrhbTZHT7ntCN-2FFZWnt-2FhnVP-2BnLzEnBY05fMK-2BYE=
+CdRsMFlh36nB1h6C-2Fv2VPNj3NzW4ipctHfYooP0ScSTKMyVSFU8Cxxl5vCoDm21Crc-2BLntb=
+ksajd-2Fd8nymNhIFoEXHAe-2FfZ9vSX5UOsww8amQct7ErewbUeB2-2Bwz-2FQzg7ucmXcvhXu=
+g-3D-3D/Vq2r"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24=
+px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaw=
+s.com/revue/items/images/004/736/081/thumb/1*Mrb_Jg_SvZL3i9dRXSLdlA.jpeg?15=
+61581736" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h45/Aq=
+NTjWQanHzpTcS3vF-2BiheY9a39I-2F0uCKSmfrhbTZHT7ntCN-2FFZWnt-2FhnVP-2BnLzEnBY=
+05fMK-2BYECdRsMFlh36nB1h6C-2Fv2VPNj3NzW4ipctHfYooP0ScSTKMyVSFU8Cxxl5vCoDm21=
+Crc-2BLntbksajd-2Fd8nymNhIFoEXHAe-2FfZ9vSX5UOsww8amQct7ErewbUeB2-2Bwz-2FQzg=
+7ucmXcvhXug-3D-3D/XQMA">Fear and Loathing in Toronto</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h46/tSkpyp5KOJ0aLddg4ffWZqRPXFb=
+U2UMDBj2ScAgHikHau7NbFAljaWInNZ2jIeUQ3Ob9TbIkCQbPacKnJZoMytlrPceuH8w99SxDut=
+v98gLhA1-2Fka1lLFRpEEyDRjwfTpmxBrk0DMauZaCQjGY8jCQ-3D-3D/3Tm5">medium.com</=
+a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h47/tSkpyp5KOJ0aLddg4ffWZqRPXFbU2UMDBj2ScAgHikHau7NbFAljaW=
+InNZ2jIeUQ-2FLJLAkGsFofmlDz8RxnE5fG1-2F-2F1AvSkvAC0ewP-2FWep3DIECtcds4qwFsC=
+0aJTOokzpe4jOuW6Myzb-2B7LdetrRg-3D-3D/grb-">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Ant=
+hony Townsend explores why Google=E2=80=99s plans to build a new kind of ur=
+ban renewal project in Toronto has drawn outrage among locals. It boils dow=
+n to trust: </div><div style=3D"margin: 0; display: block; Margin: 0; Margi=
+n-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px so=
+lid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquo=
+te">Data governance has been a lightning rod because its new and scary. Ear=
+ly on, Sidewalk put more energy into figuring out how the robot trash chute=
+s would work than how to control data it and others would collect in the pr=
+oposed district. As part of Alphabet, you=E2=80=99d think this would have b=
+een a source of unique added value versus say, a conventional development. =
+Not so=E2=80=8A=E2=80=94=E2=80=8Athe company=E2=80=99s initial proposal in =
+2017, also hundreds of pages, tacked on a 2-page memo to CYA on the topic. =
+It didn=E2=80=99t work, and belated efforts to fill the gap only led to mor=
+e missteps along the way, doing little to calm critics.</div><div style=3D"=
+margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px;=
+ border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; lin=
+e-height: inherit;" class=3D"revue-blockquote">More important questions and=
+ criticisms have been raised about Waterfront Toronto=E2=80=99s handling of=
+ the Quayside bidding process and its transparency. Existential questions f=
+or Canadian cities about the shifting line between public and private deliv=
+ery of government services are also on the table. None of these have been s=
+atisfactorily addressed by Sidewalk, and the number of elected officials sp=
+eaking out against the project has grown as a result.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px; border-top: 2px solid #38=
+3092;padding-top:42px;' valign=3D'top'>
+<div class=3D'item-header' style=3D"font-family: 'protipo-wide', Helvetica,=
+ Arial, sans-serif; display: block; font-weight: 600; font-size: 36px; line=
+-height: 40px; margin: 0; margin-bottom: 0; color: #000;">Elsewhere</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h48/cCgmMiFATr20=
+XfiZfvCwAeC3lIhtKfzcOFshzR-2FtMe7IIJs5xdk1a2kB8qNePOG3axJzdbr3TY9a7ZW6b16r1=
+pc7plXizlGYDqHQidqMIP98vnm3YpksfqF-2B5YK3B13sn9GL7y8XB69PL-2F6CEeM1-2BbESjh=
+0WQHZVZN-2FhG9-2BuiwBo2L1fXQupuc4WBZ35TSoicQAxADtUPJGK8NRlU5azcPK-2FeBA0x8t=
+Q-2BgTI2ihlOiofS4jQIWdRGVur9d-2FLhXSX6NP2LAnjVbonF4jISbZ3XXF66K0-2BFEm2cB9i=
+sIhu1m8dLDcMLDRUYJrpeSzqea0r8aloFM99fpawBfOdbmfGpCUxfzpRkY66LpuhA6LSVSYM14R=
+AJ4Fdu0migb-2FuE-2B92/qtLJ"><img width=3D"112" height=3D"112" style=3D"padd=
+ing-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"https=
+://s3.amazonaws.com/revue/items/images/004/739/598/thumb/2RV7TJDLMYI6TO7HDR=
+4Y7OAFGY.jpg?1561653975" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h49/cC=
+gmMiFATr20XfiZfvCwAeC3lIhtKfzcOFshzR-2FtMe7IIJs5xdk1a2kB8qNePOG3axJzdbr3TY9=
+a7ZW6b16r1pc7plXizlGYDqHQidqMIP98vnm3YpksfqF-2B5YK3B13sn9GL7y8XB69PL-2F6CEe=
+M1-2BbESjh0WQHZVZN-2FhG9-2BuiwBo2L1fXQupuc4WBZ35TSoicQAxADtUPJGK8NRlU5azcPK=
+-2FeBA0x8tQ-2BgTI2ihlOiofS4jQIWdRGVur9d-2FLhXSX6NP2LAnjVbonF4jISbZ3XXF66K0-=
+2BFEm2cB9isIhu1m8dLDcMLDRUYJrpeSzqea0r8aloFM99fpawBfOdbmfGpCUxfzpRkY66LpuhA=
+6LSVSYM14RAJ4Fdu0migb-2FuE-2B92/NM1r">A Facebook contractor posted a video =
+of Bruce Springsteen lyrics to his profile to protest working conditions. H=
+e was fired two weeks later. </a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h50/H7L3DETTBn4naI6XTWUlFD798Cz=
+dRxBN-2BT99BfZHJTrvTOfuHEDVTjhTndcq1Nb6A-2BIPRl7CnJvjUJ5X3mEM1BCwJ8n1yBd7Kr=
+sW7cs8d-2ByIfgFaxegg5ciy-2BZk0YvleHjNSlkfs-2FRpbQ2KZrWvfWQ-3D-3D/SWfN">www.=
+washingtonpost.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h51/H7L3DETTBn4naI6XTWUlFD798CzdRxBN-2BT99BfZHJTrvTOfuHEDV=
+TjhTndcq1Nb6vc4VH7OJGU8HswoAx-2FcAilB8s0e0AhTjUJatt2Outz-2FMXck22stS-2FF-2B=
+TcMSZB-2Fs9FkHpEK4X0vXTi5gTiHq3sg-3D-3D/BOFC">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Eli=
+zabeth Dwoskin reports that a content moderator got fired after posting lyr=
+ics from =E2=80=9CFactory=E2=80=9D and =E2=80=9CThe Promised Land=E2=80=9D =
+on an internal forum. Also:</div><div style=3D"margin: 0; display: block; M=
+argin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; bord=
+er-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D=
+"revue-blockquote">On Thursday, a group of a dozen moderators published a n=
+ew letter reviewed by The Washington Post on Facebook=E2=80=99s internal Wo=
+rkplace forum, demanding better pay and a revision of confidentiality agree=
+ments that they say prevent them from seeking clinical help to address the =
+traumatic effects of the job, among other asks. The moderators work for an =
+Accenture subsidiary in Austin.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h52/BywsvoV6Mezp=
+ThvNtMOVdG80hJA6BTxsHKmzIpIr4AYZ-2BzkHHWwoAa8mfTamDD9yv1-2BXFcOFRxslZsrXU4e=
+OoqrG9TDlNzb-2BjQ7ha0GuDljOm3x1A7mdS4oO7MqYVrrqbnk4ci6dquB-2BXQM-2BXImRdqJi=
+2IZb7PMlv4YoNmtSOwmW2ggkTMrPpXNVznbdxpEq9O8BBQvFq7WJzx2dtnK3BLKDy0BuusI4Ip-=
+2FCoRfQbIlB-2BzIOciJR4HSkDbPUMk6L/EcK0"><img width=3D"112" height=3D"112" s=
+tyle=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" =
+src=3D"https://s3.amazonaws.com/revue/items/images/004/738/731/thumb/763b57=
+e6-97f6-11e9-b82d-cb52a89d5dff_image_hires_073848.jpg?1561640840" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h53/By=
+wsvoV6MezpThvNtMOVdG80hJA6BTxsHKmzIpIr4AYZ-2BzkHHWwoAa8mfTamDD9yv1-2BXFcOFR=
+xslZsrXU4eOoqrG9TDlNzb-2BjQ7ha0GuDljOm3x1A7mdS4oO7MqYVrrqbnk4ci6dquB-2BXQM-=
+2BXImRdqJi2IZb7PMlv4YoNmtSOwmW2ggkTMrPpXNVznbdxpEq9O8BBQvFq7WJzx2dtnK3BLKDy=
+0BuusI4Ip-2FCoRfQbIlB-2BzIOciJR4HSkDbPUMk6L/glQU">Inside China=E2=80=99s ba=
+ttle to keep internet addiction in check</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h54/2OvTnRdSc7KX1sRH9xROhk0KaHV=
+v7TA78lSo-2BQePDkaooHjhPZc3XjXS4ZnTR0NyA807dpLcnhwei-2FDxpGUbqsVEhSoCSBzI-2=
+BH8ikBiY6B6WhNGiNNh-2BWOA9p-2FQmv4LIHzqUKKLQggWmt4m20NQnog-3D-3D/6Enp">www.=
+scmp.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h55/2OvTnRdSc7KX1sRH9xROhk0KaHVv7TA78lSo-2BQePDkaooHjhPZc3=
+XjXS4ZnTR0NyauER3f7yBAy1tqAIVn4CIVL-2FTaUO6ssV5iKfPk8NI-2BKUbe-2BF-2F-2FMZL=
+Ca88TAWeKhN5uoq0mdSBi5-2FNUerbtjqyw-3D-3D/tMD7">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Cel=
+ia Chen=C2=A0visits China=E2=80=99s internet addiction treatment centers:</=
+div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px=
+; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; c=
+olor: #7A889A; line-height: inherit;" class=3D"revue-blockquote">Run by Tao=
+ Ran, a former People=E2=80=99s Liberation Army colonel who headed army psy=
+chology units, the centre is one of the earliest places in China to diagnos=
+e and treat internet addiction and is said to have developed treatment prot=
+ocols that are used in other parts of the country.</div><div style=3D"margi=
+n: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; bord=
+er-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-hei=
+ght: inherit;" class=3D"revue-blockquote">The facility consists of several =
+buildings that serve as canteens, dormitories and treatment rooms, arranged=
+ around an internal open-air courtyard that doubles up as a basketball cour=
+t and where patients assemble for exercise. No electronic devices are allow=
+ed.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h56/Iz4htkgyrPAa=
+-2Fvs6p6GZQ9QFRqeOPOHYbeu9FPoAu-2B-2FgcP3QRLJ8WE81aIinooIgNkazgmAFR-2BHH3eo=
+RzeI-2BEMv565eZ8EFduxD6TMNO-2BoXYKdZvshwP1XHQ4hN-2BeujqB1VjgzpIi9usK0-2Bq5P=
+xaaLzZfifTlwDp30rAc0A5-2F6pbYk9sr-2Bdd82jO8oiB1J-2BRiwJV5bm0HI5HH5c5DD5oOzl=
+Q-2FApYqaNurs1WRLUMMPw-3D/D_rS"><img width=3D"112" height=3D"112" style=3D"=
+padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" src=3D"h=
+ttps://s3.amazonaws.com/revue/items/images/004/736/306/thumb/1561585377765-=
+swift.jpeg?1561587432" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h57/Iz=
+4htkgyrPAa-2Fvs6p6GZQ9QFRqeOPOHYbeu9FPoAu-2B-2FgcP3QRLJ8WE81aIinooIgNkazgmA=
+FR-2BHH3eoRzeI-2BEMv565eZ8EFduxD6TMNO-2BoXYKdZvshwP1XHQ4hN-2BeujqB1VjgzpIi9=
+usK0-2Bq5PxaaLzZfifTlwDp30rAc0A5-2F6pbYk9sr-2Bdd82jO8oiB1J-2BRiwJV5bm0HI5HH=
+5c5DD5oOzlQ-2FApYqaNurs1WRLUMMPw-3D/9m59">This Horrifying App Undresses a P=
+hoto of Any Woman With a Single Click</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h58/INuQmebP53WmQSBf-2FDzER1pbe=
+ErKMo-2BLCDscI-2BOFWqb-2FebjImrL0K9m3o4dwzlJpouL4qB7fFY7cPuVJrpLn3dqGduSOUN=
+Zj4k19ps1Fa49wfVz-2B8wDqKqrSpFLYhFZ1vGnKCqbNtTDYy2hxDizMqA-3D-3D/tRpG">www.=
+vice.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h59/INuQmebP53WmQSBf-2FDzER1pbeErKMo-2BLCDscI-2BOFWqb-2Feb=
+jImrL0K9m3o4dwzlJp9l-2BfX3q0YTl8-2FKpkz-2FxDDG5gEs1xt8YoXLz8akUG3dVGPGLiLTn=
+XWnd4n2ac9RlVWM3K1QICx25buUerDfNtSA-3D-3D/Pv1D">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Sam=
+antha Cole writes about a $50 app called DeepNude, which =E2=80=9Cdispenses=
+ with the idea that deepfakes were about anything besides claiming ownershi=
+p over women=E2=80=99s bodies.=E2=80=9D</div><div style=3D"margin: 0; displ=
+ay: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #=
+E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-height: inheri=
+t;" class=3D"revue-blockquote">The software, called DeepNude, uses a photo =
+of a clothed person and creates a new, naked image of that same person. It =
+swaps clothes for naked breasts and a vulva, and only works on images of wo=
+men. When Motherboard tried using an image of a man, it replaced his pants =
+with a vulva. While DeepNude works with varying levels of success on images=
+ of fully clothed women, it appears to work best on images where the person=
+ is already showing a lot of skin. We tested the app on dozens of photos an=
+d got the most convincing results on high resolution images from=C2=A0<em>S=
+ports Illustrated Swimsuit</em>=C2=A0issues.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h60/ZqmN4WWWj-2F=
+84W376Z1YcVwCUp-2Fmm1GCixtlk2y9xntFbzuBMlnJEKzI4n-2Fh3uf0BrfmM0b4ymslWAchAk=
+tPiRpoJ-2FRXjAQZh-2FFuZhw-2FRp0N-2FYzeQDGKPSsdaZ66lmDDgJPV313w11HKA0aFYw-2F=
+F1VdKCAZYs7tX5kswCqjinJ46HVnomFry43ouWNx1SOwvnj9d66grqPjjwRmrXy6-2FBXURO-2B=
+zdelh2hv2LlKqNeU0BHbbCAAR0a2ZWs0af37yVsffvZaKI3eyct4A-2BBMNCu-2Bw-3D-3D/I0W=
+J"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-=
+left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue=
+/items/images/004/736/371/thumb/nfa-king-instagram-head-needs-tracks-frame-=
+439.jpg?1561588898" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h61/Zq=
+mN4WWWj-2F84W376Z1YcVwCUp-2Fmm1GCixtlk2y9xntFbzuBMlnJEKzI4n-2Fh3uf0BrfmM0b4=
+ymslWAchAktPiRpoJ-2FRXjAQZh-2FFuZhw-2FRp0N-2FYzeQDGKPSsdaZ66lmDDgJPV313w11H=
+KA0aFYw-2FF1VdKCAZYs7tX5kswCqjinJ46HVnomFry43ouWNx1SOwvnj9d66grqPjjwRmrXy6-=
+2FBXURO-2Bzdelh2hv2LlKqNeU0BHbbCAAR0a2ZWs0af37yVsffvZaKI3eyct4A-2BBMNCu-2Bw=
+-3D-3D/8MU8">Adam Mosseri interview: Instagram seriously considering potent=
+ially massive change for platform</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h62/TpXzvCAwZnSC1slCJvvPOmVX7ch=
+-2FK7PUvqLeHCgmeg3YZvKMG6-2Fem7eYUlQp22d9p9D31lr-2ByWuPA4n6U4-2BH-2BS0buQ5c=
+fGqaDn1IEAmxeZcm-2Fa5GJRbLHg1fDlp7C2Ggm0gPDeU5TuHBoSEmqlabfA-3D-3D/KvEq">ww=
+w.cbsnews.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h63/TpXzvCAwZnSC1slCJvvPOmVX7ch-2FK7PUvqLeHCgmeg3YZvKMG6-2=
+Fem7eYUlQp22d9VCs0839LHGBCwnQaErhIZu71Xd8MhA5Z8Cu4jfgmcVtCnppNW3Fu-2B-2BHdw=
+jd1ssIA0pDHgW9-2BeyvlHM0D0HENPw-3D-3D/jXp9">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Ada=
+m Mosseri talks to Gayle King about, among other things: a Facebook breakup=
+: </div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom: =
+14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E=
+8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">=E2=80=
+=9CI think it=E2=80=99s important to be really clear if you believe that we=
+ should be separated, why and what problem it=E2=80=99s gonna solve,=E2=80=
+=9D he said. =E2=80=9CIf you look at the issues that I=E2=80=99m most focus=
+ed on, things like bullying or self-harm or elections integrity, all of tho=
+se problems become exponentially more difficult for us at Instagram to addr=
+ess if you split us up.=E2=80=9D</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h64/wnKVMwY0-2Ba=
+hHDznx2XoybVVCe66HZoSfCgKN-2FaJGuyrcDwvhe1BzujSUpDgu3c8k-2B7qJVfzHk6nAT8w48=
+Jj-2BytL1OOVCZFziEcF-2BNxFyR-2FM1IUDmj2v-2BfpnCKNLk9RpkP91tDbjLf3KJeMaL1-2B=
+Yqtcz2hhdLUrZqdBWFwIW9FJk2VrZiAl-2BSumRsj1mnEZmmBpgijHCaobJ3pRlDTRIVAw-3D-3=
+D/Q37c"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;pad=
+ding-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/=
+revue/items/images/004/736/084/thumb/26manjoo2-facebookJumbo.jpg?1561581762=
+" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h65/wn=
+KVMwY0-2BahHDznx2XoybVVCe66HZoSfCgKN-2FaJGuyrcDwvhe1BzujSUpDgu3c8k-2B7qJVfz=
+Hk6nAT8w48Jj-2BytL1OOVCZFziEcF-2BNxFyR-2FM1IUDmj2v-2BfpnCKNLk9RpkP91tDbjLf3=
+KJeMaL1-2BYqtcz2hhdLUrZqdBWFwIW9FJk2VrZiAl-2BSumRsj1mnEZmmBpgijHCaobJ3pRlDT=
+RIVAw-3D-3D/z5Et">The Global Economy Runs on Parties You=E2=80=99re Not Inv=
+ited To</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h66/cT3l5eObhUTPDQdHwFdsznkSMvj=
+n2H3aCtZujKtP2JT6t8UZeZlntLP4lMRG-2BihJL9oCRJB-2BEBgy0RdLrNHZywbs8siV2lDTll=
+rH8hRHEJrDLvtZjGJDVza9lPUPFr-2FPTxOyG20B43ghnJzfBzu8EA-3D-3D/UZR-">www.nyti=
+mes.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h67/cT3l5eObhUTPDQdHwFdsznkSMvjn2H3aCtZujKtP2JT6t8UZeZlntL=
+P4lMRG-2BihJkTV-2BfC0MuHJPSvjSQ9WPZc8fYsMKvWCfs6hjxUy-2FAeGG-2Ff9urlCoqMsRE=
+89fDtBi1fUryAXXx3lZ-2FRZ9fgqFUA-3D-3D/7va-">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Far=
+had Manjoo goes to a Facebook party at Cannes Lyon:</div><div style=3D"marg=
+in: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: 0 20px; bor=
+der-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A889A; line-he=
+ight: inherit;" class=3D"revue-blockquote">There is obviously something con=
+spicuously icky about the excess on display. One morning last week, everyon=
+e in Cannes woke up to=C2=A0<a href=3D"http://click.revue.email/mps2/c/GQE/=
+cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h68/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLM=
+Wy9uoUOq7ZsIaxGDUJiO4Zt0GbEunVj-2FwPd2PzeOSSHdo7VvpLQLh7e0CMVlCcPVPqoxPlAAv=
+P-2B17fpo5Goc3EdzFzHsyCKcRxMbao4zmT0FYCejSgXQ3uZxKc76wkey9PZZhe4w23Me9mDsP4=
+g-2FIZbV9r9y4xE2kP78WWKpIcqnphWqxYL8J-2FYNrkU-2BJVMoUry47RL0CkmOBFy-2BlYC9G=
+HFTwUxbA/fIzn" target=3D"_blank" style=3D"color: #383092;text-decoration:un=
+derline;">The Verge=E2=80=99s investigation</a>=C2=A0into horrendous workin=
+g conditions at a contract facility that hires moderators to monitor Facebo=
+ok. It was a study in contrasts: The moderators complained of bathrooms cov=
+ered in feces and menstrual blood. At Cannes, Facebook bought a piece of th=
+e beach and built a coffee bar, meeting space and private boat launch to en=
+tertain its clients.</div><div style=3D"margin: 0; display: block; Margin: =
+0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left=
+: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-=
+blockquote">It=E2=80=99s not true that the internet is eliminating every jo=
+b for humans. There are humans everywhere in the social media supply chain.=
+ Some of them suffer. Others get to schmooze. The internet changed everythi=
+ng. It also changed nothing.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px; border-top: 2px solid #38=
+3092;padding-top:42px;' valign=3D'top'>
+<div class=3D'item-header' style=3D"font-family: 'protipo-wide', Helvetica,=
+ Arial, sans-serif; display: block; font-weight: 600; font-size: 36px; line=
+-height: 40px; margin: 0; margin-bottom: 0; color: #000;">Launches</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h69/pf1JvXXz0HA6=
+Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOrr7drelgTYYBGnDYuJt2Ztus9dUVgXT96IqHQRE7QZrMM=
+g4aJrIq-2BUaU-2F0X8nuK-2Fc0MnZcA-2BJqHV0x4wMNeXsib-2Bmhbdut78QjaH0wHLBprQky=
+xr4XRfUPMsjOwTPog7olkAcwWD1LKd2nVkOgTahbBEbjp-2FImy09ZK8rGXuRwUHXXZjNINTStq=
+SvqKDCLTjS7kGZG1MtYOZJLvOuBqrs0/l7pB"><img width=3D"112" height=3D"112" sty=
+le=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" sr=
+c=3D"https://s3.amazonaws.com/revue/items/images/004/736/374/thumb/twitch_s=
+ubs.png?1561588946" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h70/pf=
+1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOrr7drelgTYYBGnDYuJt2Ztus9dUVgXT96Iq=
+HQRE7QZrMMg4aJrIq-2BUaU-2F0X8nuK-2Fc0MnZcA-2BJqHV0x4wMNeXsib-2Bmhbdut78QjaH=
+0wHLBprQkyxr4XRfUPMsjOwTPog7olkAcwWD1LKd2nVkOgTahbBEbjp-2FImy09ZK8rGXuRwUHX=
+XZjNINTStqSvqKDCLTjS7kGZG1MtYOZJLvOuBqrs0/MriW">Twitch launches subscriber-=
+only streams, but only for creators who don=E2=80=99t violate its rules</a>=
+</span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h71/1W88l8s-2Fn2bkzHrahK9fPpDaZ=
+gpbKwxFh2zFkcVkB9wHHz9VEkRF3vwC6gvJU3EkFfAOWUnKYmXXYcy704wdYjdV78IQak6UeAxT=
+6JCxo7E-2FTsSZbhjbOI3fNvOYRynSRUYRvjKIrNyBu1wIlil64A-3D-3D/TIL6">www.thever=
+ge.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h72/1W88l8s-2Fn2bkzHrahK9fPpDaZgpbKwxFh2zFkcVkB9wHHz9VEkRF=
+3vwC6gvJU3Ek-2BUdKyJu47vGH49ehNpOb13G05X5yJPGMfq4742PxN54l945TKPqrvzvW8NoZQ=
+lQdZQa10S-2BJxdPOWRSpkPZMrw-3D-3D/prH3">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Twi=
+tch is giving its creators another carrot with which to lure paying subscri=
+bers, Julia Alexander reports:</div><div style=3D"margin: 0; display: block=
+; Margin: 0; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; b=
+order-left: 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=
+=3D"revue-blockquote">Twitch is giving its well-behaved streamers a chance =
+to offer a new, VIP-like feature to their most loyal viewers with subscribe=
+r-only streams.</div><div style=3D"margin: 0; display: block; Margin: 0; Ma=
+rgin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px=
+ solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-block=
+quote">The new feature does exactly what the name suggests: any Twitch Affi=
+liated or Partnered creator can choose to broadcast exclusively for moderat=
+ors, VIPs, and subscribers. This comes at no additional cost to the subscri=
+ber beyond the minimum $5-a-month fee they=E2=80=99re paying to support the=
+ streamer. Fans who aren=E2=80=99t subscribed will be greeted with a previe=
+w of a broadcast before being asked to subscribe to a channel.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px; border-top: 2px solid #38=
+3092;padding-top:42px;' valign=3D'top'>
+<div class=3D'item-header' style=3D"font-family: 'protipo-wide', Helvetica,=
+ Arial, sans-serif; display: block; font-weight: 600; font-size: 36px; line=
+-height: 40px; margin: 0; margin-bottom: 0; color: #000;">Takes</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h73/shiJTVQLSvOW=
+cTSNrlDEaTdZvKWViiXGYVpextYkN0kvMmJsGuw90W9wvnTzdn7VSQNe-2FbLxkoSqXGZTqPX1q=
+DESzDUCrdrXy8m7FG0nDQfc5GTlsVHA5qsXqoYcH-2BNLS-2Bzlad0lzjtcrr5V9riAhX2ZQpwa=
+jOxPCph3ofZtfV3XVrfT3h2J-2FMILjr0ZHl6qJ7ytnxavAHSyRNzZtA4JZBg0yR1vv9dsRNDD7=
+6chlgSWpY-2BgYPBYgCZlL9ouQRE-2F/hKeW"><img width=3D"112" height=3D"112" sty=
+le=3D"padding-bottom: 24px;padding-left: 28px;" alt=3D"" align=3D"right" sr=
+c=3D"https://s3.amazonaws.com/revue/items/images/004/739/163/thumb/cropped-=
+android-chrome-512x512-1.png?1561646064" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h74/sh=
+iJTVQLSvOWcTSNrlDEaTdZvKWViiXGYVpextYkN0kvMmJsGuw90W9wvnTzdn7VSQNe-2FbLxkoS=
+qXGZTqPX1qDESzDUCrdrXy8m7FG0nDQfc5GTlsVHA5qsXqoYcH-2BNLS-2Bzlad0lzjtcrr5V9r=
+iAhX2ZQpwajOxPCph3ofZtfV3XVrfT3h2J-2FMILjr0ZHl6qJ7ytnxavAHSyRNzZtA4JZBg0yR1=
+vv9dsRNDD76chlgSWpY-2BgYPBYgCZlL9ouQRE-2F/qmyy">Libra=E2=80=99s Questionabl=
+e Benefits ($)</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h75/nf6qCxpkMBOsYvd6sxLj07owKNJ=
+c3uEsVKAcbH7caWOReJyuXtEd2cOrA86-2Fevlz-2BHozAn3TchrULjdFE3fksNwV7UFo0vs7lr=
+7Qm-2ByvMxyufsGcyCebm1FXgjnU4CmDhq9-2B5187pNjbJUk4qZfCNg-3D-3D/jJa9">strate=
+chery.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h76/nf6qCxpkMBOsYvd6sxLj07owKNJc3uEsVKAcbH7caWOReJyuXtEd2c=
+OrA86-2Fevlz5ltUJAM2cK-2F28Ri9065nnTtVe6uqi7ewksyxuXDtpsMXRH90wZop-2BM1eSWX=
+5ltQ5GJjXNxe3N9EUkhY-2BZLk0tQ-3D-3D/7d2s">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Aft=
+er <a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSN=
+F5qn6SUmbQ/h77/shiJTVQLSvOWcTSNrlDEafxUkvImJbT0cO-2Fq5oR9PGDBRLd-2BE1QBeXnt=
+Ya1n-2Bn60fOrBy7L34r3SpfCbGpSwzB0D-2F-2FHPIlybDWE-2FApx9MaSS8up9L8G3uQj1dk4=
+VWw5aaQk9hSTrMs9W0gxLlC0E54Z0nnV3Izb59h8d4xMuhPh5flskkB2jLqEk9Blp8Yi3zjOkI5=
+0wOyR141Fq33BTv-2BK6RfhT6tIhNbnkFAFjzFb2v7wOtkR8CQOotSuoKGL-2B/IWKn" target=
+=3D"_blank" style=3D"color: #383092;text-decoration:underline;">interviewin=
+g</a> two of its top executives, Ben Thompson calls Libra =E2=80=9Ca bad id=
+ea.=E2=80=9D</div><div style=3D"margin: 0; display: block; Margin: 0; Margi=
+n-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px so=
+lid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquo=
+te">To my mind money =E2=80=94 which, at the end of the day, is the medium =
+that makes society work, particularly a capitalistic one =E2=80=94 has thos=
+e same high stakes. That means the downsides should be weighed more heavily=
+ than the upsides, which means less efficiency and more accountability shou=
+ld be preferable to the opposite. And that, by extension, means that a curr=
+ency managed, if not by a single corporation then at best a collection of t=
+hem, is a bad idea.</div><div style=3D"margin: 0; display: block; Margin: 0=
+; Margin-bottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left:=
+ 2px solid #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-b=
+lockquote">To be sure, all of these objections apply to a reality that is v=
+ery far in the future, if it arrives at all. By the time that future arrive=
+s, though, it will be too late to raise them.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h78/pf1JvXXz0HA6=
+Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOrMWA9eAr3Id63QRH9dV-2FBytD7WeUXxW3TG7gY3Mf7de=
+9T7R5GdcYDPszoC-2FFK5UIwlc0rr-2FCSXYc22UhZVdy0CsIIwvEDcmovzOqd9Hcd5UH13cDA-=
+2BYqRXpeCoCutocyFt2TCqrgNdjQGJGcpIatgSFYw9IiainEoMm7ywrfJAub-2Fo98NNFfnbh4X=
+s9GmhJ9aBHucf98-2F847vmjKtgvRYi7R2YMuJCwVtKxj5KmT-2Fl5A-3D-3D/9vQf"><img wi=
+dth=3D"112" height=3D"112" style=3D"padding-bottom: 24px;padding-left: 28px=
+;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/revue/items/ima=
+ges/004/738/713/thumb/VRG_ILLO_3517_001.jpg?1561640569" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h79/pf=
+1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOrMWA9eAr3Id63QRH9dV-2FBytD7WeUXxW3T=
+G7gY3Mf7de9T7R5GdcYDPszoC-2FFK5UIwlc0rr-2FCSXYc22UhZVdy0CsIIwvEDcmovzOqd9Hc=
+d5UH13cDA-2BYqRXpeCoCutocyFt2TCqrgNdjQGJGcpIatgSFYw9IiainEoMm7ywrfJAub-2Fo9=
+8NNFfnbh4Xs9GmhJ9aBHucf98-2F847vmjKtgvRYi7R2YMuJCwVtKxj5KmT-2Fl5A-3D-3D/Zbd=
+B">Facebook=E2=80=99s Libra probably won=E2=80=99t help people without bank=
+ accounts</a></span>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h80/lsko8ivQ8-2BNmOyqUJ-2FSpmfK=
+Ya1P8pegAmHqkqtsFxdLrrNaVk-2FI01jUvymFEdPmFsE-2B27Ab2cJ-2FSWCd-2FRYDJSkEQ5W=
+wdUYeraeMs4hepW9aKVHSP6XyOhnGhJVpPOTGM1Gx9OdC8SYTbEdi-2FQqfmhg-3D-3D/ZwM7">=
+www.theverge.com</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h81/lsko8ivQ8-2BNmOyqUJ-2FSpmfKYa1P8pegAmHqkqtsFxdLrrNaVk-=
+2FI01jUvymFEdPmFb0AZVzUwNeeACI6GuXAqeRJX3u9aDIlQkgOrP8wZGQ1PcCvUYrhaMBYEi3l=
+wT9bF9uaRBItaP-2F-2BL-2FBDRCbdZ-2FA-3D-3D/mSz8">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p"></div><div style=3D"margin: 0;" class=3D"revue-p">Hal=
+f of all adults who don=E2=80=99t have bank accounts live in seven countrie=
+s, according to a report cited by Facebook. Elizabeth Lopatto says this cou=
+ld limit Libra=E2=80=99s power to lift people out of poverty: </div><div st=
+yle=3D"margin: 0; display: block; Margin: 0; Margin-bottom: 14px; padding: =
+0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4E8; color: #7A88=
+9A; line-height: inherit;" class=3D"revue-blockquote">Facebook is banned in=
+=C2=A0<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1Q=
+USNF5qn6SUmbQ/h82/VkbCQigPwNG-2FbMX7YLnAFzTstxP6BYNog0CZyQOJdNW7LcwO-2Fnd84=
+V-2BujuZZfhZ19NDVwTBh6pu-2B2Jb4t8QVwRws7OkWVFzCP0H-2B3kS9C7BL-2B8w8eb0UXnFx=
+l4E9aPbfOGGoM7gdo6HV2zvFbiJlLWwHLQMqxJ38pGmWBfHiEsIWAlEsk0F2QnNBixE3PvzUVja=
+DZyIaZuA0Nn6MWLRVyQ-3D-3D/1pyo" target=3D"_blank" style=3D"color: #383092;t=
+ext-decoration:underline;">China</a>. Some countries, such as Pakistan,=C2=
+=A0<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSN=
+F5qn6SUmbQ/h83/2QB-2Bhef-2B8RXt-2FXLHDh0zQM3BufW14VLxfZZDMEC-2BuPbwN-2BUNIF=
+7Aa82ruNkBm-2BJRbPezNBH0Ou2dUvk3tpfiBT0RFxJHue9hzzpVxIJYoqPZ3UH5P3g1LC0-2Bp=
+IU8fQmyxUscR6Umv-2FE-2BUAWk9UuMHyqJP1mmJAoeEc8HjbZRDf08lnrO0ooU0QY-2FSOV-2B=
+p6s8n6D5G0u0viqduJiJzHYzXlzZOP34A-2BEJVgzmQZFuVk2nCGUJyVn2MYeuKkeNtjGtruaRv=
+sbZS5kkfYgRY7-2F2nw-3D-3D/rmZ-" target=3D"_blank" style=3D"color: #383092;t=
+ext-decoration:underline;">Indonesia</a>, and=C2=A0<a href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h84/9HqbXzCzK6nR=
+4SPruylVDwtKFlh57TZXysracU1vAlpPXtFZy3RZLnT4qdkyJseFIg51vTGtyBXF88mInjbQsC7=
+d9URUmK0C6tHp-2BQ-2BQ8AhNXTh15JG8Nf4q1FVtcwJzt-2F-2FhJ4uO1w4ha9h9p-2BR-2Fgs=
+KyLkM40GEYttocmNVmsW8-3D/3IjN" target=3D"_blank" style=3D"color: #383092;te=
+xt-decoration:underline;">Bangladesh</a>, have temporarily banned Facebook =
+for periods of time, possibly limiting the effectiveness of any money tied =
+to the app. Facebook mentions this as a risk factor to its business in its=
+=C2=A0<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1Q=
+USNF5qn6SUmbQ/h85/NA7SNBTNu-2BtuTOt9isnswW2RAD1KBCFwtGzCiN6-2BMcg5vCQYbsVsP=
+t1kWRVDdyQurP7kp0LEFufJKZi3anSRN0-2BZo6YU4Jbgulc94uQ7-2BAqneODZri2W4fXyNR9h=
+Fnlg2l5mgVoCT4brcjGIsTpr4Z2lY-2BK3fphM9ZkDi345BakL0EzpXchbvTtq-2F-2F1JzNvht=
+11hpEbbSKjKxohij7kxaI86BYpjGC9tteafbPXqwjk-3D/sBtS" target=3D"_blank" style=
+=3D"color: #383092;text-decoration:underline;">quarterly filing</a>: =E2=80=
+=9CGovernment authorities in other countries may seek to restrict user acce=
+ss to our products if they consider us to be in violation of their laws or =
+a threat to public safety or for other reasons, and certain of our products=
+ have been restricted by governments in other countries from time to time.=
+=E2=80=9D</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-b=
+ottom: 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid=
+ #E0E4E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote"=
+>That=E2=80=99s not all: many of these countries have laws around cryptocur=
+rency. (Yes,=C2=A0<a href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2=
+su/Vn7oL8A1QUSNF5qn6SUmbQ/h86/pf1JvXXz0HA6Uk3h4thQp9ZUbP6rCEDUZLMWy9uoUOp-2=
+F8kHolTQc8eQpHurrHKL9bzgAw2mhmdmsnSUYOooFP5Be2RDeC1FMX-2Fj8XCRww8ZCAPZFQZ7A=
+UbOQgs5SjZkK0azs6iTmv-2BaZjk8N-2Fp0zLBlW7-2FbxdmXKAF3j9weiotXw-2Bs2vyNi-2Bp=
+hbH1GYzmsh2-2B07ELCzPrZkTkbyx9gLjntLG4VRDbduLUec34rxVq68-3D/Xq4Y" target=3D=
+"_blank" style=3D"color: #383092;text-decoration:underline;">I know it is d=
+ebatable</a>=C2=A0whether Libra qualifies as a cryptocurrency or not. But F=
+acebook is calling Libra a cryptocurrency, so I am going to assume cryptocu=
+rrency laws will apply.)=C2=A0<a href=3D"http://click.revue.email/mps2/c/GQ=
+E/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h87/nKTMpKgkSw5zbsekyMdgZDLc3QFYzDdaH=
+S0MUSSqF5qSgj-2F7a6znbwqjQj-2FwZliybI9klgBdX2jD16PDsYmNKxGcH-2BkQfRxj4QcRY0=
+FwV4EVGCrIB-2BW1u9KQ3al9kvzmz08dw0Xxak7Fh1yZphBaHdkhVaAdxfLZPtJVWlMBzWFcJfr=
+BmBlFiPJIZ-2FgL-2Fm0aKX5Cnw0hHnPrvEJJ-2B0oOcBvO5chUtbXWWfNMmxeJ849mD8iegzIR=
+kp7KOnks8QXA/CUq-" target=3D"_blank" style=3D"color: #383092;text-decoratio=
+n:underline;">India=E2=80=99s current regulations</a>=C2=A0mean Libra can=
+=E2=80=99t operate in the country. Pakistan is=C2=A0<a href=3D"http://click=
+.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h88/t3gYT6RMu1g=
+0a-2FKTEB3-2B3fOLTXxr8e9vCx0RPvGvVAp28hIKggXeFXyS8aYp4Mtf8oDirQbaj76BhAVxEW=
+qMLoaVtAn-2FVeCVLGRQUL0k1TO-2FeV6AwFNGFvmf-2BT1sN48BmdSHaQGGAvuBD-2F-2F-2BD=
+dzLckZSgD57HmUYW9QoUqTa-2FzS8xvlnCJHqd2WGj3fHzd9nPdketDkI1EWwQl3whyk4Cg-3D-=
+3D/OQgH" target=3D"_blank" style=3D"color: #383092;text-decoration:underlin=
+e;">considering regulation</a>=C2=A0for cryptocurrencies, but=C2=A0<a href=
+=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ=
+/h89/CmzAM7pvigHEkjZLatMoTEibEpXVJX5SjB-2BHmenoEuel8jyqT3D8MAkjoFdnGaIF6T9w=
+bKXGZLcFB5NDVHmg-2FN1vDeK5fE5BPdzIdN82oT4HX4lwm74yoWA1h0m9ETjlPPz-2BuhMhBdo=
+gnyEgDtWwfRqk6KWjDbWBDXAeO1qc7u8x7PweAXf-2BFt77mVZg-2Fj2Emvw7xB8FMFOuallJ-2=
+Bs8BjQ-3D-3D/mUQ1" target=3D"_blank" style=3D"color: #383092;text-decoratio=
+n:underline;">currently they are banned</a>.=C2=A0<a href=3D"http://click.r=
+evue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h90/MX-2FwqrlWa1M=
+OOI-2BDk4Pu5u6xn6JpMHil8LISmWlGTekalywH37c0th6FdhWceELc6HQhrwvcLjGoqdj07hdI=
+bku7dQ4HUxtzcoo6poEccAoZgItgO2G7LsT8GTu8x4MCY2uOJxatsfBOWa1QHnjnjf8XDVmXVu0=
+14Hh38-2FTlu-2Bo-3D/GAY3" target=3D"_blank" style=3D"color: #383092;text-de=
+coration:underline;">Cryptocurrency is also implicitly banned</a>in Banglad=
+esh and China.</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px; border-top: 2px solid #38=
+3092;padding-top:42px;' valign=3D'top'>
+<div class=3D'item-header' style=3D"font-family: 'protipo-wide', Helvetica,=
+ Arial, sans-serif; display: block; font-weight: 600; font-size: 36px; line=
+-height: 40px; margin: 0; margin-bottom: 0; color: #000;">And finally ...</=
+div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"text-decoration: none;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h91/rBZpkgofuxZG=
+OvNDh7QBpkoU9-2FSR2ZS5iKvY4BAcQ0eriDqn11SOOmmtwq6Fh8Lu-2BpyB2lc0tuEzIkAX1JR=
+-2FwckErLPuFIX0NRFJlYb20prPNsIZzLwX64r535iN-2BQyQ29v3lWeLoMNOQxlVL2cYFPKwje=
+4m5b1Dia3zzq8ty-2F8NC-2FtRAYla2CjwyMzfVcqDJAAly-2FmzJpZ-2ByYzE1a1o5A-3D-3D/=
+gkul"><img width=3D"112" height=3D"112" style=3D"padding-bottom: 24px;paddi=
+ng-left: 28px;" alt=3D"" align=3D"right" src=3D"https://s3.amazonaws.com/re=
+vue/items/images/004/736/373/thumb/lolol.jpg?1561588940" />
+</a><span class=3D'item-link-title' style=3D"font-family: 'protipo-wide', H=
+elvetica, Arial, sans-serif; font-weight: 700; color: #383092; font-size: 2=
+4px;display: block; line-height: 30px; margin: 0; margin-bottom: 0;"><a tar=
+get=3D"_blank" style=3D"color: #383092; text-decoration: none;" href=3D"htt=
+p://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h92/rB=
+ZpkgofuxZGOvNDh7QBpkoU9-2FSR2ZS5iKvY4BAcQ0eriDqn11SOOmmtwq6Fh8Lu-2BpyB2lc0t=
+uEzIkAX1JR-2FwckErLPuFIX0NRFJlYb20prPNsIZzLwX64r535iN-2BQyQ29v3lWeLoMNOQxlV=
+L2cYFPKwje4m5b1Dia3zzq8ty-2F8NC-2FtRAYla2CjwyMzfVcqDJAAly-2FmzJpZ-2ByYzE1a1=
+o5A-3D-3D/1itl">Why People Pretend To Be Boomers In Facebook Groups</a></sp=
+an>
+<div class=3D'domain' style=3D'font-family: Helvetica, -apple-system, Arial=
+, sans-serif; display: block; line-height: 24px; margin: 0; margin-bottom: =
+0; color: #383092; text-decoration: none !important;'>
+<a target=3D"_blank" style=3D"color: #383092; text-decoration: none; text-t=
+ransform: uppercase; font-size: 12px;" href=3D"http://click.revue.email/mps=
+2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h93/FjGfBsvp54BigIbmnvbuwaIzjdR=
+YZBTXjSQRyxRE9MCKJxo90xMdOtIUVPj3DKiGbvvdsid4sdqdN0Cn802Kki3eKIOYlQfTT-2B0h=
+hyvxLpujOZss0ZQgAr395veBAvQI6zKXTJJGy4qxZjuyJrCUHA-3D-3D/nnlX">www.pedestri=
+an.tv</a>
+=E2=80=93
+<a target=3D"_blank" style=3D"color: #383092; font-size: 14px; text-decorat=
+ion: none;" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8=
+A1QUSNF5qn6SUmbQ/h94/FjGfBsvp54BigIbmnvbuwaIzjdRYZBTXjSQRyxRE9MCKJxo90xMdOt=
+IUVPj3DKiGjSMyMRKTAZGVkBPc0VwSoC6zwVq-2FDht5rTzSa-2FBvjQjPVoJbHEph-2FyXPaTa=
+iSyLqeiuXT-2BToTvGSBITteAPmxQ-3D-3D/lTiZ">Share</a>
+</div>
+<div class=3D'item-link-description' style=3D'font-family: Helvetica, -appl=
+e-system, Arial, sans-serif; font-size: 16px; line-height: 24px; display: b=
+lock; margin: 0; margin-bottom: 0; margin-top: 4px;'><div style=3D"margin: =
+0;" class=3D"revue-p">Brad Esposito talks to people participating in my fav=
+orite current trend in Facebook Groups: pretending that you are extremely o=
+ld:</div><div style=3D"margin: 0; display: block; Margin: 0; Margin-bottom:=
+ 14px; padding: 0 20px; border-color: #E0E4E8; border-left: 2px solid #E0E4=
+E8; color: #7A889A; line-height: inherit;" class=3D"revue-blockquote">In th=
+e group Snider helps manage people post Facebook-prompted text images lamen=
+ting the death of their =E2=80=9Cson=E2=80=9D in brutal honestly (=E2=80=9C=
+<em>My son is dead</em>=E2=80=9C), they share gifs of the American flag in =
+faux patriotism, the words =E2=80=9C<em>Flood Facebook with our flag!</em>=
+=E2=80=9D emboldened along the top. Often, it=E2=80=99s just someone replic=
+ating the ham-fisted way the older generation can often find itself using F=
+acebook=E2=80=99s basic features, asking amongst an army of commas what the=
+ acronym =E2=80=9C<em>wyd</em>=E2=80=9D means (=E2=80=9C<em>Is this some ga=
+ng language?</em>=E2=80=9C).</div><div style=3D"margin: 0;" class=3D"revue-=
+p">(Yes it is a gang language.)</div>
+</div>
+
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px; border-top: 2px solid #38=
+3092;padding-top:42px;' valign=3D'top'>
+<div class=3D'item-header' style=3D"font-family: 'protipo-wide', Helvetica,=
+ Arial, sans-serif; display: block; font-weight: 600; font-size: 36px; line=
+-height: 40px; margin: 0; margin-bottom: 0; color: #000;">Talk to me</div>
+</td>
+</tr>
+<tr>
+<td align=3D'left' style=3D'padding-bottom: 30px;' valign=3D'top'>
+<div class=3D'item-text' style=3D'font-family: Helvetica, -apple-system, Ar=
+ial, sans-serif; font-size: 18px; line-height: 28px;display: block; margin:=
+ 0; margin-bottom: 0;'><div style=3D"margin: 0;" class=3D"revue-p">(Yesterd=
+ay I forgot to finish the sentence with my customary joke at the end of the=
+ newsletter, and so accidentally encouraged people to =E2=80=9Csend me Cass=
+ Sunstein,=E2=80=9D Zuckerberg=E2=80=99s interviewer at the Aspen Ideas Fes=
+tival. Thank you to the readers who sent me images of the Harvard law profe=
+ssor; you may now stop, as I have enough.) </div><div style=3D"margin: 0;" =
+class=3D"revue-p">Today I invite you to send me tips, comments, questions, =
+and your nominations to Facebook=E2=80=99s oversight board: casey@theverge.=
+com. </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding: 20px 0; background-color: #FAFAFB;' =
+valign=3D'top'>
+<table border=3D'0' cellpadding=3D'0' cellspacing=3D'0' style=3D'border-col=
+lapse: collapse;mso-table-lspace:0pt; mso-table-rspace:0pt;' width=3D'100%'>
+<tr>
+<td align=3D'right' valign=3D'top' width=3D'56%'>
+<div style=3D'font-family: Helvetica, -apple-system, Arial, sans-serif; dis=
+play: block; font-size: 16px; color: #666; line-height: 36px; margin: 0; ma=
+rgin-bottom: 0; text-align: right;'>Did you enjoy this issue?</div>
+</td>
+<td align=3D'left' style=3D'padding-left: 10px;' valign=3D'top' width=3D'44=
+%'>
+<table border=3D'0' cellpadding=3D'0' cellspacing=3D'0' style=3D'border-col=
+lapse: collapse;mso-table-lspace:0pt; mso-table-rspace:0pt;' width=3D'81'>
+<tr>
+<td align=3D'right' height=3D'36' valign=3D'top' width=3D'41'>
+<a style=3D"padding: 0; border:0; text-decoration: none;" href=3D"http://cl=
+ick.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h95/jfrXSEe9=
+JOerdoPhijW6S2OB1qQX6q6g3ftoYqZCApLH1aHD-2FpvXpjZMroRwn3Z0B8X7m1h0QaRaqrl5b=
+hPQWkSfcTCaPD44Z7NgEtyuGHpd9mATms3xsc2FSKIPVZZI9RQ9vtuH1Ynv4J9ycUW2cNemK8sQ=
+0ScPNeS8N3gyxqzLegJV80VF7GyxPKB0zzEd/VOLo"><img style=3D"outline:none; text=
+-decoration:none; -ms-interpolation-mode: bicubic;border: 0;" width=3D"41" =
+height=3D"36" alt=3D"" src=3D"https://www.getrevue.co/assets/email/thumbs_u=
+p-1ae5a7bdfcd3220e2b376aa0c1607bc5edaba758e5dd83b482d03965219a220b.png" />
+</a></td>
+<td align=3D'left' height=3D'36' valign=3D'top' width=3D'40'>
+<a style=3D"padding: 0; border:0; text-decoration: none;" href=3D"http://cl=
+ick.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h96/jfrXSEe9=
+JOerdoPhijW6S2OB1qQX6q6g3ftoYqZCApLH1aHD-2FpvXpjZMroRwn3Z0B8X7m1h0QaRaqrl5b=
+hPQWkSfcTCaPD44Z7NgEtyuGHpd9mATms3xsc2FSKIPVZZI9RQ9vtuH1Ynv4J9ycUW2cNemK8sQ=
+0ScPNeS8N3gyxqw4NATm05t6OZeCx34-2F2xzz/OFQL"><img style=3D"outline:none; te=
+xt-decoration:none; -ms-interpolation-mode: bicubic;border: 0;" width=3D"40=
+" height=3D"36" alt=3D"" src=3D"https://www.getrevue.co/assets/email/thumbs=
+_down-e13779fa29e2935b47488fb8f82977fedcf689a0cc0cc3c19fa3c6bb14d1493b.png"=
+ />
+</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-top: 28px;' valign=3D'top'>
+<a target=3D"_blank" style=3D"border: 0; outline: none; text-decoration: no=
+ne; -webkit-text-size-adjust:none;mso-hide:all;padding-right: 5px;" href=3D=
+"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h9=
+7/-2FLlLjURmKQT72XcrieJUBSZCQJ-2F-2B3qPfmS5oqfce3LgpoZ6SmQfyKyL4P-2FjETCH0I=
+-2BwZHSx8-2BFhnksYTeowBkWyvr-2FMy-2BzZHdTQFv7tT3gj5tJyP3K175JfICHRTCN9JhKFx=
+sXcl8SuMxyVuk73HobpPazsnKU3w9zqHA2jqYBubzYVu6LWUkb7yitl88bojWOQHzowx2yGr1z2=
+rfNLPrPQ8UgV0ycZYjXPpjNgyxZkNtv2Y4OYeSkvIkrfKzUPGcaIuejlXfsiPsCLYlJspl-2FRQ=
+kthpeuI4tnSLPkT5A-2BVF3j9f1lWGi0ntaWKq81UxHbnQTnH6SRHcUXlevzfXMQ-3D-3D/ml3Q=
+"><img alt=3D"" width=3D"28" height=3D"28" src=3D"https://www.getrevue.co/a=
+ssets/email/share_twitter-1d50bcd74851bdf7f9c51e5942c9ca4bef741c6a69c9380e5=
+3ea84ddf23936f6.png" />
+</a><a target=3D"_blank" style=3D"border: 0; outline: none; text-decoration=
+: none; -webkit-text-size-adjust:none; mso-hide:all;" href=3D"http://click.=
+revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h98/DDdEWe5maUJa=
+fQE7xr6e3NSkBsCseOnKc3-2Fim-2FaNLdDMkIWBTax8Vx2xcpAg6bnI4VMn6llynQq5ZLymMkf=
+Oi0zT8kLCxUqxd8jVv3RMQUDA7JVUqzEPUaTEsMC-2FV7l7dab4ndKQiQmuB9DaB8ykb-2FkSqX=
+XeNIaFyziciAK2vlCFv8SJfOqdKw3JZhI10-2BlX/2FfJ"><img alt=3D"" width=3D"28" h=
+eight=3D"28" src=3D"https://www.getrevue.co/assets/email/share_facebook-de7=
+94f7bb7cf43d1d511fb0ffa88ae43436a3f09811ee338a7fa38b413fb659e.png" />
+</a></td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding-top: 56px;' valign=3D'top'>
+<div style=3D'font-family: Helvetica, -apple-system, Arial, sans-serif; dis=
+play: block; font-size: 16px; color: #666; line-height: 28px; color: #999; =
+margin: 0; margin-bottom: 0;'>
+If you don't want these updates anymore, please unsubscribe <a target=3D"_b=
+lank" style=3D"color: #383092" href=3D"http://click.revue.email/mps2/c/GQE/=
+cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h99/jfrXSEe9JOerdoPhijW6S2OB1qQX6q6g3ft=
+oYqZCApImYnf8wKlnAmvLoSYoeF2rEsq5iIZ718vW3o8TPh0G88Z2s6dvpq-2BLmI0w-2Fey38y=
+VYLm3qlcFBv57c1XJB3odivuVj4E1LdPgWgGIjgfheJQT1riQN6gNnCynjA1an5K2guqLbEfFT4=
+HXPCL9SWAAhRzwpxiGV3iQv1MUnUHU9SHcC62myDPkX1-2F-2FPwGHKgzY-3D/dmL_">here</a>
+</div>
+<div style=3D'font-family: Helvetica, -apple-system, Arial, sans-serif; dis=
+play: block; font-size: 16px; color: #666; line-height: 28px; color: #999; =
+margin: 0; margin-bottom: 0;'>
+If you were forwarded this newsletter and you like it, you can subscribe <a=
+ target=3D"_blank" style=3D"color: #383092" href=3D"http://click.revue.emai=
+l/mps2/c/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5qn6SUmbQ/h100/TrXaJm8OFnbbxb2WYsid2=
+Ar422K2Gh3B-2F-2B-2FTP0Mh7wsonKom9C9KyeUEMzhvdqAUTo1vy54ulihIo7r-2Fbr43paS6=
+yOwt-2F9xRHIVJvYsetf-2Fx8IUYJo5t1t3M-2Fni-2Bx3BpGYyG-2FlewESKM30l2qZsd0LqMh=
+YvCg7CzCIeXLkFxqqQ-3D/glb2">here</a>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' style=3D'padding: 8px 0 28px 0;' valign=3D'top'>
+<div style=3D'font-family: Helvetica, -apple-system, Arial, sans-serif; dis=
+play: block; font-size: 16px; color: #666; line-height: 28px; color: #999; =
+margin: 0; margin-bottom: 0;'>Powered by <a target=3D"_parent" style=3D"col=
+or: #383092" href=3D"http://click.revue.email/mps2/c/GQE/cM9xAA/t.2su/Vn7oL=
+8A1QUSNF5qn6SUmbQ/h101/TrXaJm8OFnbbxb2WYsid2NlyWAQGMlXn2rQoJ-2BsSuDGiBfjeNb=
+E-2BfCm7cUk0G7dqr-2FZm6i1c-2BVOiXlwfr0wLHeOXwk3Bf-2FTA7DDpObc7aCeufDHQiL0LZ=
+fG63d4E4NPxlV-2Fiwxmt9Lb9kTNiVwsNRw-3D-3D/Fq1Z">Revue</a></div>
+</td>
+</tr>
+<tr>
+<td align=3D'center' valign=3D'top'>
+<div style=3D'font-family: Helvetica, -apple-system, Arial, sans-serif; dis=
+play: block; font-size: 16px; line-height: 28px; color: #fff; margin: 0; ma=
+rgin-bottom: 0;'>&nbsp;</div>
+</td>
+</tr>
+</table>
+
+          </td>
+        </tr>
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    </td>
+    <td width=3D"10" valign=3D"top">&nbsp;</td>
+  </tr>
+</table>=20
+
+<img src=3D"http://click.revue.email/mpss/o/GQE/cM9xAA/t.2su/Vn7oL8A1QUSNF5=
+qn6SUmbQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"he=
+ight:1px !important;width:1px !important;border-width:0 !important;margin-t=
+op:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin=
+-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;pad=
+ding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+----==_mimepart_5d1558842f184_42afcf142f98c103991--
